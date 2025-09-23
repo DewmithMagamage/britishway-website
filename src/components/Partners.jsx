@@ -7,7 +7,7 @@ const logos = [
   "/images/BC.png",
   "/images/CTH.png",
   "/images/TVEC.png",
-  "/Images/Lincoln.png",
+  "/images/Lincoln.png",
   "/Images/Cambridge copy.png",
   "/Images/Thames.png",
 ];
