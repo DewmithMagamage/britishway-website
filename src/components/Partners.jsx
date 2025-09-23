@@ -8,8 +8,8 @@ const logos = [
   "/images/CTH.png",
   "/images/TVEC.png",
   "/images/Lincoln.png",
-  "/Images/Cambridge copy.png",
-  "/Images/Thames.png",
+  "/images/Cambridge copy.png",
+  "/images/Thames.png",
 ];
 
 const Partners = () => {
