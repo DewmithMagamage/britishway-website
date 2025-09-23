@@ -2,8 +2,8 @@ import React from "react";
 import Marquee from "react-fast-marquee";
 
 const logos = [
-  "/Images/abe.png",
-  "/Images/AEU.png",
+  "/images/abe.png",
+  "/images/AEU.png",
   "/Images/BC.png",
   "/Images/CTH.png",
   "/Images/TVEC.png",
