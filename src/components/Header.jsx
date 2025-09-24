@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <>
       {/* Header Spacer - Prevents content from going under fixed header */}
-      <div className="h-[108px]"></div>
+      <div className="h-[120px]"></div>
       
       {/* Fixed Header Container */}
       <div className="fixed top-0 left-0 right-0 z-50">
@@ -51,8 +51,8 @@ const Header = () => {
         </div>
         
         {/* Navigation Bar */}
-        <div className="bg-white shadow-md px-3 py-1">
-          <nav className="max-w-7xl mx-auto backdrop-blur-md">
+        <div className="px-3 py-1">
+          <nav className="max-w-7xl mx-auto backdrop-blur-md bg-gray-100/70 rounded-2xl shadow-xl border border-gray-200/50">
             <div className="px-2 py-1">
               <div className="flex justify-between items-center">
               {/* Logo */}
