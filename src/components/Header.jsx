@@ -8,48 +8,53 @@ const Header = () => {
   
   return (
     <>
-      {/* Top Contact Bar */}
-      <div className="bg-gray-900 text-white py-2">
-        <div className="max-w-9xl mx-auto px-8 flex justify-between items-center text-sm">
-          <div className="flex items-center space-x-6">
-            <div className="flex items-center">
-              <span>Have any questions?</span>
+      {/* Header Spacer - Prevents content from going under fixed header */}
+      <div className="h-[108px]"></div>
+      
+      {/* Fixed Header Container */}
+      <div className="fixed top-0 left-0 right-0 z-50">
+        {/* Top Contact Bar */}
+        <div className="bg-gray-900 text-white py-2">
+          <div className="max-w-9xl mx-auto px-8 flex justify-between items-center text-sm">
+            <div className="flex items-center space-x-6">
+              <div className="flex items-center">
+                <span>Have any questions?</span>
+              </div>
+              <div className="flex items-center">
+                <Mail className="w-4 h-4 mr-2" />
+                <span>info@britishway.lk</span>
+              </div>
+              <div className="flex items-center">
+                <Phone className="w-4 h-4 mr-2" />
+                <span>033 202 4141 / 071 10 100 10</span>
+              </div>
             </div>
-            <div className="flex items-center">
-              <Mail className="w-4 h-4 mr-2" />
-              <span>info@britishway.lk</span>
+            
+            <div className="flex items-center space-x-4">
+              <a href="#" className="hover:text-blue-300 transition-colors">
+                <Youtube className="w-4 h-4" />
+              </a>
+              <a href="#" className="hover:text-blue-300 transition-colors">
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a href="#" className="hover:text-blue-300 transition-colors">
+                <Twitter className="w-4 h-4" />
+              </a>
+              <a href="#" className="hover:text-blue-300 transition-colors">
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a href="#" className="hover:text-blue-300 transition-colors">
+                <Linkedin className="w-4 h-4" />
+              </a>
             </div>
-            <div className="flex items-center">
-              <Phone className="w-4 h-4 mr-2" />
-              <span>033 202 4141 / 071 10 100 10</span>
-            </div>
-          </div>
-          
-          <div className="flex items-center space-x-4">
-            <a href="#" className="hover:text-blue-300 transition-colors">
-              <Youtube className="w-4 h-4" />
-            </a>
-            <a href="#" className="hover:text-blue-300 transition-colors">
-              <Facebook className="w-4 h-4" />
-            </a>
-            <a href="#" className="hover:text-blue-300 transition-colors">
-              <Twitter className="w-4 h-4" />
-            </a>
-            <a href="#" className="hover:text-blue-300 transition-colors">
-              <Instagram className="w-4 h-4" />
-            </a>
-            <a href="#" className="hover:text-blue-300 transition-colors">
-              <Linkedin className="w-4 h-4" />
-            </a>
           </div>
         </div>
-      </div>
-      
-      {/* Fixed Navigation Bar - Positioned absolutely to overlay hero */}
-      <div className="absolute top-10 left-0 right-0 z-50 px-3 py-1">
-        <nav className="max-w-7xl mx-auto backdrop-blur-md bg-gray-100/70 rounded-2xl shadow-xl border border-gray-200/50">
-          <div className="px-2 py-1">
-            <div className="flex justify-between items-center">
+        
+        {/* Navigation Bar */}
+        <div className="bg-white shadow-md px-3 py-1">
+          <nav className="max-w-7xl mx-auto backdrop-blur-md">
+            <div className="px-2 py-1">
+              <div className="flex justify-between items-center">
               {/* Logo */}
               <div className="flex items-center">
                 <div className="flex items-center">
@@ -151,7 +156,8 @@ const Header = () => {
               </button>
             </div>
           </div>
-        </nav>
+          </nav>
+        </div>
       </div>
     </>
   );
