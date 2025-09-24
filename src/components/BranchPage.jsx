@@ -1,6 +1,9 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock, Users, Award, ArrowRight, Search } from "lucide-react";
+import Header from "./Header";
+import Footer from "./Footer";
+import Reveal from "./Reveal";
 
 const BranchPage = () => {
   const { branchId } = useParams();
@@ -167,63 +170,71 @@ const BranchPage = () => {
   const branch = branchData[branchId] || branchData.matara;
 
   return (
-    <main className="w-full">
+    <div className="min-h-screen bg-white">
+      <Header />
+      
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 py-12">
-          <div className="relative rounded-2xl overflow-hidden min-h-[400px] bg-gray-900">
-            <img src={`/images/branches/${branchId}-hero.jpg`} alt={branch.name} className="absolute inset-0 w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-black/60" />
-            <div className="relative z-10 flex items-center justify-center h-full">
-              <h1 className="text-5xl md:text-6xl font-bold text-white text-center">
-                {branch.name}
-              </h1>
-            </div>
-          </div>
-        </div>
+      <section className="relative h-96 bg-gradient-to-r from-gray-900 to-gray-700 flex items-center justify-center">
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <Reveal variant="fade-up" className="relative z-10 text-center text-white px-8">
+          <h1 className="text-5xl font-bold mb-6">{branch.name}</h1>
+          <p className="text-xl max-w-3xl mx-auto">
+            Experience excellence in English education at our {branch.name}. Join us to unlock your potential.
+          </p>
+        </Reveal>
       </section>
 
       {/* Branch Introduction */}
       <section className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid md:grid-cols-2 gap-12 items-start">
-          <div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">{branch.name}</h2>
-            <p className="text-gray-700 leading-relaxed text-lg">
-              {branch.description}
-            </p>
-          </div>
+          <Reveal>
+            <div>
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">{branch.name}</h2>
+              <p className="text-gray-700 leading-relaxed text-lg">
+                {branch.description}
+              </p>
+            </div>
+          </Reveal>
 
-          <div className="grid grid-cols-2 gap-4">
-            <img src={`/images/branches/${branchId}-gallery-1.jpg`} alt="Gallery 1" className="rounded-xl shadow-md object-cover h-48 w-full" />
-            <img src={`/images/branches/${branchId}-gallery-2.jpg`} alt="Gallery 2" className="rounded-xl shadow-md object-cover h-48 w-full" />
-            <img src={`/images/branches/${branchId}-gallery-3.jpg`} alt="Gallery 3" className="rounded-xl shadow-md object-cover h-48 w-full" />
-            <img src={`/images/branches/${branchId}-gallery-4.jpg`} alt="Gallery 4" className="rounded-xl shadow-md object-cover h-48 w-full" />
-            <img src={`/images/branches/${branchId}-gallery-5.jpg`} alt="Gallery 5" className="rounded-xl shadow-md object-cover h-48 w-full" />
-            <img src={`/images/branches/${branchId}-gallery-6.jpg`} alt="Gallery 6" className="rounded-xl shadow-md object-cover h-48 w-full" />
-          </div>
+          <Reveal delay={200}>
+            <div className="grid grid-cols-2 gap-4">
+              <img src={`/images/branches/${branchId}-gallery-1.jpg`} alt="Gallery 1" className="rounded-xl shadow-md object-cover h-48 w-full" />
+              <img src={`/images/branches/${branchId}-gallery-2.jpg`} alt="Gallery 2" className="rounded-xl shadow-md object-cover h-48 w-full" />
+              <img src={`/images/branches/${branchId}-gallery-3.jpg`} alt="Gallery 3" className="rounded-xl shadow-md object-cover h-48 w-full" />
+              <img src={`/images/branches/${branchId}-gallery-4.jpg`} alt="Gallery 4" className="rounded-xl shadow-md object-cover h-48 w-full" />
+              <img src={`/images/branches/${branchId}-gallery-5.jpg`} alt="Gallery 5" className="rounded-xl shadow-md object-cover h-48 w-full" />
+              <img src={`/images/branches/${branchId}-gallery-6.jpg`} alt="Gallery 6" className="rounded-xl shadow-md object-cover h-48 w-full" />
+            </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Contact Information */}
       <section className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid md:grid-cols-3 gap-8">
-          <div className="text-center">
-            <Phone className="w-8 h-8 text-gray-600 mx-auto mb-3" />
-            <h3 className="font-semibold text-gray-800 mb-1">PHONE</h3>
-            <p className="text-gray-600">{branch.phone}</p>
-          </div>
+          <Reveal>
+            <div className="text-center">
+              <Phone className="w-8 h-8 text-gray-600 mx-auto mb-3" />
+              <h3 className="font-semibold text-gray-800 mb-1">PHONE</h3>
+              <p className="text-gray-600">{branch.phone}</p>
+            </div>
+          </Reveal>
           
-          <div className="text-center">
-            <Phone className="w-8 h-8 text-gray-600 mx-auto mb-3" />
-            <h3 className="font-semibold text-gray-800 mb-1">HOT LINE</h3>
-            <p className="text-gray-600">{branch.phone2}</p>
-          </div>
+          <Reveal delay={100}>
+            <div className="text-center">
+              <Phone className="w-8 h-8 text-gray-600 mx-auto mb-3" />
+              <h3 className="font-semibold text-gray-800 mb-1">HOT LINE</h3>
+              <p className="text-gray-600">{branch.phone2}</p>
+            </div>
+          </Reveal>
           
-          <div className="text-center">
-            <Mail className="w-8 h-8 text-gray-600 mx-auto mb-3" />
-            <h3 className="font-semibold text-gray-800 mb-1">EMAIL</h3>
-            <p className="text-gray-600">{branch.email}</p>
-          </div>
+          <Reveal delay={200}>
+            <div className="text-center">
+              <Mail className="w-8 h-8 text-gray-600 mx-auto mb-3" />
+              <h3 className="font-semibold text-gray-800 mb-1">EMAIL</h3>
+              <p className="text-gray-600">{branch.email}</p>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -346,7 +357,10 @@ const BranchPage = () => {
           ← Back to All Branches
         </button>
       </section>
-    </main>
+
+      {/* Footer */}
+      <Footer />
+    </div>
   );
 };
 

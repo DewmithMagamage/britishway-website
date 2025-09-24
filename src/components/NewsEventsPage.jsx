@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Search, Calendar, ArrowRight, ChevronRight, Mail, Phone, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Search, Calendar, ArrowRight } from "lucide-react";
+import Header from "./Header";
 import Footer from "./Footer";
 import Reveal from "./Reveal";
 
@@ -179,91 +180,18 @@ const NewsEventsPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Custom Header for News & Events Page */}
-      <div className="bg-gray-900 text-white py-2">
-        <div className="max-w-9xl mx-auto px-8 flex justify-between items-center text-sm">
-          <div className="flex items-center space-x-6">
-            <div className="flex items-center">
-              <span>News & Event Page</span>
-            </div>
-            <div className="flex items-center">
-              <span>Have any questions?</span>
-            </div>
-            <div className="flex items-center">
-              <Mail className="w-4 h-4 mr-2" />
-              <span>info@britishwak</span>
-            </div>
-            <div className="flex items-center">
-              <Phone className="w-4 h-4 mr-2" />
-              <span>03:23 550 312 / 07 1010010</span>
-            </div>
-          </div>
-          
-          <div className="flex items-center space-x-4">
-            <a href="#" className="hover:text-blue-300 transition-colors">
-              <Facebook className="w-4 h-4" />
-            </a>
-            <a href="#" className="hover:text-blue-300 transition-colors">
-              <Instagram className="w-4 h-4" />
-            </a>
-            <a href="#" className="hover:text-blue-300 transition-colors">
-              <Linkedin className="w-4 h-4" />
-            </a>
-          </div>
-        </div>
-      </div>
-      
-      {/* Main Navigation Bar */}
-      <div className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-8 py-4">
-          <div className="flex justify-between items-center">
-            {/* Logo */}
-            <div className="flex items-center">
-              <img 
-                src="/images/logo.png" 
-                alt="British Way English Academy" 
-                className="h-10 w-auto mr-3"
-              />
-            </div>
-            
-            {/* Navigation Links */}
-            <div className="hidden md:flex items-center space-x-6">
-              <a href="/" className="text-gray-700 hover:text-blue-600 transition-colors px-3 py-1.5 rounded-lg hover:bg-gray-100 text-sm">
-                Home
-              </a>
-              <a href="/courses" className="text-gray-700 hover:text-blue-600 transition-colors px-3 py-1.5 rounded-lg hover:bg-gray-100 text-sm">
-                Courses
-              </a>
-              <a href="/about" className="text-gray-700 hover:text-blue-600 transition-colors px-3 py-1.5 rounded-lg hover:bg-gray-100 text-sm">
-                About Us
-              </a>
-              <a href="/careers" className="text-gray-700 hover:text-blue-600 transition-colors px-3 py-1.5 rounded-lg hover:bg-gray-100 text-sm">
-                Careers
-              </a>
-              <a href="/contact" className="text-gray-700 hover:text-blue-600 transition-colors px-3 py-1.5 rounded-lg hover:bg-gray-100 text-sm">
-                Contact US
-              </a>
-              <a href="/news-events" className="text-blue-600 font-semibold px-3 py-1.5 rounded-lg bg-blue-50 text-sm border-b-2 border-blue-600">
-                News and Events
-              </a>
-              <a href="/branches" className="text-gray-700 hover:text-blue-600 transition-colors px-3 py-1.5 rounded-lg hover:bg-gray-100 text-sm">
-                Branches
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Header />
 
       {/* Hero Section */}
-      <div className="relative bg-gray-800 py-20">
-        <div className="absolute inset-0 bg-black opacity-40"></div>
-        <div className="relative max-w-7xl mx-auto px-8 text-center">
-          <h1 className="text-5xl font-bold text-white mb-6">Stay Updated</h1>
-          <p className="text-xl text-white max-w-4xl mx-auto leading-relaxed">
+      <section className="relative h-96 bg-gradient-to-r from-gray-900 to-gray-700 flex items-center justify-center">
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <Reveal variant="fade-up" className="relative z-10 text-center text-white px-8">
+          <h1 className="text-5xl font-bold mb-6">Stay Updated</h1>
+          <p className="text-xl max-w-3xl mx-auto">
             Catch the latest happenings, news, and events from our community. From big moments that matter - explore what's new and what's next.
           </p>
-        </div>
-      </div>
+        </Reveal>
+      </section>
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-8 py-12">
@@ -352,7 +280,7 @@ const NewsEventsPage = () => {
               </Reveal>
             </div>
             {/* Compact list grid like preview cards */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
               {news.slice(1).map((newsItem, i) => (
                 <Reveal key={newsItem.id} delay={i*80}>
                   <NewsCard news={newsItem} />

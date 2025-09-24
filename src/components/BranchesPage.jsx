@@ -1,6 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
+import Header from "./Header";
+import Footer from "./Footer";
+import Reveal from "./Reveal";
 
 const branches = [
   { name: "Matara Branch", id: "matara" },
@@ -23,21 +26,18 @@ const BranchesPage = () => {
   const navigate = useNavigate();
   
   return (
-    <main className="w-full">
+    <div className="min-h-screen bg-white">
+      <Header />
+      
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 py-12">
-          <div className="relative rounded-2xl overflow-hidden min-h-[260px] bg-gray-900">
-            <img src="/images/branches-hero.jpg" alt="Visit Our Branches" className="absolute inset-0 w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-r from-white via-white/70 to-transparent" />
-            <div className="relative z-10 p-8 md:p-12">
-              <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2">Visit Our Branches</h1>
-              <p className="max-w-xl text-xs md:text-sm text-gray-700">
-                Find a branch near you and experience our services closer to home. We're proud to serve you across multiple locations with the same commitment and care.
-              </p>
-            </div>
-          </div>
-        </div>
+      <section className="relative h-96 bg-gradient-to-r from-gray-900 to-gray-700 flex items-center justify-center">
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <Reveal variant="fade-up" className="relative z-10 text-center text-white px-8">
+          <h1 className="text-5xl font-bold mb-6">Visit Our Branches</h1>
+          <p className="text-xl max-w-3xl mx-auto">
+            Find a branch near you and experience our services closer to home. We're proud to serve you across multiple locations with the same commitment and care.
+          </p>
+        </Reveal>
       </section>
 
       {/* Our Branches Section */}
@@ -170,7 +170,10 @@ const BranchesPage = () => {
           </form>
         </div>
       </section>
-    </main>
+
+      {/* Footer */}
+      <Footer />
+    </div>
   );
 };
 

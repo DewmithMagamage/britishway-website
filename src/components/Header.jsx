@@ -21,7 +21,7 @@ const Header = () => {
             </div>
             <div className="flex items-center">
               <Phone className="w-4 h-4 mr-2" />
-              <span>0333 555 312 / 071 10 100 10</span>
+              <span>033 202 4141 / 071 10 100 10</span>
             </div>
           </div>
           
