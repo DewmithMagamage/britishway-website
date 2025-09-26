@@ -8,11 +8,8 @@ const Header = () => {
   
   return (
     <>
-      {/* Header Spacer - Prevents content from going under fixed header */}
-      <div className="h-[120px]"></div>
-      
       {/* Fixed Header Container */}
-      <div className="fixed top-0 left-0 right-0 z-50">
+      <div className="fixed top-0 left-0 right-0 z-50 mt-0">
         {/* Top Contact Bar */}
         <div className="bg-gray-900 text-white py-2">
           <div className="max-w-9xl mx-auto px-8 flex justify-between items-center text-sm">
@@ -31,10 +28,10 @@ const Header = () => {
             </div>
             
             <div className="flex items-center space-x-4">
-              <a href="#" className="hover:text-blue-300 transition-colors">
+              <a href="https://youtube.com/@britishwayenglishacademy?si=aeabZxHdfS3QwkBO" className="hover:text-blue-300 transition-colors">
                 <Youtube className="w-4 h-4" />
               </a>
-              <a href="#" className="hover:text-blue-300 transition-colors">
+              <a href="https://www.facebook.com/BritishWayEnglishAcademy.lk" className="hover:text-blue-300 transition-colors">
                 <Facebook className="w-4 h-4" />
               </a>
               <a href="#" className="hover:text-blue-300 transition-colors">
@@ -52,7 +49,7 @@ const Header = () => {
         
         {/* Navigation Bar */}
         <div className="px-3 py-1">
-          <nav className="max-w-7xl mx-auto backdrop-blur-md bg-gray-100/70 rounded-2xl shadow-xl border border-gray-200/50">
+          <nav className="max-w-7xl mx-auto backdrop-blur-md bg-gray-100/30 rounded-2xl shadow-xl border border-gray-200/50">
             <div className="px-2 py-1">
               <div className="flex justify-between items-center">
               {/* Logo */}
