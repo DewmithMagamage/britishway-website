@@ -95,15 +95,22 @@ const CoursesPage = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative h-96 bg-gradient-to-r from-gray-900 to-gray-700 flex items-center justify-center">
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <Reveal variant="fade-up" className="relative z-10 text-center text-white px-8">
-          <h1 className="text-5xl font-bold mb-6">Explore Our Courses</h1>
-          <p className="text-xl max-w-3xl mx-auto">
-            Discover a wide range of programs designed to help you master English with confidence. 
-            Whether you're a beginner or aiming for advanced fluency, we have the right path for you.
-          </p>
-        </Reveal>
+      <section className="relative h-[60vh] overflow-hidden">
+        <img 
+          src="/images/course card.jpg" 
+          alt="Our Courses" 
+          className="absolute top-0 left-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 flex items-center z-10">
+          <div className="text-white max-w-3xl p-8 mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Explore Our Courses</h1>
+            <p className="text-lg md:text-xl max-w-2xl mx-auto">
+              Discover a wide range of programs designed to help you master English with confidence. 
+              Whether you're a beginner or aiming for advanced fluency, we have the right path for you.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* Filter Buttons */}

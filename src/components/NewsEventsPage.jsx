@@ -183,14 +183,21 @@ const NewsEventsPage = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative h-96 bg-gradient-to-r from-gray-900 to-gray-700 flex items-center justify-center">
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <Reveal variant="fade-up" className="relative z-10 text-center text-white px-8">
-          <h1 className="text-5xl font-bold mb-6">Stay Updated</h1>
-          <p className="text-xl max-w-3xl mx-auto">
-            Catch the latest happenings, news, and events from our community. From big moments that matter - explore what's new and what's next.
-          </p>
-        </Reveal>
+      <section className="relative h-[60vh] overflow-hidden">
+        <img 
+          src="/images/course card.jpg" 
+          alt="News and Events" 
+          className="absolute top-0 left-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 flex items-center z-10">
+          <div className="text-white max-w-3xl p-8 mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Stay Updated</h1>
+            <p className="text-lg md:text-xl max-w-2xl mx-auto">
+              Catch the latest happenings, news, and events from our community. From big moments that matter - explore what's new and what's next.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* Main Content */}

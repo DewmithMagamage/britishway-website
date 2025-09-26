@@ -30,14 +30,21 @@ const BranchesPage = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative h-96 bg-gradient-to-r from-gray-900 to-gray-700 flex items-center justify-center">
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <Reveal variant="fade-up" className="relative z-10 text-center text-white px-8">
-          <h1 className="text-5xl font-bold mb-6">Visit Our Branches</h1>
-          <p className="text-xl max-w-3xl mx-auto">
-            Find a branch near you and experience our services closer to home. We're proud to serve you across multiple locations with the same commitment and care.
-          </p>
-        </Reveal>
+      <section className="relative h-[60vh] overflow-hidden">
+        <img 
+          src="/images/course card.jpg" 
+          alt="Our Branches" 
+          className="absolute top-0 left-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 flex items-center z-10">
+          <div className="text-white max-w-3xl p-8 mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Visit Our Branches</h1>
+            <p className="text-lg md:text-xl max-w-2xl mx-auto">
+              Find a branch near you and experience our services closer to home. We're proud to serve you across multiple locations with the same commitment and care.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* Our Branches Section */}
