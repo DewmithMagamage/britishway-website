@@ -22,7 +22,7 @@ const SplashScreen = ({ onFinish }) => {
         <img 
           src="/images/logo.png"
           alt="British Way English Academy"
-          className="w-full h-full object-contain animate-fadeIn"
+          className="w-full h-full object-contain animate-zoomIn"
         />
       </div>
 
