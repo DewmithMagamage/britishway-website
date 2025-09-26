@@ -12,13 +12,14 @@ module.exports = {
           '100%': { opacity: '1' },
         },
         zoomIn: {
-          '0%': { transform: 'scale(0.5)', opacity: '0' },
-          '100%': { transform: 'scale(1)', opacity: '1' },
+          '0%': { transform: 'scale(1)', opacity: '0' },
+          '50%': { transform: 'scale(1.2)', opacity: '0.5' },
+          '100%': { transform: 'scale(1.4)', opacity: '1' },
         }
       },
       animation: {
         fadeIn: 'fadeIn 1s ease-in-out',
-        zoomIn: 'zoomIn 1.2s cubic-bezier(0.4, 0, 0.2, 1)',
+        zoomIn: 'zoomIn 2s ease-in-out',
       }
     },
   },
