@@ -17,7 +17,7 @@ const Hero = () => {
       setTimeout(() => {
         setTextIndex((current) => (current + 1) % texts.length);
         setIsVisible(true);
-      }, 1000); // Wait for fade out before changing text
+      }, 1000); 
     }, 4000); 
 
     return () => clearInterval(intervalId);
