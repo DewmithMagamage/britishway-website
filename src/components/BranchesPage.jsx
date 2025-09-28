@@ -28,7 +28,7 @@ const BranchesPage = () => {
       <section className="relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="relative rounded-2xl overflow-hidden min-h-[260px] bg-gray-900">
-            <img src="/images/branches-hero.jpg" alt="Visit Our Branches" className="absolute inset-0 w-full h-full object-cover" />
+            <img src="/images/course card.jpg" alt="Visit Our Branches" className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-white via-white/70 to-transparent" />
             <div className="relative z-10 p-8 md:p-12">
               <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2">Visit Our Branches</h1>

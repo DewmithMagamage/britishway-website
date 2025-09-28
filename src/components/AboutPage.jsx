@@ -29,18 +29,20 @@ const AboutPage = () => {
     <div className="w-full min-h-screen bg-white">
       <Header />
       <main>
-      {/* Hero Banner with header overlay */}
-      <section className="relative overflow-hidden pt-24">
-        <div className="max-w-7xl mx-auto px-6 py-12">
-          <div className="relative rounded-2xl overflow-hidden min-h-[260px] bg-gray-900">
-            <img src="/images/aboutus.png" alt="About Us" className="absolute inset-0 w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-r from-white via-white/75 to-transparent" />
-            <Reveal className="relative z-10 p-8 md:p-12" variant="fade-up">
-              <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2">About Us</h1>
-              <p className="max-w-xl text-xs md:text-sm text-gray-700">
-                For over two decades, British Way English Academy has been shaping futures with trusted language education.
-              </p>
-            </Reveal>
+      {/* Hero Banner */}
+      <section className="relative h-[60vh] overflow-hidden">
+        <img 
+          src="/images/aboutus.png" 
+          alt="About Us" 
+          className="absolute top-0 left-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 flex items-center z-10">
+          <div className="text-white max-w-3xl p-8 mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">About Us</h1>
+            <p className="text-lg md:text-xl max-w-2xl mx-auto">
+              For over two decades, British Way English Academy has been shaping futures with trusted language education.
+            </p>
           </div>
         </div>
       </section>
@@ -113,188 +115,133 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Timeline - Perfect Story Design */}
-      <section className="max-w-6xl mx-auto px-6 py-20">
-        <Reveal variant="fade-up">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Story Of <span className="text-blue-600">British Way</span>
-            </h2>
-            <p className="text-gray-600 text-lg">Explore British Way history</p>
-          </div>
-        </Reveal>
-
-        <div className="relative">
-          {/* Central Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-200 via-blue-400 to-blue-200 rounded-full"></div>
-
-          {[
-            { 
-              year: "2004", 
-              title: "The Beginning", 
-              description: "The first British Way branch opened in Nittambuwa. The first class only had 7 students. As they say, from small acorns, mighty oak trees grow.",
-              side: "left",
-              highlight: true
-            },
-            { 
-              year: "2007", 
-              title: "Expansion Begins", 
-              description: "Kiribathgoda branch opened, marking our first expansion beyond the capital region.",
-              side: "right"
-            },
-            { 
-              year: "2009", 
-              title: "Coastal Reach", 
-              description: "Negombo branch was established, bringing quality English education to the western coast.",
-              side: "left"
-            },
-            { 
-              year: "2011", 
-              title: "Rapid Growth", 
-              description: "Two major branches opened: Kandy in the hill country and Nugegoda in the suburbs, expanding our reach significantly.",
-              side: "right"
-            },
-            { 
-              year: "2012", 
-              title: "Southern Expansion", 
-              description: "Three branches established in the south: Matara, Galle, and Anuradhapura, covering the entire southern region.",
-              side: "left"
-            },
-            { 
-              year: "2013", 
-              title: "Western Network", 
-              description: "Gampaha branch was established, completing our western province coverage.",
-              side: "right"
-            },
-            { 
-              year: "2015", 
-              title: "Central Highlands", 
-              description: "Rathnapura branch opened, extending our services to the central highlands and gem mining regions.",
-              side: "left"
-            },
-            { 
-              year: "2016", 
-              title: "International Recognition", 
-              description: "First MASSCO Award and global recognition at UNESCO's 7th World Scientific Congress in Geneva. A milestone year for excellence.",
-              side: "right",
-              highlight: true
-            },
-            { 
-              year: "2017", 
-              title: "Partnership & Excellence", 
-              description: "Thames College joined BWEA family. SLIM Brand Excellence Award and second consecutive MASSCO award for Best English Academy.",
-              side: "left"
-            },
-            { 
-              year: "2018", 
-              title: "Three-Peat Achievement", 
-              description: "Third consecutive MASSCO award. New branches in Bandarawela, Kalutara, and Polonnaruwa, reaching every corner of Sri Lanka.",
-              side: "right"
-            },
-            { 
-              year: "2019", 
-              title: "Brand of the Year", 
-              description: "Brand of the Year at SLIM Brand Excellence. MASSCO award for 4th consecutive time. Three new branches established.",
-              side: "left",
-              highlight: true
-            },
-            { 
-              year: "2020", 
-              title: "Digital Transformation", 
-              description: "BWEA International School network launched in Nittambuwa, pioneering digital education during challenging times.",
-              side: "right"
-            },
-            { 
-              year: "2021", 
-              title: "Online Revolution", 
-              description: "Launched comprehensive online learning platform, ensuring uninterrupted education during global challenges.",
-              side: "left"
-            },
-            { 
-              year: "2022", 
-              title: "21,000+ Graduates", 
-              description: "Reached milestone of 21,000+ annual graduates across 16 branches, becoming Sri Lanka's largest English training institute.",
-              side: "right",
-              highlight: true
-            },
-            { 
-              year: "2023", 
-              title: "Innovation Hub", 
-              description: "Opened state-of-the-art learning centers with modern technology and innovative teaching methods.",
-              side: "left"
-            },
-            { 
-              year: "2024", 
-              title: "Future Ready", 
-              description: "Launched AI-powered learning tools and personalized education pathways, preparing students for the digital future.",
-              side: "right"
-            }
-          ].map((item, i) => (
-            <Reveal key={i} delay={i * 100} variant="fade-up">
-              <div className="relative flex items-center mb-16">
-                {/* Left Content Card */}
-                {item.side === 'left' && (
-                  <div className="w-6/12 pr-16 text-right">
-                    <div className={`bg-white rounded-2xl shadow-lg p-6 border-l-4 ${item.highlight ? 'border-blue-500' : 'border-gray-300'} hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}>
-                      <div className="text-blue-600 font-bold text-sm mb-2">{item.title}</div>
-                      <div className="text-gray-600 text-sm leading-relaxed">{item.description}</div>
-                    </div>
-                  </div>
-                )}
-
-                {/* Timeline Node - Always in center */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center z-10">
-                  <div className={`w-6 h-6 rounded-full border-4 border-white shadow-lg flex items-center justify-center ${item.highlight ? 'bg-blue-600' : 'bg-blue-400'}`}>
-                    <div className="w-2 h-2 rounded-full bg-white"></div>
-                  </div>
-                  <div className="mt-2 bg-white px-3 py-1 rounded-full shadow-md">
-                    <span className="text-sm font-bold text-gray-800">{item.year}</span>
+      {/* Timeline Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Our Journey</h2>
+          <div className="relative">
+            {/* Vertical line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-500" />
+            
+            {/* Timeline Items */}
+            <Reveal>
+              <div className="flex items-center justify-between mb-8 relative">
+                <div className="w-5/12 text-right pr-8">
+                  <div className="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 className="text-xl font-bold text-blue-600 mb-2">2004</h3>
+                    <p className="text-gray-600">The first British Way branch opened in Nittambuwa. The first class only had 7 students. As they say, from small acorns, mighty oak trees grow.</p>
                   </div>
                 </div>
-
-                {/* Right Content Card */}
-                {item.side === 'right' && (
-                  <div className="w-5/16 pl-16 text-left ml-auto">
-                    <div className={`bg-white rounded-2xl shadow-lg p-6 border-r-4 ${item.highlight ? 'border-blue-500' : 'border-gray-300'} hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}>
-                      <div className="text-blue-600 font-bold text-sm mb-2">{item.title}</div>
-                      <div className="text-gray-600 text-sm leading-relaxed">{item.description}</div>
-                    </div>
-                  </div>
-                )}
-
-                {/* Empty space for alignment when content is on opposite side */}
-                {item.side === 'left' && <div className="w-5/12"></div>}
-                {item.side === 'right' && <div className="w-22/5"></div>}
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white" />
+                <div className="w-5/12" />
               </div>
             </Reveal>
-          ))}
-        </div>
 
-        {/* Timeline Summary */}
-        <Reveal variant="fade-up" delay={1600}>
-          <div className="mt-20 text-center bg-gradient-to-r from-blue-50 to-indigo-50 rounded-3xl p-12">
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">Two Decades of Excellence</h3>
-            <p className="text-gray-600 text-lg max-w-4xl mx-auto leading-relaxed">
-              From 7 students in 2004 to over 21,000 graduates annually, British Way English Academy has grown 
-              from a single classroom to Sri Lanka's most trusted English education institution. Our journey 
-              continues with innovation, excellence, and an unwavering commitment to student success.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-              <div className="text-center">
-                <div className="text-4xl font-bold text-blue-600 mb-2">20+</div>
-                <div className="text-gray-600">Years of Excellence</div>
+            <Reveal delay={100}>
+              <div className="flex items-center justify-between mb-8 relative flex-row-reverse">
+                <div className="w-5/12 text-left pl-8">
+                  <div className="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 className="text-xl font-bold text-blue-600 mb-2">2007</h3>
+                    <p className="text-gray-600">Kiribathgoda branch opened.</p>
+                  </div>
+                </div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white" />
+                <div className="w-5/12" />
               </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-blue-600 mb-2">16</div>
-                <div className="text-gray-600">Branches Nationwide</div>
+            </Reveal>
+
+            <Reveal delay={200}>
+              <div className="flex items-center justify-between mb-8 relative">
+                <div className="w-5/12 text-right pr-8">
+                  <div className="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 className="text-xl font-bold text-blue-600 mb-2">2009</h3>
+                    <p className="text-gray-600">Negombo branch was established.</p>
+                  </div>
+                </div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white" />
+                <div className="w-5/12" />
               </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-blue-600 mb-2">21K+</div>
-                <div className="text-gray-600">Annual Graduates</div>
+            </Reveal>
+
+            <Reveal delay={300}>
+              <div className="flex items-center justify-between mb-8 relative flex-row-reverse">
+                <div className="w-5/12 text-left pl-8">
+                  <div className="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 className="text-xl font-bold text-blue-600 mb-2">2011</h3>
+                    <p className="text-gray-600">A busy year! Two branches were opened: Kandy and Nugegoda.</p>
+                  </div>
+                </div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white" />
+                <div className="w-5/12" />
               </div>
-            </div>
+            </Reveal>
+
+            <Reveal delay={400}>
+              <div className="flex items-center justify-between mb-8 relative">
+                <div className="w-5/12 text-right pr-8">
+                  <div className="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 className="text-xl font-bold text-blue-600 mb-2">2012</h3>
+                    <p className="text-gray-600">British way went from strength to strength. 3 branches were established: Matara, Galle and Anuradhapura.</p>
+                  </div>
+                </div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white" />
+                <div className="w-5/12" />
+              </div>
+            </Reveal>
+
+            <Reveal delay={500}>
+              <div className="flex items-center justify-between mb-8 relative flex-row-reverse">
+                <div className="w-5/12 text-left pl-8">
+                  <div className="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 className="text-xl font-bold text-blue-600 mb-2">2013</h3>
+                    <p className="text-gray-600">Gampaha branch was established.</p>
+                  </div>
+                </div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white" />
+                <div className="w-5/12" />
+              </div>
+            </Reveal>
+
+            <Reveal delay={600}>
+              <div className="flex items-center justify-between mb-8 relative">
+                <div className="w-5/12 text-right pr-8">
+                  <div className="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 className="text-xl font-bold text-blue-600 mb-2">2015</h3>
+                    <p className="text-gray-600">Rathnapura branch opened.</p>
+                  </div>
+                </div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white" />
+                <div className="w-5/12" />
+              </div>
+            </Reveal>
+
+            <Reveal delay={700}>
+              <div className="flex items-center justify-between mb-8 relative flex-row-reverse">
+                <div className="w-5/12 text-left pl-8">
+                  <div className="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 className="text-xl font-bold text-blue-600 mb-2">2016</h3>
+                    <p className="text-gray-600">Our first Tamil branch in Jaffna opened its doors. Also, NR'S Campus was established in Gampaha.</p>
+                  </div>
+                </div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white" />
+                <div className="w-5/12" />
+              </div>
+            </Reveal>
+
+            <Reveal delay={800}>
+              <div className="flex items-center justify-between mb-8 relative">
+                <div className="w-5/12 text-right pr-8">
+                  <div className="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 className="text-xl font-bold text-blue-600 mb-2">2016</h3>
+                    <p className="text-gray-600">BWEA won the award for the Best English Academy in the world at UNESCO's 7th World Scientific Congress in Geneva. Our first MASSCO Award for Best English Academy came this year.</p>
+                  </div>
+                </div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white" />
+                <div className="w-5/12" />
+              </div>
+            </Reveal>
           </div>
-        </Reveal>
+        </div>
       </section>
 
 
