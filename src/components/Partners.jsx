@@ -2,14 +2,14 @@ import React from "react";
 import Marquee from "react-fast-marquee";
 
 const logos = [
-  "/images/abe.png",
-  "/images/AEU.png",
-  "/images/BC.png",
-  "/images/CTH.png",
-  "/images/TVEC.png",
-  "/images/Lincoln.png",
-  "/images/Cambridge.png",
-  "/images/Thames.png",
+  "/Images/abe.png",
+  "/Images/AEU.png",
+  "/Images/BC.png",
+  "/Images/CTH.png",
+  "/Images/TVEC.png",
+  "/Images/Lincoln.png",
+  "/Images/Cambridge copy.png",
+  "/Images/Thames.png",
 ];
 
 const Partners = () => {
