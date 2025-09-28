@@ -236,7 +236,7 @@ const BranchPage = () => {
 
         <div className="grid md:grid-cols-4 gap-6">
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <img src="/images/courses/weekend-diploma.jpg" alt="Weekend Diploma" className="w-full h-48 object-cover" />
+            <img src="/images/course card.jpg" alt="Weekend Diploma" className="w-full h-48 object-cover" />
             <div className="p-6">
               <h4 className="text-lg font-semibold text-gray-900 mb-3">Weekend Diploma</h4>
               <p className="text-gray-600 text-sm mb-4">Product Management Masterclass, you will learn with Sarah Johnson - Head of Product Customer Platform, Super cool tools</p>
@@ -247,7 +247,7 @@ const BranchPage = () => {
           </div>
 
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <img src="/images/courses/weekday-2months.jpg" alt="Weekday Diploma 2 Months" className="w-full h-48 object-cover" />
+            <img src="/images/course card.jpg" alt="Weekday Diploma 2 Months" className="w-full h-48 object-cover" />
             <div className="p-6">
               <h4 className="text-lg font-semibold text-gray-900 mb-3">Weekday Diploma - 2 Months</h4>
               <p className="text-gray-600 text-sm mb-4">Product Management Masterclass, you will learn with Sarah Johnson - Head of Product Customer Platform, Super cool tools</p>
@@ -258,7 +258,7 @@ const BranchPage = () => {
           </div>
 
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <img src="/images/courses/weekday-3months.jpg" alt="Weekday Diploma 3 Months" className="w-full h-48 object-cover" />
+            <img src="/images/course card.jpg" alt="Weekday Diploma 3 Months" className="w-full h-48 object-cover" />
             <div className="p-6">
               <h4 className="text-lg font-semibold text-gray-900 mb-3">Weekday Diploma - 3 Months</h4>
               <p className="text-gray-600 text-sm mb-4">Product Management Masterclass, you will learn with Sarah Johnson - Head of Product Customer Platform, Super cool tools</p>
@@ -269,7 +269,7 @@ const BranchPage = () => {
           </div>
 
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <img src="/images/courses/online-diploma.jpg" alt="Online English Diploma" className="w-full h-48 object-cover" />
+            <img src="/images/course card.jpg" alt="Online English Diploma" className="w-full h-48 object-cover" />
             <div className="p-6">
               <h4 className="text-lg font-semibold text-gray-900 mb-3">Online English Diploma</h4>
               <p className="text-gray-600 text-sm mb-4">Product Management Masterclass, you will learn with Sarah Johnson - Head of Product Customer Platform, Super cool tools</p>
@@ -289,9 +289,9 @@ const BranchPage = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
-          <img src="/images/gallery/graduation-1.jpg" alt="Graduation ceremony" className="rounded-xl shadow-lg object-cover h-80 w-full" />
-          <img src="/images/gallery/ceremony-1.jpg" alt="Ceremony event" className="rounded-xl shadow-lg object-cover h-80 w-full" />
-          <img src="/images/gallery/audience-1.jpg" alt="Audience" className="rounded-xl shadow-lg object-cover h-80 w-full" />
+          <img src="/images/Stu 01.png" alt="Graduation ceremony" className="rounded-xl shadow-lg object-cover h-80 w-full" />
+          <img src="/images/Stu 02.jpeg" alt="Ceremony event" className="rounded-xl shadow-lg object-cover h-80 w-full" />
+          <img src="/images/Stu 03.jpeg" alt="Audience" className="rounded-xl shadow-lg object-cover h-80 w-full" />
         </div>
       </section>
 
