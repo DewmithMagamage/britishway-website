@@ -5,7 +5,6 @@ module.exports = {
     './src/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {
-<<<<<<< HEAD
     extend: {
       keyframes: {
         fadeIn: {
@@ -37,9 +36,6 @@ module.exports = {
         blink: 'blink 1s step-end infinite'
       }
     },
-=======
-    extend: {},
->>>>>>> a6e9b9c6 (first commit)
   },
   plugins: [],
 }
