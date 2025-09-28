@@ -50,9 +50,9 @@ const BranchesPage = () => {
         </div>
 
         <div className="grid grid-cols-2 gap-4">
-          <img src="/images/course card.jpg" alt="Branch gallery 1" className="rounded-xl shadow-md object-cover h-40 md:h-48 w-full" />
-          <img src="/images/aboutus.png" alt="Branch gallery 2" className="rounded-xl shadow-md object-cover h-40 md:h-48 w-full" />
-          <img src="/images/CEO.png" alt="Branch gallery 3" className="rounded-xl shadow-md object-cover h-40 md:h-48 w-full col-span-2" />
+          <img src="/images/branches/gallery-1.jpg" alt="Branch gallery 1" className="rounded-xl shadow-md object-cover h-40 md:h-48 w-full" />
+          <img src="/images/branches/gallery-2.jpg" alt="Branch gallery 2" className="rounded-xl shadow-md object-cover h-40 md:h-48 w-full" />
+          <img src="/images/branches/gallery-3.jpg" alt="Branch gallery 3" className="rounded-xl shadow-md object-cover h-40 md:h-48 w-full col-span-2" />
         </div>
       </section>
 
