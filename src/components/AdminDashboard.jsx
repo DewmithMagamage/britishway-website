@@ -13,7 +13,7 @@ import {
   CogIcon,
   ArrowRightOnRectangleIcon
 } from "@heroicons/react/24/outline";
-import * as XLSX from 'xlsx';
+import ExcelJS from "exceljs";
 
 const AdminDashboard = () => {
   const { formSubmissions, deleteFormSubmission } = useFormContext();
@@ -66,12 +66,30 @@ const AdminDashboard = () => {
     // Form submissions are now managed by context
   }, []);
 
-  const handleExportExcel = () => {
-    const worksheet = XLSX.utils.json_to_sheet(formSubmissions);
-    const workbook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(workbook, worksheet, "Form Submissions");
-    XLSX.writeFile(workbook, "form_submissions.xlsx");
-  };
+  const handleExportExcel = async () => {
+  const workbook = new ExcelJS.Workbook();
+  const worksheet = workbook.addWorksheet("Form Submissions");
+
+  if (formSubmissions.length > 0) {
+    const headers = Object.keys(formSubmissions[0]);
+    worksheet.addRow(headers);
+
+    formSubmissions.forEach((item) => {
+      worksheet.addRow(Object.values(item));
+    });
+  }
+
+  const buffer = await workbook.xlsx.writeBuffer();
+  const blob = new Blob([buffer], {
+    type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  });
+  const url = window.URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "form_submissions.xlsx";
+  a.click();
+  window.URL.revokeObjectURL(url);
+};
 
   const handleDeleteEvent = (id) => {
     setEvents(events.filter(event => event.id !== id));
