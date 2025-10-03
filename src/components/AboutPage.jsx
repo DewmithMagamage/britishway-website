@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Header from "./Header";
-import Footer from "./Footer";
+import Layout from "./Layout";
 import Reveal from "./Reveal";
 
 const Stat = ({ icon, value, label }) => (
@@ -26,11 +25,11 @@ const AboutPage = () => {
   ];
 
   return (
-    <div className="w-full min-h-screen bg-white">
-      <Header />
-      <main>
+    <Layout>
+      <div className="w-full min-h-screen bg-white">
+        <main>
       {/* Hero Banner */}
-      <section className="relative h-[60vh] overflow-hidden">
+      <section className="relative h-[60vh] overflow-hidden -mt-24">
         <img 
           src="/images/aboutus.png" 
           alt="About Us" 
@@ -307,9 +306,9 @@ const AboutPage = () => {
 
 
 
-      </main>
-      <Footer />
-    </div>
+        </main>
+      </div>
+    </Layout>
   );
 };
 

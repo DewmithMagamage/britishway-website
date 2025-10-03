@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import Header from "./Header";
-import Footer from "./Footer";
+import Layout from "./Layout";
 import Partners from "./Partners";
 import Contact from "./Contact";
 import JoinCourses from "./JoinCourses";
@@ -91,11 +90,11 @@ const CoursesPage = () => {
     : courses.filter(course => course.category === activeFilter);
 
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
+    <Layout>
+      <div className="min-h-screen bg-white">
       
       {/* Hero Section */}
-      <section className="relative h-[60vh] overflow-hidden">
+      <section className="relative h-[60vh] overflow-hidden -mt-24">
         <img 
           src="/images/course card.jpg" 
           alt="Our Courses" 
@@ -156,9 +155,8 @@ const CoursesPage = () => {
       {/* Contact Us Section */}
       <Contact />
 
-      {/* Footer */}
-      <Footer />
-    </div>
+      </div>
+    </Layout>
   );
 };
 

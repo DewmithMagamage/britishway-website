@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { MapPin, Facebook, Youtube, Twitter, Instagram, Linkedin } from "lucide-react";
 
 const Footer = () => {
+  const navigate = useNavigate();
+  
   return (
     <footer className="bg-gradient-to-b from-[#2F327D] to-[#0A0B1C] text-white">
       <div className="max-w-7xl mx-auto px-8 py-12">
@@ -34,10 +37,10 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-lg mb-4">OUR PROGRAMMES</h4>
             <ul className="space-y-2 text-blue-200">
-              <li>Weekday Diploma</li>
-              <li>Weekend Diploma</li>
-              <li>Online Diploma</li>
-              <li>Kids Class</li>
+              <li><button onClick={() => navigate('/courses')} className="hover:text-white transition-colors">Weekday Diploma</button></li>
+              <li><button onClick={() => navigate('/courses')} className="hover:text-white transition-colors">Weekend Diploma</button></li>
+              <li><button onClick={() => navigate('/courses')} className="hover:text-white transition-colors">Online Diploma</button></li>
+              <li><button onClick={() => navigate('/courses')} className="hover:text-white transition-colors">Kids Class</button></li>
             </ul>
           </div>
           
@@ -45,10 +48,10 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-lg mb-4">EXPLORE MORE</h4>
             <ul className="space-y-2 text-blue-200">
-              <li>Careers</li>
-              <li>News & Events</li>
-              <li>Branches</li>
-              <li>Testimonials</li>
+              <li><button onClick={() => navigate('/careers')} className="hover:text-white transition-colors">Careers</button></li>
+              <li><button onClick={() => navigate('/news-events')} className="hover:text-white transition-colors">News & Events</button></li>
+              <li><button onClick={() => navigate('/branches')} className="hover:text-white transition-colors">Branches</button></li>
+              <li><button onClick={() => navigate('/testimonials')} className="hover:text-white transition-colors">Testimonials</button></li>
             </ul>
           </div>
           
@@ -92,10 +95,10 @@ const Footer = () => {
         <div className="flex justify-between items-center text-blue-200 text-sm">
           <p>British Way English Academy © 2025. All rights reserved.</p>
           <div className="flex space-x-8">
-            <a href="#" className="hover:text-white transition-colors">Home</a>
-            <a href="#" className="hover:text-white transition-colors">Courses</a>
-            <a href="#" className="hover:text-white transition-colors">About Us</a>
-            <a href="#" className="hover:text-white transition-colors">Contact Us</a>
+            <button onClick={() => navigate('/')} className="hover:text-white transition-colors">Home</button>
+            <button onClick={() => navigate('/courses')} className="hover:text-white transition-colors">Courses</button>
+            <button onClick={() => navigate('/about')} className="hover:text-white transition-colors">About Us</button>
+            <button onClick={() => navigate('/contact')} className="hover:text-white transition-colors">Contact Us</button>
           </div>
         </div>
       </div>

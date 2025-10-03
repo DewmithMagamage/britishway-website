@@ -1,7 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import { Phone, Mail } from "lucide-react";
+import { useFormContext } from "../context/FormContext";
 
 const Contact = () => {
+  const { addFormSubmission } = useFormContext();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    city: '',
+    message: '',
+    course: 'General Inquiry'
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    try {
+      // Add form submission to context
+      addFormSubmission(formData);
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        city: '',
+        message: '',
+        course: 'General Inquiry'
+      });
+      
+      setIsSubmitted(true);
+      setTimeout(() => setIsSubmitted(false), 3000);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section className="py-16 px-8 max-w-4xl mx-auto">
       <div className="text-center mb-12">
@@ -11,8 +58,14 @@ const Contact = () => {
         </p>
       </div>
       
+      {isSubmitted && (
+        <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg text-center">
+          Thank you for your message! We'll get back to you soon.
+        </div>
+      )}
+      
       <div className="bg-white rounded-xl shadow-lg p-8">
-        <form className="space-y-6">
+        <form className="space-y-6" onSubmit={handleSubmit}>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -20,6 +73,9 @@ const Contact = () => {
               </label>
               <input
                 type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
                 required
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="Enter your name"
@@ -32,6 +88,9 @@ const Contact = () => {
               </label>
               <input
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="Enter your email"
               />
@@ -45,6 +104,9 @@ const Contact = () => {
               </label>
               <input
                 type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
                 required
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="Enter your phone number"
@@ -57,6 +119,9 @@ const Contact = () => {
               </label>
               <input
                 type="text"
+                name="city"
+                value={formData.city}
+                onChange={handleChange}
                 required
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="Enter your city"
@@ -69,6 +134,9 @@ const Contact = () => {
               Message
             </label>
             <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
               rows="4"
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               placeholder="Enter your message"
@@ -78,9 +146,10 @@ const Contact = () => {
           <div className="text-center">
             <button
               type="submit"
-              className="px-8 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition-colors"
+              disabled={isSubmitting}
+              className="px-8 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              SEND
+              {isSubmitting ? 'SENDING...' : 'SEND'}
             </button>
           </div>
         </form>

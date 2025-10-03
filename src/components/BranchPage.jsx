@@ -1,184 +1,30 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock, Users, Award, ArrowRight, Search } from "lucide-react";
+import Layout from "./Layout";
+import { branches } from "../data/branches";
 
 const BranchPage = () => {
   const { branchId } = useParams();
   const navigate = useNavigate();
   
-  // Branch data - you can expand this with more details
-  const branchData = {
-    matara: {
-      name: "Matara Branch",
-      address: "123 Main Street, Matara, Sri Lanka",
-      phone: "070 827 7929",
-      phone2: "033 305 53 12",
-      email: "bweamatara@gmail.com",
-      workingHours: "8:00 AM - 5:00 PM (Daily)",
-      established: "2012",
-      manager: "Ms. Anjali Silva",
-      description: "The Matara branch, opened in 2012, is a cornerstone for English education in the deep south. With passionate educators and a supportive learning space, it continues to transform futures through language."
-    },
-    galle: {
-      name: "Galle Branch",
-      address: "456 Beach Road, Galle, Sri Lanka",
-      phone: "071 10 100 10",
-      phone2: "033 202 41 41",
-      email: "galle@britishway.lk",
-      workingHours: "8:00 AM - 5:00 PM (Daily)",
-      established: "2008",
-      manager: "Mr. Ramesh Fernando",
-      description: "The Galle branch is committed to delivering world-class English education to the historic city and surrounding areas. Our modern facilities and experienced staff ensure the best learning experience."
-    },
-    nugegoda: {
-      name: "Nugegoda Branch",
-      address: "789 High Level Road, Nugegoda, Sri Lanka",
-      phone: "071 10 100 10",
-      phone2: "033 202 41 41",
-      email: "nugegoda@britishway.lk",
-      workingHours: "8:00 AM - 5:00 PM (Daily)",
-      established: "2005",
-      manager: "Mrs. Priya Perera",
-      description: "Serving the Nugegoda community since 2005, our branch offers comprehensive English language programs designed to meet the diverse needs of our students."
-    },
-    kalutara: {
-      name: "Kalutara Branch",
-      address: "321 Colombo Road, Kalutara, Sri Lanka",
-      phone: "071 10 100 10",
-      phone2: "033 202 41 41",
-      email: "kalutara@britishway.lk",
-      workingHours: "8:00 AM - 5:00 PM (Daily)",
-      established: "2012",
-      manager: "Mr. Sunil Jayasuriya",
-      description: "The Kalutara branch brings quality English education to the western coastal region, offering flexible schedules and personalized learning approaches."
-    },
-    kiribathgoda: {
-      name: "Kiribathgoda Branch",
-      address: "654 Kandy Road, Kiribathgoda, Sri Lanka",
-      phone: "071 10 100 10",
-      phone2: "033 202 41 41",
-      email: "kiribathgoda@britishway.lk",
-      workingHours: "8:00 AM - 5:00 PM (Daily)",
-      established: "2004",
-      manager: "Ms. Dilini Wijesinghe",
-      description: "As one of our earliest branches, Kiribathgoda has been instrumental in establishing British Way's reputation for excellence in English language education."
-    },
-    kurunegala: {
-      name: "Kurunegala Branch",
-      address: "987 Dambulla Road, Kurunegala, Sri Lanka",
-      phone: "071 10 100 10",
-      phone2: "033 202 41 41",
-      email: "kurunegala@bishway.lk",
-      workingHours: "8:00 AM - 5:00 PM (Daily)",
-      established: "2009",
-      manager: "Mr. Ajith Bandara",
-      description: "Our Kurunegala branch serves the North Western Province with dedication, providing comprehensive English language training and career development support."
-    },
-    gampaha: {
-      name: "Gampaha Branch",
-      address: "147 Negombo Road, Gampaha, Sri Lanka",
-      phone: "071 10 100 10",
-      phone2: "033 202 41 41",
-      email: "gampaha@britishway.lk",
-      workingHours: "8:00 AM - 5:00 PM (Daily)",
-      established: "2011",
-      manager: "Mrs. Nimali Gunasekara",
-      description: "The Gampaha branch offers a welcoming environment for English language learners, with modern classrooms and experienced teaching staff."
-    },
-    nittambuwa: {
-      name: "Nittambuwa Branch",
-      address: "258 Kandy Road, Nittambuwa, Sri Lanka",
-      phone: "071 10 100 10",
-      phone2: "033 202 41 41",
-      email: "nittambuwa@britishway.lk",
-      workingHours: "8:00 AM - 5:00 PM (Daily)",
-      established: "2006",
-      manager: "Mr. Chaminda Rathnayake",
-      description: "Located in the heart of Nittambuwa, our branch provides accessible English education with flexible scheduling options for busy professionals and students."
-    },
-    negombo: {
-      name: "Negombo Branch",
-      address: "369 Beach Road, Negombo, Sri Lanka",
-      phone: "071 10 100 10",
-      phone2: "033 202 41 41",
-      email: "negombo@britishway.lk",
-      workingHours: "8:00 AM - 5:00 PM (Daily)",
-      established: "2007",
-      manager: "Ms. Shanthi Mendis",
-      description: "Our Negombo branch serves the coastal community with dedication, offering English courses that prepare students for global opportunities."
-    },
-    ratnapura: {
-      name: "Ratnapura Branch",
-      address: "741 Colombo Road, Ratnapura, Sri Lanka",
-      phone: "071 10 100 10",
-      phone2: "033 202 41 41",
-      email: "ratnapura@britishway.lk",
-      workingHours: "8:00 AM - 5:00 PM (Daily)",
-      established: "2013",
-      manager: "Mr. Lasantha Karunaratne",
-      description: "The Ratnapura branch brings quality English education to the Sabaragamuwa Province, helping students achieve their language learning goals."
-    },
-    polonnaruwa: {
-      name: "Polonnaruwa Branch",
-      address: "852 Anuradhapura Road, Polonnaruwa, Sri Lanka",
-      phone: "071 10 100 10",
-      phone2: "033 202 41 41",
-      email: "polonnaruwa@britishway.lk",
-      workingHours: "8:00 AM - 5:00 PM (Daily)",
-      established: "2014",
-      manager: "Mrs. Sandya Weerasinghe",
-      description: "Our Polonnaruwa branch serves the North Central Province with commitment to excellence in English language education and student success."
-    },
-    anura: {
-      name: "Anuradhapura Branch",
-      address: "963 Kandy Road, Anuradhapura, Sri Lanka",
-      phone: "071 10 100 10",
-      phone2: "033 202 41 41",
-      email: "anura@britishway.lk",
-      workingHours: "8:00 AM - 5:00 PM (Daily)",
-      established: "2012",
-      manager: "Mr. Ranjith Dissanayake",
-      description: "The Anuradhapura branch provides comprehensive English language training to the North Central Province, helping students build confidence and skills."
-    },
-    bandarawela: {
-      name: "Bandarawela Branch",
-      address: "159 Badulla Road, Bandarawela, Sri Lanka",
-      phone: "071 10 100 10",
-      phone2: "033 202 41 41",
-      email: "bandarawela@britishway.lk",
-      workingHours: "8:00 AM - 5:00 PM (Daily)",
-      established: "2015",
-      manager: "Ms. Kumari Herath",
-      description: "Our Bandarawela branch serves the Uva Province with dedication, offering English courses that prepare students for academic and professional success."
-    },
-    kandy: {
-      name: "Kandy Branch",
-      address: "357 Peradeniya Road, Kandy, Sri Lanka",
-      phone: "071 10 100 10",
-      phone2: "033 202 41 41",
-      email: "kandy@britishway.lk",
-      workingHours: "8:00 AM - 5:00 PM (Daily)",
-      established: "2009",
-      manager: "Mr. Mahinda Rajapaksa",
-      description: "The Kandy branch serves the Central Province with excellence, providing quality English education in a supportive and professional environment."
-    }
-  };
-
-  const branch = branchData[branchId] || branchData.matara;
+  // Find the branch data from the imported branches array
+  const branch = branches.find(b => b.id === branchId) || branches[0];
 
   return (
-    <main className="w-full">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 py-12">
-          <div className="relative rounded-2xl overflow-hidden min-h-[400px] bg-gray-900">
-            <img src={`/images/branches/${branchId}-hero.jpg`} alt={branch.name} className="absolute inset-0 w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-black/60" />
-            <div className="relative z-10 flex items-center justify-center h-full">
-              <h1 className="text-5xl md:text-6xl font-bold text-white text-center">
-                {branch.name}
-              </h1>
-            </div>
+    <Layout>
+      <main className="w-full">
+      {/* Hero Section (unified style) */}
+      <section className="relative h-[60vh] overflow-hidden -mt-24">
+        <img 
+          src={`/images/branches/${branchId}-hero.jpg`} 
+          alt={branch.name} 
+          className="absolute top-0 left-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 flex items-center z-10">
+          <div className="text-white max-w-3xl p-8 mx-auto text-center">
+            <h1 className="text-5xl md:text-6xl font-bold">{branch.name}</h1>
           </div>
         </div>
       </section>
@@ -215,8 +61,8 @@ const BranchPage = () => {
           
           <div className="text-center">
             <Phone className="w-8 h-8 text-gray-600 mx-auto mb-3" />
-            <h3 className="font-semibold text-gray-800 mb-1">HOT LINE</h3>
-            <p className="text-gray-600">{branch.phone2}</p>
+            <h3 className="font-semibold text-gray-800 mb-1">LANDLINE</h3>
+            <p className="text-gray-600">{branch.landline}</p>
           </div>
           
           <div className="text-center">
@@ -224,6 +70,20 @@ const BranchPage = () => {
             <h3 className="font-semibold text-gray-800 mb-1">EMAIL</h3>
             <p className="text-gray-600">{branch.email}</p>
           </div>
+        </div>
+        
+        <div className="mt-8 text-center">
+          <MapPin className="w-8 h-8 text-gray-600 mx-auto mb-3" />
+          <h3 className="font-semibold text-gray-800 mb-1">ADDRESS</h3>
+          <p className="text-gray-600">{branch.address}</p>
+          <a 
+            href={branch.mapUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-4 text-blue-600 hover:text-blue-800 font-medium"
+          >
+            View on Map →
+          </a>
         </div>
       </section>
 
@@ -311,6 +171,7 @@ const BranchPage = () => {
       </section>
 
       {/* Stay Connected */}
+      
       <section className="max-w-4xl mx-auto px-6 py-16 text-center">
         <h3 className="text-2xl font-bold text-gray-900 mb-4">Stay Connected</h3>
         <p className="text-gray-600 mb-8">Stay connected with us through your favorite social platforms.</p>
@@ -346,7 +207,8 @@ const BranchPage = () => {
           ← Back to All Branches
         </button>
       </section>
-    </main>
+      </main>
+    </Layout>
   );
 };
 

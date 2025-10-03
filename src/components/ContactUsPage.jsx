@@ -1,6 +1,5 @@
 import React from "react";
-import Header from "./Header";
-import Footer from "./Footer";
+import Layout from "./Layout";
 import Contact from "./Contact";
 import MapSection from "./MapSection";
 import BranchCard from "./BranchCard";
@@ -124,11 +123,11 @@ const ContactUsPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
+    <Layout>
+      <div className="min-h-screen bg-white">
       
       {/* Hero Section */}
-      <section className="relative h-[60vh] overflow-hidden">
+      <section className="relative h-[60vh] overflow-hidden -mt-24">
         <img 
           src="/images/course card.jpg" 
           alt="Contact Us" 
@@ -179,9 +178,8 @@ const ContactUsPage = () => {
       {/* Stay Connected Section */}
       <StayConnected />
 
-      {/* Footer */}
-      <Footer />
-    </div>
+      </div>
+    </Layout>
   );
 };
 

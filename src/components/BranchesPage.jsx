@@ -1,41 +1,29 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
-
-const branches = [
-  { name: "Matara Branch", id: "matara" },
-  { name: "Galle Branch", id: "galle" },
-  { name: "Nugegoda Branch", id: "nugegoda" },
-  { name: "Kalutara Branch", id: "kalutara" },
-  { name: "Kiribathgoda Branch", id: "kiribathgoda" },
-  { name: "Kurunegala Branch", id: "kurunegala" },
-  { name: "Gampaha Branch", id: "gampaha" },
-  { name: "Nittambuwa Branch", id: "nittambuwa" },
-  { name: "Negombo Branch", id: "negombo" },
-  { name: "Ratnapura Branch", id: "ratnapura" },
-  { name: "Polonnaruwa Branch", id: "polonnaruwa" },
-  { name: "Anuradhapura Branch", id: "anura" },
-  { name: "Bandarawela Branch", id: "bandarawela" },
-  { name: "Kandy Branch", id: "kandy" }
-];
+import Layout from "./Layout";
+import { branches } from "../data/branches";
 
 const BranchesPage = () => {
   const navigate = useNavigate();
   
   return (
-    <main className="w-full">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 py-12">
-          <div className="relative rounded-2xl overflow-hidden min-h-[260px] bg-gray-900">
-            <img src="/images/course card.jpg" alt="Visit Our Branches" className="absolute inset-0 w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-r from-white via-white/70 to-transparent" />
-            <div className="relative z-10 p-8 md:p-12">
-              <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2">Visit Our Branches</h1>
-              <p className="max-w-xl text-xs md:text-sm text-gray-700">
-                Find a branch near you and experience our services closer to home. We're proud to serve you across multiple locations with the same commitment and care.
-              </p>
-            </div>
+    <Layout>
+      <main className="w-full">
+      {/* Hero Section (unified style) */}
+      <section className="relative h-[60vh] overflow-hidden -mt-24">
+        <img 
+          src="/images/course card.jpg" 
+          alt="Visit Our Branches" 
+          className="absolute top-0 left-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 flex items-center z-10">
+          <div className="text-white max-w-3xl p-8 mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Visit Our Branches</h1>
+            <p className="text-lg md:text-xl max-w-2xl mx-auto">
+              Find a branch near you and experience our services closer to home. We're proud to serve you across multiple locations with the same commitment and care.
+            </p>
           </div>
         </div>
       </section>
@@ -82,21 +70,36 @@ const BranchesPage = () => {
                 
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4 text-blue-600" />
-                  <span className="text-gray-700">071 10 100 10</span>
+                  <span className="text-gray-700">{branch.phone}</span>
                 </div>
                 
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4 text-blue-600" />
-                  <span className="text-gray-700">033 202 41 41</span>
+                  <span className="text-gray-700">{branch.landline}</span>
                 </div>
                 
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4 text-blue-600" />
-                  <span className="text-gray-700">careers@britishway.lk</span>
+                  <span className="text-gray-700">{branch.email}</span>
+                </div>
+                
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-blue-600" />
+                  <span className="text-gray-700 text-xs">{branch.address}</span>
                 </div>
               </div>
               
-              <div className="mt-4 w-8 h-12 bg-gray-200 rounded-lg ml-auto"></div>
+              <div className="mt-4 flex justify-end">
+                <a 
+                  href={branch.mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-800 text-xs font-medium"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  View on Map →
+                </a>
+              </div>
             </div>
           ))}
         </div>
@@ -170,7 +173,8 @@ const BranchesPage = () => {
           </form>
         </div>
       </section>
-    </main>
+      </main>
+    </Layout>
   );
 };
 

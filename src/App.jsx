@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { FormProvider } from "./context/FormContext";
 import Home from "./Home";
 import AboutPage from "./components/AboutPage";
 import BranchesPage from "./components/BranchesPage";
@@ -7,6 +8,11 @@ import BranchPage from "./components/BranchPage";
 import NewsEventsPage from "./components/NewsEventsPage";
 import CoursesPage from "./components/CoursesPage";
 import ContactUsPage from "./components/ContactUsPage";
+import CareersPage from "./components/CareersPage";
+import TestimonialsPage from "./components/TestimonialsPage";
+import AdminDashboard from "./components/AdminDashboard";
+import Login from "./components/Login";
+import RequireAuth from "./components/RequireAuth";
 import SplashScreen from "./components/SplashScreen";
 
 function App() {
@@ -22,7 +28,7 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
   return (
-    <>
+    <FormProvider>
       {loading ? (
         <SplashScreen onFinish={() => setLoading(false)} />
       ) : (
@@ -35,10 +41,14 @@ function App() {
             <Route path="/news-events" element={<NewsEventsPage />} />
             <Route path="/branches" element={<BranchesPage />} />
             <Route path="/branch/:branchId" element={<BranchPage />} />
+            <Route path="/careers" element={<CareersPage />} />
+            <Route path="/testimonials" element={<TestimonialsPage />} />
+            <Route path="/admin/login" element={<Login />} />
+            <Route path="/admin" element={<RequireAuth><AdminDashboard /></RequireAuth>} />
           </Routes>
         </BrowserRouter>
       )}
-    </>
+    </FormProvider>
   );
 }
 

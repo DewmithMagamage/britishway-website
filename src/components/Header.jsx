@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Mail, Phone, Youtube, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Mail, Phone, Youtube, Facebook, Twitter, Instagram, Linkedin, Menu, X } from "lucide-react";
 
 const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
   return (
     <>
@@ -77,68 +78,63 @@ const Header = () => {
               </div>
               
               {/* Navigation Links */}
-              <div className="hidden md:flex items-center space-x-6">
+              <div className="hidden md:flex items-center space-x-1">
                 <button 
                   onClick={() => navigate('/')}
-                  className={`px-3 py-1.5 rounded-lg text-sm transition-colors ${
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ease-in-out ${
                     location.pathname === '/' 
-                      ? 'text-blue-600 font-semibold bg-gray-200/50' 
-                      : 'text-gray-700 hover:text-blue-600 hover:bg-gray-200/30'
+                      ? 'text-white bg-blue-600 shadow-lg' 
+                      : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
                   }`}
                 >
                   Home
                 </button>
-                <span className="text-gray-400">|</span>
                 <button 
                   onClick={() => navigate('/courses')}
-                  className={`px-3 py-1.5 rounded-lg text-sm transition-colors ${
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ease-in-out ${
                     location.pathname === '/courses' 
-                      ? 'text-blue-600 font-semibold bg-gray-200/50' 
-                      : 'text-gray-700 hover:text-blue-600 hover:bg-gray-200/30'
+                      ? 'text-white bg-blue-600 shadow-lg' 
+                      : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
                   }`}
                 >
                   Courses
                 </button>
-                <span className="text-gray-400">|</span>
                 <button 
                   onClick={() => navigate('/about')}
-                  className={`px-3 py-1.5 rounded-lg text-sm transition-colors ${
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ease-in-out ${
                     location.pathname === '/about' 
-                      ? 'text-blue-600 font-semibold bg-gray-200/50' 
-                      : 'text-gray-700 hover:text-blue-600 hover:bg-gray-200/30'
+                      ? 'text-white bg-blue-600 shadow-lg' 
+                      : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
                   }`}
                 >
                   About Us
                 </button>
-                <span className="text-gray-400">|</span>
                 <button 
                   onClick={() => navigate('/contact')}
-                  className={`px-3 py-1.5 rounded-lg text-sm transition-colors ${
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ease-in-out ${
                     location.pathname === '/contact' 
-                      ? 'text-blue-600 font-semibold bg-gray-200/50' 
-                      : 'text-gray-700 hover:text-blue-600 hover:bg-gray-200/30'
+                      ? 'text-white bg-blue-600 shadow-lg' 
+                      : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
                   }`}
                 >
                   Contact Us
                 </button>
-                <span className="text-gray-400">|</span>
                 <button 
                   onClick={() => navigate('/news-events')}
-                  className={`px-3 py-1.5 rounded-lg text-sm transition-colors ${
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ease-in-out ${
                     location.pathname === '/news-events' 
-                      ? 'text-blue-600 font-semibold bg-gray-200/50' 
-                      : 'text-gray-700 hover:text-blue-600 hover:bg-gray-200/30'
+                      ? 'text-white bg-blue-600 shadow-lg' 
+                      : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
                   }`}
                 >
-                  News and Events
+                  News & Events
                 </button>
-                <span className="text-gray-400">|</span>
                 <button 
                   onClick={() => navigate('/branches')}
-                  className={`px-3 py-1.5 rounded-lg text-sm transition-colors ${
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ease-in-out ${
                     location.pathname === '/branches' 
-                      ? 'text-blue-600 font-semibold bg-gray-200/50' 
-                      : 'text-gray-700 hover:text-blue-600 hover:bg-gray-200/30'
+                      ? 'text-white bg-blue-600 shadow-lg' 
+                      : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
                   }`}
                 >
                   Branches
@@ -146,15 +142,102 @@ const Header = () => {
               </div>
               
               {/* Mobile Menu Button */}
-              <button className="md:hidden text-gray-700 hover:text-blue-600">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
+              <button 
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="md:hidden text-gray-700 hover:text-blue-600 transition-colors"
+              >
+                {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
             </div>
           </div>
           </nav>
         </div>
+        
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden bg-white shadow-lg border-t border-gray-200">
+            <div className="px-4 py-2 space-y-1">
+              <button 
+                onClick={() => {
+                  navigate('/');
+                  setIsMobileMenuOpen(false);
+                }}
+                className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
+                  location.pathname === '/' 
+                    ? 'text-white bg-blue-600' 
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                }`}
+              >
+                Home
+              </button>
+              <button 
+                onClick={() => {
+                  navigate('/courses');
+                  setIsMobileMenuOpen(false);
+                }}
+                className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
+                  location.pathname === '/courses' 
+                    ? 'text-white bg-blue-600' 
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                }`}
+              >
+                Courses
+              </button>
+              <button 
+                onClick={() => {
+                  navigate('/about');
+                  setIsMobileMenuOpen(false);
+                }}
+                className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
+                  location.pathname === '/about' 
+                    ? 'text-white bg-blue-600' 
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                }`}
+              >
+                About Us
+              </button>
+              <button 
+                onClick={() => {
+                  navigate('/contact');
+                  setIsMobileMenuOpen(false);
+                }}
+                className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
+                  location.pathname === '/contact' 
+                    ? 'text-white bg-blue-600' 
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                }`}
+              >
+                Contact Us
+              </button>
+              <button 
+                onClick={() => {
+                  navigate('/news-events');
+                  setIsMobileMenuOpen(false);
+                }}
+                className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
+                  location.pathname === '/news-events' 
+                    ? 'text-white bg-blue-600' 
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                }`}
+              >
+                News & Events
+              </button>
+              <button 
+                onClick={() => {
+                  navigate('/branches');
+                  setIsMobileMenuOpen(false);
+                }}
+                className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
+                  location.pathname === '/branches' 
+                    ? 'text-white bg-blue-600' 
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                }`}
+              >
+                Branches
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );
