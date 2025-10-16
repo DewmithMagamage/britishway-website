@@ -5,6 +5,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  scroll-behavior: smooth; /* smooth scroll for anchor and programmatic scrolls */
 }
 
 /* Infinite scroll animation */

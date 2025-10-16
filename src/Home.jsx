@@ -12,7 +12,7 @@ import Contact from "./components/Contact";
 
 const Home = () => {
   return (
-    <Layout>
+    <Layout noTopPadding>
       <div className="w-full overflow-hidden bg-white text-gray-900">
         <Hero />
         <Partners />

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Mail, Phone, Youtube, Facebook, Twitter, Instagram, Linkedin, Menu, X } from "lucide-react";
 
@@ -7,12 +7,24 @@ const Header = () => {
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
+  
   return (
     <>
       {/* Fixed Header Container */}
       <div className="fixed top-0 left-0 right-0 z-50 mt-0">
-        {/* Top Contact Bar */}
-        <div className="bg-gray-900 text-white py-2">
+        {/* Top Contact Bar (hidden on mobile) */}
+        <div className="hidden md:block bg-gray-900 text-white py-2">
           <div className="max-w-9xl mx-auto px-8 flex justify-between items-center text-sm">
             <div className="flex items-center space-x-6">
               <div className="flex items-center">
@@ -145,6 +157,9 @@ const Header = () => {
               <button 
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="md:hidden text-gray-700 hover:text-blue-600 transition-colors"
+                aria-label="Toggle navigation menu"
+                aria-expanded={isMobileMenuOpen}
+                aria-controls="mobile-menu"
               >
                 {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
@@ -153,10 +168,19 @@ const Header = () => {
           </nav>
         </div>
         
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden bg-white shadow-lg border-t border-gray-200">
-            <div className="px-4 py-2 space-y-1">
+        {/* Mobile Menu with overlay */}
+        <div className={`md:hidden fixed inset-0 z-40 transition-opacity ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+          {/* Backdrop */}
+          <div 
+            className={`absolute inset-0 bg-black/40 transition-opacity duration-300`} 
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+          {/* Slide-down panel */}
+          <div 
+            id="mobile-menu"
+            className={`absolute top-[64px] left-0 right-0 bg-white shadow-xl border-t border-gray-200 rounded-b-2xl transform transition-transform duration-300 ${isMobileMenuOpen ? 'translate-y-0' : '-translate-y-4'}`}
+          >
+            <div className="px-4 py-3 space-y-2">
               <button 
                 onClick={() => {
                   navigate('/');
@@ -237,7 +261,7 @@ const Header = () => {
               </button>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </>
   );

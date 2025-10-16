@@ -26,11 +26,11 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-16 px-8 max-w-6xl mx-auto">
-      <div className="grid md:grid-cols-2 gap-12 items-start">
+    <section className="py-14 sm:py-16 px-5 sm:px-8 max-w-6xl mx-auto">
+      <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-start">
         <div>
-          <h2 className="text-sm tracking-wide uppercase text-gray-500 mb-2">Testimonials</h2>
-          <h3 className="text-3xl font-bold mb-6">What Students Say</h3>
+          <h2 className="text-xs sm:text-sm tracking-wide uppercase text-gray-500 mb-1 sm:mb-2">Testimonials</h2>
+          <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">What Students Say</h3>
           <p className="text-gray-600">
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
             Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
@@ -39,20 +39,20 @@ const Testimonials = () => {
         
         <div className="relative">
           {/* Slider viewport */}
-          <div className="overflow-hidden pb-4">
+          <div className="overflow-hidden pb-4 px-0 max-w-md mx-auto md:max-w-none">
             {/* Slider track */}
             <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
               {testimonials.map((testimonial, index) => (
-                <div key={index} className="min-w-full px-2">
-                  <div className="bg-white rounded-xl p-6 shadow-lg max-w-md">
+                <div key={index} className="min-w-full box-border px-0 sm:px-2 flex justify-center">
+                  <div className="bg-white rounded-xl p-8 sm:p-6 shadow-lg w-full max-w-md mx-4 min-h-[190px]">
                     <div className="flex items-center mb-4">
                       <img
                         src={testimonial.image}
                         alt={testimonial.name}
-                        className="w-12 h-12 rounded-full object-cover mr-4"
+                        className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover mr-3 sm:mr-4"
                       />
                       <div>
                         <h4 className="font-semibold">{testimonial.name}</h4>

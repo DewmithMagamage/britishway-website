@@ -5,7 +5,7 @@ const BranchCard = ({ branch }) => {
   return (
     <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
       {/* Branch Map */}
-      <div className="h-32 overflow-hidden">
+      <div className="h-28 sm:h-32 overflow-hidden">
         <iframe
           src={branch.mapUrl}
           width="100%"
@@ -20,7 +20,7 @@ const BranchCard = ({ branch }) => {
       
       {/* Branch Content */}
       <div className="p-4">
-        <h3 className="text-lg font-bold text-gray-800 mb-3">
+        <h3 className="text-base sm:text-lg font-bold text-gray-800 mb-2 sm:mb-3">
           {branch.name}
         </h3>
         

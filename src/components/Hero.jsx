@@ -24,17 +24,17 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-screen overflow-hidden">
+    <section className="relative w-full h-[90vh] md:h-screen overflow-hidden">
       <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover">
         <source src="/images/hero-bg-video.mp4" type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-black/40" />
       
       {/* Hero Content */}
-      <div className="absolute inset-0 flex items-end z-10">
-        <div className="text-white max-w-xl p-8 mb-16 ml-16 overflow-hidden">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 text-left">
-            <div className="min-h-[40px] md:min-h-[44px]">
+      <div className="absolute inset-0 z-10 flex items-end md:items-end">
+        <div className="text-white w-full px-5 sm:px-8 md:px-12 lg:px-16 mb-10 md:mb-16">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-3 md:mb-4 text-left max-w-xl">
+            <div className="min-h-[32px] sm:min-h-[40px] md:min-h-[56px]">
               <span 
                 className={`inline-block transition-opacity duration-1000 ${
                   isVisible ? 'opacity-100' : 'opacity-0'
@@ -44,14 +44,14 @@ const Hero = () => {
               </span>
             </div>
           </h1>
-          <p className="text-base md:text-lg mb-6 text-gray-200 leading-relaxed text-left max-w-lg">
+          <p className="text-sm sm:text-base md:text-lg mb-5 md:mb-6 text-gray-200 leading-relaxed text-left max-w-lg">
             Join Sri Lanka's largest English training institute with 20+ years of excellence. 
             At British Way, we empower potential and inspire growth.
           </p>
-          <button className="group relative px-6 py-3 bg-blue-600 text-white rounded-lg shadow-xl 
-            transition-all duration-300 ease-in-out text-sm font-semibold flex items-center
+          <button className="group relative px-4 sm:px-6 py-2.5 sm:py-3 bg-blue-600 text-white rounded-lg shadow-xl 
+            transition-all duration-300 ease-in-out text-sm sm:text-base font-semibold inline-flex items-center
             hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/30 border-2 border-transparent
-            hover:border-blue-500 animate-borderPulse">
+            hover:border-blue-500">
             APPLY NOW
             <ArrowRight className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
           </button>
