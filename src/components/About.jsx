@@ -7,9 +7,8 @@ const About = () => {
         <h2 className="text-sm tracking-wide uppercase text-gray-500 mb-2">A Bit</h2>
         <h3 className="text-3xl font-bold mb-6">About Us</h3>
         <p className="text-gray-600 mb-6">
-          For over 20 years, British Way English Academy has been Sri Lanka’s largest English training institute, 
-          with 14 branches and over 21,000 diplomates annually. Guided by a passionate, qualified team, 
-          we believe every student has unlimited potential and we’re here to unlock it.
+        For over 20 years, British Way English Academy has been the staple of English Training Institutions.
+        With over 14 branches Island-wide, and a growing amount of over 21,000 diplomats each passing year, our team of exemplary lecturers and teachers are filled with passion to unlock the unlimited potential of each and every one of our students.
         </p>
         <button className="px-6 py-3 bg-purple-600 text-white rounded-xl shadow hover:bg-purple-700">Explore More</button>
       </div>

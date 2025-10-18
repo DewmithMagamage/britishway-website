@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const programmes = [
-  { title: "Two Months Diploma", subtitle: "Extended English Language Training in 2 Months", img: "/images/Weekday Diploma copy.jpg" },
-  { title: "50 Day Camp", subtitle: "Extended English Language Training in 2 Months", img: "/images/Online Diploma copy.jpg" },
-  { title: "Weekend Diploma", subtitle: "Extended English Language Training in 2 Months", img: "/images/Weekday Diploma copy.jpg" },
-  { title: "Kid Class", subtitle: "Extended English Language Training in 2 Months", img: "/images/Online Diploma copy.jpg" },
-  { title: "IT+English Diploma", subtitle: "Extended English Language Training in 2 Months", img: "/images/Weekday Diploma copy.jpg" },
-  { title: "Online Diploma", subtitle: "Extended English Language Training in 2 Months", img: "/images/Online Diploma copy.jpg" },
+  { title: "Two-Month Diploma", subtitle: "Gives You All the Essentials in Learning English and More.", img: "/images/Weekday Diploma copy.jpg" },
+  { title: "50 Day Camp", subtitle: "An Outstanding English Knowledge in a Residential Background.", img: "/images/50 Day Residential camp.jpg" },
+  { title: "Diploma (Weekend-Based)", subtitle: "Turn your weekends into stepping stones for success.", img: "/images/Weekend Diploma.jpg" },
+  { title: "English Classes for Kids", subtitle: "Engaging English Lessons Designed Just for Your Child .", img: "/images/Kids Class.jpg" },
+  { title: "IT+English Diploma", subtitle: "Expand your IT Knowledge with English.", img: "/images/IT+English.jpg" },
+  { title: "Online Diploma", subtitle: "Master English Anytime, Anywhere.", img: "/images/Online Diploma copy.jpg" },
 ];
 
 const Programmes = () => {
@@ -56,8 +56,8 @@ const Programmes = () => {
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Programmes</h2>
-          <p className="text-lg text-gray-600">Working together to empower learning and growth.</p>
+          <h2 className="text-2xl font-bold mb-1">What We Offer</h2>
+          <p className="text-lg text-gray-600">A range of courses that can meet your educational needs.</p>
         </div>
 
         {/* Carousel */}
@@ -115,7 +115,7 @@ const Programmes = () => {
         {/* Description Text */}
         <div className="mt-20 text-center max-w-4xl mx-auto">
           <p className="text-gray-700 text-lg leading-relaxed mb-6">
-          Join us to make your dream of mastering English language a reality! We provide some of the most academically updated and enhanced English courses, tailoring to a wide scope of audience. Coupled with a variety of discipline programmes, we make sure that you can be a well endowed citizen who not only speaks perfect English, but also becomes a good role model to society. 
+          Join us to make your dream of mastering English language a reality! We provide some of the most academically updated and enhanced English courses, tailoring to a wide scope of audience.
           </p>
           <p className="text-gray-700 text-lg leading-relaxed">
           As long as you have the will to learn, we have the will to show you the way. Our way.

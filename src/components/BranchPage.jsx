@@ -44,8 +44,6 @@ const BranchPage = () => {
             <img src={`/images/branches/${branchId}-gallery-2.jpg`} alt="Gallery 2" className="rounded-xl shadow-md object-cover h-48 w-full" />
             <img src={`/images/branches/${branchId}-gallery-3.jpg`} alt="Gallery 3" className="rounded-xl shadow-md object-cover h-48 w-full" />
             <img src={`/images/branches/${branchId}-gallery-4.jpg`} alt="Gallery 4" className="rounded-xl shadow-md object-cover h-48 w-full" />
-            <img src={`/images/branches/${branchId}-gallery-5.jpg`} alt="Gallery 5" className="rounded-xl shadow-md object-cover h-48 w-full" />
-            <img src={`/images/branches/${branchId}-gallery-6.jpg`} alt="Gallery 6" className="rounded-xl shadow-md object-cover h-48 w-full" />
           </div>
         </div>
       </section>
