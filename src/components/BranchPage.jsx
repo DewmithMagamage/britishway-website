@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock, Users, Award, ArrowRight, Search } from "lucide-react";
 import Layout from "./Layout";
@@ -31,7 +31,7 @@ const BranchPage = () => {
 
       {/* Branch Introduction */}
       <section className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
           <div>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">{branch.name}</h2>
             <p className="text-gray-700 leading-relaxed text-lg">
@@ -39,11 +39,8 @@ const BranchPage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <img src={`/images/branches/${branchId}-gallery-1.jpg`} alt="Gallery 1" className="rounded-xl shadow-md object-cover h-48 w-full" />
-            <img src={`/images/branches/${branchId}-gallery-2.jpg`} alt="Gallery 2" className="rounded-xl shadow-md object-cover h-48 w-full" />
-            <img src={`/images/branches/${branchId}-gallery-3.jpg`} alt="Gallery 3" className="rounded-xl shadow-md object-cover h-48 w-full" />
-            <img src={`/images/branches/${branchId}-gallery-4.jpg`} alt="Gallery 4" className="rounded-xl shadow-md object-cover h-48 w-full" />
+          <div>
+            <img src={`/images/branches/${branchId}-gallery-1.jpg`} alt={`${branch.name} campus`} className="rounded-xl shadow-md object-cover h-64 w-full" />
           </div>
         </div>
       </section>
@@ -139,18 +136,65 @@ const BranchPage = () => {
         </div>
       </section>
 
-      {/* Gallery Section */}
+      {/* Gallery Section - Infinite Auto Carousel */}
       <section className="max-w-7xl mx-auto px-6 py-16">
         <div className="text-center mb-12">
           <h3 className="text-3xl font-bold text-gray-900 mb-4">Gallery</h3>
           <p className="text-gray-600 text-lg">A glimpse into our journey, achievements, and moments that define us.</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          <img src="/images/gallery/graduation-1.jpg" alt="Graduation ceremony" className="rounded-xl shadow-lg object-cover h-80 w-full" />
-          <img src="/images/gallery/ceremony-1.jpg" alt="Ceremony event" className="rounded-xl shadow-lg object-cover h-80 w-full" />
-          <img src="/images/gallery/audience-1.jpg" alt="Audience" className="rounded-xl shadow-lg object-cover h-80 w-full" />
-        </div>
+        {(() => {
+          const galleryTrackRef = useRef(null);
+          const rafRef = useRef(null);
+          const offsetRef = useRef(0);
+          const widthRef = useRef(0);
+
+          useEffect(() => {
+            const track = galleryTrackRef.current;
+            if (!track) return;
+
+            // Measure width of a single set (half of duplicated content)
+            const singleSetWidth = track.scrollWidth / 2;
+            widthRef.current = singleSetWidth;
+
+            const speedPxPerFrame = 0.7; // tune speed here
+            const step = () => {
+              offsetRef.current += speedPxPerFrame;
+              if (offsetRef.current >= widthRef.current) {
+                offsetRef.current = 0;
+              }
+              track.style.transform = `translateX(-${offsetRef.current}px)`;
+              rafRef.current = requestAnimationFrame(step);
+            };
+            rafRef.current = requestAnimationFrame(step);
+            return () => {
+              if (rafRef.current) cancelAnimationFrame(rafRef.current);
+            };
+          }, []);
+
+          const images = Array.isArray(branch.gallery) && branch.gallery.length > 0
+            ? branch.gallery
+            : [
+                `/images/gallery/graduation-1.jpg`,
+                `/images/gallery/ceremony-1.jpg`,
+                `/images/gallery/audience-1.jpg`,
+              ];
+
+          return (
+            <div className="overflow-hidden">
+              <div className="flex gap-6 will-change-transform" ref={galleryTrackRef}>
+                {[...images, ...images].map((src, idx) => (
+                  <img
+                    key={idx}
+                    src={src}
+                    alt={`Gallery ${idx + 1}`}
+                    className="rounded-xl shadow-lg object-cover h-56 sm:h-64 md:h-72 lg:h-80 w-auto"
+                  />
+                ))}
+              </div>
+            </div>
+          );
+        })()}
       </section>
 
       {/* Join Section */}
@@ -169,30 +213,34 @@ const BranchPage = () => {
       </section>
 
       {/* Stay Connected */}
-      
       <section className="max-w-4xl mx-auto px-6 py-16 text-center">
         <h3 className="text-2xl font-bold text-gray-900 mb-4">Stay Connected</h3>
         <p className="text-gray-600 mb-8">Stay connected with us through your favorite social platforms.</p>
-        
-        <div className="flex justify-center space-x-6">
-          <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
-            <span className="text-white font-bold">M</span>
-          </div>
-          <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
-            <span className="text-white font-bold">Y</span>
-          </div>
-          <div className="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center">
-            <span className="text-white font-bold">I</span>
-          </div>
-          <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
-            <span className="text-white font-bold">W</span>
-          </div>
-          <div className="w-12 h-12 bg-blue-800 rounded-full flex items-center justify-center">
-            <span className="text-white font-bold">F</span>
-          </div>
-          <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center">
-            <span className="text-white font-bold">T</span>
-          </div>
+
+        <div className="flex flex-wrap justify-center gap-6">
+          {(() => {
+            const links = branch.socialLinks || {};
+            const iconFor = (key) => {
+              switch (key) {
+                case 'facebook': return '/images/Facebook.png';
+                case 'instagram': return '/images/Instergram.png';
+                case 'youtube': return '/images/Youtube.png';
+                case 'tiktok': return '/images/Tiktok.png';
+                case 'messenger': return '/images/Messenger.png';
+                case 'whatsapp': return '/images/Whatsapp.png';
+                case 'linkedin': return '/images/Linkedin.png';
+                case 'twitter': return '/images/Twitter.png';
+                default: return '';
+              }
+            };
+            return Object.entries(links)
+              .filter(([, url]) => typeof url === 'string' && url.trim().length > 0)
+              .map(([key, url]) => (
+                <a key={key} href={url} target="_blank" rel="noopener noreferrer" title={key} className="group hover:scale-110 transition-transform duration-300">
+                  <img src={iconFor(key)} alt={key} className="w-10 h-10 object-contain" />
+                </a>
+              ));
+          })()}
         </div>
       </section>
 

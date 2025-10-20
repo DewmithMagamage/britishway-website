@@ -1,8 +1,33 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Star } from "lucide-react";
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const touchStartXRef = useRef(null);
+  const touchDeltaXRef = useRef(0);
+
+  const next = () => setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  const prev = () => setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+
+  const handleTouchStart = (e) => {
+    touchStartXRef.current = e.touches[0].clientX;
+    touchDeltaXRef.current = 0;
+  };
+
+  const handleTouchMove = (e) => {
+    if (touchStartXRef.current === null) return;
+    touchDeltaXRef.current = e.touches[0].clientX - touchStartXRef.current;
+  };
+
+  const handleTouchEnd = () => {
+    const delta = touchDeltaXRef.current;
+    const threshold = 40;
+    if (Math.abs(delta) > threshold) {
+      if (delta < 0) next(); else prev();
+    }
+    touchStartXRef.current = null;
+    touchDeltaXRef.current = 0;
+  };
   
   const testimonials = [
     {
@@ -39,7 +64,7 @@ const Testimonials = () => {
         
         <div className="relative">
           {/* Slider viewport */}
-          <div className="overflow-hidden pb-4 px-0 max-w-md mx-auto md:max-w-none">
+          <div className="overflow-hidden pb-4 px-0 max-w-md mx-auto md:max-w-none" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
             {/* Slider track */}
             <div
               className="flex transition-transform duration-500 ease-in-out"

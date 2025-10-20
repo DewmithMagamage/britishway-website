@@ -25,7 +25,7 @@ const CoursesPage = () => {
       description: "Intensive English learning program designed for rapid skill development. Perfect for students who want to accelerate their English proficiency in a short time.",
       instructor: "Sarah Johnson - Head of Product Customer Platform Expert Instructor",
       category: "Full Time Diplomas",
-      image: "/images/course card.jpg"
+      image: "/images/50 Day Residential camp.jpg"
     },
     {
       id: 2,
@@ -33,7 +33,7 @@ const CoursesPage = () => {
       description: "Comprehensive English diploma program covering all essential language skills. Structured curriculum with practical applications and real-world scenarios.",
       instructor: "Sarah Johnson - Head of Product Customer Platform Expert Instructor",
       category: "Full Time Diplomas",
-      image: "/images/course card.jpg"
+      image: "/images/Weekday Diploma copy.jpg"
     },
     {
       id: 3,
@@ -49,7 +49,7 @@ const CoursesPage = () => {
       description: "Flexible weekend program designed for working professionals. Balance your career with English language development through our structured weekend classes.",
       instructor: "Sarah Johnson - Head of Product Customer Platform Expert Instructor",
       category: "Part Time Diplomas",
-      image: "/images/course card.jpg"
+      image: "/images/Weekend Diploma.jpg"
     },
     {
       id: 5,
@@ -57,7 +57,7 @@ const CoursesPage = () => {
       description: "Modern online learning experience with interactive sessions and digital resources. Learn English from anywhere with our comprehensive online platform.",
       instructor: "Sarah Johnson - Head of Product Customer Platform Expert Instructor",
       category: "Online Courses",
-      image: "/images/course card.jpg"
+      image: "/images/Online Diploma copy.jpg"
     },
     {
       id: 6,
@@ -65,7 +65,7 @@ const CoursesPage = () => {
       description: "Combined program offering both English language skills and IT fundamentals. Perfect for students looking to enhance their career prospects in technology.",
       instructor: "Sarah Johnson - Head of Product Customer Platform Expert Instructor",
       category: "Full Time Diplomas",
-      image: "/images/course card.jpg"
+      image: "/images/IT+English.jpg"
     },
     {
       id: 7,
@@ -73,7 +73,7 @@ const CoursesPage = () => {
       description: "Fun and engaging English classes designed specifically for children. Interactive learning methods that make English enjoyable for young learners.",
       instructor: "Sarah Johnson - Head of Product Customer Platform Expert Instructor",
       category: "Kids Class",
-      image: "/images/course card.jpg"
+      image: "/images/Kids Class.jpg"
     },
     {
       id: 8,

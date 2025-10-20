@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const programmes = [
@@ -16,6 +16,34 @@ const Programmes = () => {
   const CARD_WIDTH = 350;
   const CARD_HEIGHT = 400;
   const CARD_GAP = 24; // Tailwind gap-6
+
+  // Touch swipe handling
+  const touchStartXRef = useRef(null);
+  const touchDeltaXRef = useRef(0);
+
+  const handleTouchStart = (e) => {
+    touchStartXRef.current = e.touches[0].clientX;
+    touchDeltaXRef.current = 0;
+  };
+
+  const handleTouchMove = (e) => {
+    if (touchStartXRef.current === null) return;
+    touchDeltaXRef.current = e.touches[0].clientX - touchStartXRef.current;
+  };
+
+  const handleTouchEnd = () => {
+    const delta = touchDeltaXRef.current;
+    const threshold = 40; // px
+    if (Math.abs(delta) > threshold) {
+      if (delta < 0) {
+        next();
+      } else {
+        prev();
+      }
+    }
+    touchStartXRef.current = null;
+    touchDeltaXRef.current = 0;
+  };
 
   // Determine cards to show based on viewport width
   useEffect(() => {
@@ -78,7 +106,7 @@ const Programmes = () => {
           </button>
 
           {/* Cards Container */}
-          <div className="overflow-hidden px-6 sm:px-10 lg:px-16">
+          <div className="overflow-hidden px-6 sm:px-10 lg:px-16" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
             <div 
               className="flex gap-6 transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentIndex * (CARD_WIDTH + CARD_GAP)}px)` }}
