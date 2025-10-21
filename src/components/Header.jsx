@@ -62,7 +62,7 @@ const Header = () => {
         
         {/* Navigation Bar */}
         <div className="px-3 py-1">
-          <nav className="max-w-7xl mx-auto backdrop-blur-md bg-gray-100/30 rounded-2xl shadow-xl border border-gray-200/50">
+          <nav className="max-w-7xl mx-auto backdrop-blur-md bg-gray-100/70 rounded-2xl shadow-xl border border-gray-200/50">
             <div className="px-2 py-1">
               <div className="flex justify-between items-center">
               {/* Logo */}
