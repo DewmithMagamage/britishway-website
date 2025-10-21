@@ -10,10 +10,10 @@ export const branches = [
     description:"British Way English Academy – Nittambuwa Branch is a proud part of the island-wide British Way network, offering world-class English education to students of all ages. Our goal is to help learners build fluency, confidence, and personality through interactive lessons, practical speaking sessions, and expert guidance. With a proven record of success, the Nittambuwa Branch continues to inspire students to become confident, articulate, and globally competitive communicators.",
     socialLinks: {
       facebook: "https://www.facebook.com/Britishwayenglishacademynittambuwa",
-      instagram: "",
-      youtube: "",
-      tiktok: "",
-      whatsapp: "",
+      instagram: "https://www.instagram.com/britishwaylk?igsh=N2VsYzl4ZG5jMHIx",
+      youtube: "https://www.youtube.com/@BritishWayEnglishAcademy",
+      tiktok: "https://www.tiktok.com/@britishwayenglishacademy?is_from_webapp=1&sender_device=pc",
+      whatsapp: "https://wa.me/94711010010",
     },
     gallery: [
       "/images/nittambuwa-gallery-1.jpg",
@@ -58,26 +58,29 @@ export const branches = [
   {
     id: "galle",
     name: "Galle Branch",
-    phone: "0754058843",
+    phone: "0779996368",
     landline: "0333555311",
     address: "33/1, Wakwella Road, Galle",
     email: "gallebwea@gmail.com",
     mapUrl: "https://maps.app.goo.gl/6PfrNPfxNEL6oUBVA",
     description:"British Way English Academy – Galle Branch is a premier center for English language learning in the historic city of Galle. As part of the respected British Way network, the branch is dedicated to helping students build fluency, confidence, and cultural awareness through structured lessons, modern teaching methods, and expert guidance. With experienced instructors and dynamic programs ranging from General English to IELTS and professional communication courses, the Galle Branch provides an engaging learning environment that empowers students to excel academically, professionally, and globally.",
     socialLinks: { 
-      facebook: "", 
-      instagram: "", 
+      facebook: "https://www.facebook.com/share/1A3EXerLES/", 
+      instagram: "https://www.instagram.com/british_way_galle_official?igsh=MWlwNjhpZW1ibWhrYg==", 
       youtube: "", 
-      tiktok: "", 
-      messenger: "", 
-      whatsapp: "", 
-      linkedin: "", 
-      twitter: "" 
+      tiktok: "https://www.tiktok.com/@bwat28?_t=ZS-90hlwd8xsYs&_r=1", 
+      whatsapp: "https://wa.me/94779996368"
     },
     gallery: [
-      "/images/branches/galle-gallery-1.jpg",
-      "/images/branches/galle-gallery-2.jpg",
-      "/images/branches/galle-gallery-3.jpg"
+      "/images/galle-gallery-1.jpg",
+      "/images/galle-gallery-2.jpg",
+      "/images/galle-gallery-3.jpg",
+      "/images/galle-gallery-4.jpg",
+      "/images/galle-gallery-5.jpg",
+      "/images/galle-gallery-6.jpg",
+      "/images/galle-gallery-7.jpg",
+      "/images/galle-gallery-8.jpg",
+      "/images/galle-gallery-9.jpg"
     ]
   },
   {
@@ -90,19 +93,22 @@ export const branches = [
     mapUrl: "https://maps.app.goo.gl/x7CJNsFw49u8A3s96",
     description:"British Way English Academy – Kandy Branch is a premier center for English language learning in the heart of the Central Province. As part of the esteemed British Way network, the Kandy Branch focuses on developing students’ fluency, confidence, and communicative competence through a carefully designed curriculum and modern teaching methodologies. With experienced instructors guiding learners from beginner to advanced levels across General English, Spoken English, IELTS, and professional courses, the branch provides an engaging and dynamic learning environment. Strategically located in culturally rich Kandy, the branch empowers students to excel academically and professionally while fostering global-ready, confident communicators.",
     socialLinks: { 
-      facebook: "", 
+      facebook: "https://www.facebook.com/britishwaykandyofficial", 
       instagram: "", 
       youtube: "", 
       tiktok: "", 
-      messenger: "", 
-      whatsapp: "", 
-      linkedin: "", 
-      twitter: "" 
+      whatsapp: "https://wa.me/94779756410"
     },
     gallery: [
-      "/images/branches/kandy-gallery-1.jpg",
-      "/images/branches/kandy-gallery-2.jpg",
-      "/images/branches/kandy-gallery-3.jpg"
+      "/images/kandy-gallery-1.jpg",
+      "/images/kandy-gallery-2.jpg",
+      "/images/kandy-gallery-3.jpg",
+      "/images/kandy-gallery-4.jpg",
+      "/images/kandy-gallery-5.jpg",
+      "/images/kandy-gallery-6.jpg",
+      "/images/kandy-gallery-7.jpg",
+      "/images/kandy-gallery-8.jpg",
+      "/images/kandy-gallery-9.jpg"
     ]
   },
   {
@@ -115,19 +121,22 @@ export const branches = [
     mapUrl: "https://maps.app.goo.gl/5wNVm6rUjQLxBHUHA?g_st=aw",
     description:"British Way English Academy – Polonnaruwa Branch is a premier center for English language learning in the heart of Polonnaruwa. As part of the esteemed British Way network, the branch combines traditional teaching excellence with modern methodologies to provide a transformative learning experience. Students develop fluency, confidence, and practical communication skills through a carefully structured curriculum that covers grammar, vocabulary, speaking, listening, and writing. Guided by highly qualified instructors and enriched with interactive lessons, workshops, and extracurricular activities, the Polonnaruwa Branch empowers learners to become articulate, confident, and globally competent communicators ready to excel academically and professionally.",
     socialLinks: { 
-      facebook: "", 
-      instagram: "", 
-      youtube: "", 
-      tiktok: "", 
-      messenger: "", 
-      whatsapp: "", 
-      linkedin: "", 
-      twitter: "" 
+      facebook: "https://www.facebook.com/share/1GiZxercZZ/", 
+      instagram: "https://www.instagram.com/brtishway_polonnaruwa?igsh=MzBlcDZrcGJyZXA2", 
+      youtube: "https://www.youtube.com/@BritishWayPolonaruwa", 
+      tiktok: "https://tiktok.com/@britishway.polonnnaruwa", 
+      whatsapp: "https://wa.me/94742025203"
     },
     gallery: [
-      "/images/branches/polonnaruwa-gallery-1.jpg",
-      "/images/branches/polonnaruwa-gallery-2.jpg",
-      "/images/branches/polonnaruwa-gallery-3.jpg"
+      "/images/polonnaruwa-gallery-1.jpg",
+      "/images/polonnaruwa-gallery-2.jpg",
+      "/images/polonnaruwa-gallery-3.jpg",
+      "/images/polonnaruwa-gallery-4.jpg",
+      "/images/polonnaruwa-gallery-5.jpg",
+      "/images/polonnaruwa-gallery-6.jpg",
+      "/images/polonnaruwa-gallery-7.jpg",
+      "/images/polonnaruwa-gallery-8.jpg",
+      "/images/polonnaruwa-gallery-9.jpg"
     ]
   },
   {
@@ -140,14 +149,11 @@ export const branches = [
     mapUrl: "https://maps.app.goo.gl/7kSFfzLWjnESothe9",
     description:"British Way English Academy – Nugegoda Branch is a leading center for English language learning in Sri Lanka, combining prestige, expertise, and a proven track record. As part of the island-wide British Way network, the Nugegoda Branch goes beyond traditional language teaching, helping students develop fluency, confidence, communication skills, and a global outlook. The branch offers comprehensive programs including General English, Spoken English, IELTS preparation, and immersive learning experiences, alongside essential life skills such as interview readiness, public speaking, leadership, and etiquette. Guided by nationally and internationally trained instructors and enriched with interactive assessments, mock interviews, and speaking camps, the Nugegoda Branch empowers students to excel academically, professionally, and globally.",
     socialLinks: { 
-      facebook: "", 
-      instagram: "", 
+      facebook: "https://www.facebook.com/share/1ADcigWiay/", 
+      instagram: "https://www.instagram.com/britishway.nugegoda?igsh=MWludmM5dTJkNzltMQ==", 
       youtube: "", 
-      tiktok: "", 
-      messenger: "", 
-      whatsapp: "", 
-      linkedin: "", 
-      twitter: "" 
+      tiktok: "https://www.tiktok.com/@britishway.nugegoda?_t=ZS-90hnF5aNkbx&_r=1", 
+      whatsapp: "https://wa.me/94742025198", 
     },
     gallery: [
       "/images/nugegoda-gallery-1.jpg",
@@ -171,11 +177,11 @@ export const branches = [
     mapUrl: "https://maps.app.goo.gl/rZPVB2UuVDPH9TMUA",
     description:"British Way English Academy – Kalutara Branch is a premier center for English language learning in the heart of Kalutara. As part of the esteemed British Way network, the branch is dedicated to developing students’ fluency, confidence, and practical communication skills through interactive lessons, modern teaching methods, and expert guidance. Offering programs from beginner to advanced levels—including Spoken English, Grammar, Business Communication, and IELTS—the Kalutara Branch ensures students gain both theoretical knowledge and real-world language proficiency. With highly qualified instructors, engaging classroom experiences, and a supportive learning environment, the branch empowers learners to become articulate, confident, and globally competitive communicators.",
     socialLinks: { 
-      facebook: "", 
-      instagram: "", 
-      youtube: "", 
-      tiktok: "", 
-      whatsapp: ""
+      facebook: "https://www.facebook.com/share/1MSpDme81a/", 
+      instagram: "https://www.instagram.com/britishwaykalutara?igsh=MTMxa2d2NWE5ZTVncQ==", 
+      youtube: "https://www.youtube.com/@BritishWayEnglishAcademy12200", 
+      tiktok: "https://www.tiktok.com/@bweakalutara?_t=ZS-90hnzCd3qlt&_r=1", 
+      whatsapp: "https://wa.me/94764337482"
     },
     gallery: [
       "/images/kalutara-gallery-1.jpg",
@@ -199,11 +205,11 @@ export const branches = [
     mapUrl: "https://maps.app.goo.gl/nkbCFV4Z3hV5Mzha7",
     description:"British Way English Academy – Kiribathgoda Branch, established in 2007, offers a structured path for learners to progress from foundational English to advanced proficiency. As part of the respected British Way network, the branch provides comprehensive support in grammar, vocabulary, reading, writing, speaking, listening, pronunciation, and essential soft skills such as interview preparation. With flexible schedules including weekday, weekend, and evening classes, Kiribathgoda Branch accommodates students balancing school, work, or other commitments. Guided by highly qualified local and international instructors, students benefit from modern teaching methods, interactive lessons, and a robust learning environment, empowering them to achieve confidence, fluency, and practical communication skills for academic and professional success.",
     socialLinks: { 
-      facebook: "", 
-      instagram: "", 
-      youtube: "", 
-      tiktok: "", 
-      whatsapp: ""
+      facebook: "https://www.facebook.com/share/1Cz6FUZzKy/", 
+      instagram: "https://www.instagram.com/_britishway_kiribathgoda?igsh=bDY4ZWh2NGZudzFh", 
+      youtube: "http://www.youtube.com/@britishwayenglishacademy11600", 
+      tiktok: "https://www.tiktok.com/@britishway_kiriba?_t=ZS-90hmz5rJIIB&_r=1", 
+      whatsapp: "https://wa.me/94762306443"
     },
     gallery: [
       "/images/kiribathgoda-gallery-1.jpg",
@@ -227,16 +233,22 @@ export const branches = [
     mapUrl: "https://maps.app.goo.gl/GrSL4fcoyjMM7y8i8",
     description:"British Way English Academy – Bandarawela Branch is a premier center for English language learning in the scenic hill country. As part of the esteemed British Way network, the branch provides a learner-centered environment that combines modern teaching methods, interactive lessons, and a carefully structured curriculum for all proficiency levels. Students develop fluency, confidence, and practical communication skills through programs ranging from beginner to advanced, enhanced with pronunciation practice and confidence-building exercises. With highly qualified instructors, personalized mentorship, and a focus on both academic and personal growth, the Bandarawela Branch empowers learners to excel academically, professionally, and globally.",
     socialLinks: { 
-      facebook: "", 
-      instagram: "", 
-      youtube: "", 
-      tiktok: "", 
-      whatsapp: ""
+      facebook: "https://www.facebook.com/BritishWayBandarawela", 
+      instagram: "https://www.instagram.com/britishway.bandarawela?igsh=OGM5d3A0ZnlqdzM5", 
+      youtube: "https://youtube.com/@britishwayenglishacademy90100?si=TSEf92bwVpbqr1Oy", 
+      tiktok: "https://www.tiktok.com/@bwea.bandarawela?_t=ZS-90hlWJeJVhQ&_r=1", 
+      whatsapp: "https://wa.me/94743844439"
     },
     gallery: [
-      "/images/branches/bandarawela-gallery-1.jpg",
-      "/images/branches/bandarawela-gallery-2.jpg",
-      "/images/branches/bandarawela-gallery-3.jpg"
+      "/images/bandarawela-gallery-1.jpg",
+      "/images/bandarawela-gallery-2.jpg",
+      "/images/bandarawela-gallery-3.jpg",
+      "/images/bandarawela-gallery-4.jpg",
+      "/images/bandarawela-gallery-5.jpg",
+      "/images/bandarawela-gallery-6.jpg",
+      "/images/bandarawela-gallery-7.jpg",
+      "/images/bandarawela-gallery-8.jpg",
+      "/images/bandarawela-gallery-9.jpg"
     ]
   },
   {
@@ -249,16 +261,22 @@ export const branches = [
     mapUrl: "https://maps.app.goo.gl/VCBbzzLqfr5PUX7i6",
     description:"British Way English Academy – Negombo Branch is a leading center for English language learning in the vibrant coastal city of Negombo. As part of the esteemed British Way network, the branch offers a structured curriculum for learners of all levels—from beginners to advanced—fostering fluency, confidence, and practical communication skills. With modern classrooms, multimedia teaching tools, and highly qualified instructors, students engage in interactive lessons that develop grammar, vocabulary, pronunciation, and real-world conversational abilities. Beyond academics, the Negombo Branch emphasizes personality development, cross-cultural communication, and global readiness, empowering learners to excel academically, professionally, and internationally.",
     socialLinks: { 
-      facebook: "", 
-      instagram: "", 
-      youtube: "", 
-      tiktok: "", 
-      whatsapp: ""
+      facebook: "https://www.facebook.com/BritishWayNegomboOfficial?mibextid=LQQJ4d", 
+      instagram: "https://www.instagram.com/britishwa_negombo1?igsh=MTFwc2Y5MWY0enlldw==", 
+      youtube: "https://youtube.com/@britishwayenglishacademy11500?si=gKrJ5ZWCrYZHZIQg", 
+      tiktok: "https://www.tiktok.com/@british.way.negom?_t=ZS-90hiFSXpOrQ&_r=1", 
+      whatsapp: "https://wa.me/94763232773"
     },
     gallery: [
-      "/images/branches/negombo-gallery-1.jpg",
-      "/images/branches/negombo-gallery-2.jpg",
-      "/images/branches/negombo-gallery-3.jpg"
+      "/images/negombo-gallery-1.jpg",
+      "/images/negombo-gallery-2.jpg",
+      "/images/negombo-gallery-3.jpg",
+      "/images/negombo-gallery-4.jpg",
+      "/images/negombo-gallery-5.jpg",
+      "/images/negombo-gallery-6.jpg",
+      "/images/negombo-gallery-7.jpg",
+      "/images/negombo-gallery-8.jpg",
+      "/images/negombo-gallery-9.jpg"
     ]
   },
   {
@@ -270,11 +288,23 @@ export const branches = [
     email: "kurunegalabwea@gmail.com",
     mapUrl: "https://maps.app.goo.gl/pwy2yoZJjz9xufcy5",
     description:"British Way English Academy – Kurunegala Branch is a premier center for English language learning in the cultural and educational hub of Kurunegala. As part of the renowned British Way network, the branch provides a structured and interactive curriculum for learners of all levels—from beginners to advanced—fostering fluency, confidence, and global communication skills. Guided by highly qualified instructors and supported by modern classrooms and multimedia tools, students engage in practical learning that develops grammar, vocabulary, pronunciation, and real-world conversational ability. Beyond academics, the Kurunegala Branch emphasizes personality development, cultural awareness, and critical thinking, empowering learners to excel academically, professionally, and as confident global citizens.",
-    socialLinks: { facebook: "", instagram: "", youtube: "", tiktok: "", messenger: "", whatsapp: "", linkedin: "", twitter: "" },
+    socialLinks: { 
+      facebook: "", 
+      instagram: "", 
+      youtube: "", 
+      tiktok: "", 
+      whatsapp: ""
+    },
     gallery: [
-      "/images/branches/kurunegala-gallery-1.jpg",
-      "/images/branches/kurunegala-gallery-2.jpg",
-      "/images/branches/kurunegala-gallery-3.jpg"
+      "/images/kurunegala-gallery-1.jpg",
+      "/images/kurunegala-gallery-2.jpg",
+      "/images/kurunegala-gallery-3.jpg",
+      "/images/kurunegala-gallery-4.jpg",
+      "/images/kurunegala-gallery-5.jpg",
+      "/images/kurunegala-gallery-6.jpg",
+      "/images/kurunegala-gallery-7.jpg",
+      "/images/kurunegala-gallery-8.jpg",
+      "/images/kurunegala-gallery-9.jpg"
     ]
   },
   {
@@ -286,11 +316,20 @@ export const branches = [
     email: "bwearathnapura@gmail.com",
     mapUrl: "https://maps.app.goo.gl/nhv6GgBVpYPeVfm99",
     description:"British Way English Academy – Rathnapura Branch is a leading center for English language learning in the heart of Rathnapura. As part of the esteemed British Way network, the branch provides a structured and interactive curriculum for learners of all ages, fostering fluency, confidence, and practical communication skills. Guided by highly qualified instructors and supported by modern classrooms and multimedia resources, students engage in lessons that develop grammar, vocabulary, pronunciation, and real-world conversational ability. Beyond academics, the Rathnapura Branch emphasizes personality development, leadership, and cultural awareness, empowering learners to excel academically, professionally, and as confident global communicators.",
-    socialLinks: { facebook: "", instagram: "", youtube: "", tiktok: "", messenger: "", whatsapp: "", linkedin: "", twitter: "" },
+    socialLinks: { 
+      facebook: "", 
+      instagram: "", 
+      youtube: "", 
+      tiktok: "", 
+      messenger: "", 
+      whatsapp: "", 
+      linkedin: "", 
+      twitter: "" 
+    },
     gallery: [
-      "/images/branches/ratnapura-gallery-1.jpg",
-      "/images/branches/ratnapura-gallery-2.jpg",
-      "/images/branches/ratnapura-gallery-3.jpg"
+      "/images/ratnapura-gallery-1.jpg",
+      "/images/ratnapura-gallery-2.jpg",
+      "/images/ratnapura-gallery-3.jpg"
     ]
   },
   {
@@ -304,9 +343,9 @@ export const branches = [
     description:"British Way English Academy – Gampaha Branch, founded in 2013, is a premier center for English language learning in the heart of Gampaha. As part of the island-wide British Way network, the branch provides comprehensive training in all four core language skills—reading, writing, speaking, and listening—while also emphasizing confidence, etiquette, and presentation skills. Students benefit from flexible programs, including General English, Spoken English, Advanced Certificates, and IELTS preparation, along with weekend and short-term courses to suit busy schedules. With highly qualified instructors, interactive lessons, and a supportive learning environment, the Gampaha Branch empowers learners to excel academically, professionally, and as confident global communicators.",
     socialLinks: { facebook: "", instagram: "", youtube: "", tiktok: "", messenger: "", whatsapp: "", linkedin: "", twitter: "" },
     gallery: [
-      "/images/branches/gampaha-gallery-1.jpg",
-      "/images/branches/gampaha-gallery-2.jpg",
-      "/images/branches/gampaha-gallery-3.jpg"
+      "/images/gampaha-gallery-1.jpg",
+      "/images/gampaha-gallery-2.jpg",
+      "/images/gampaha-gallery-3.jpg"
     ]
   },
   {
@@ -320,9 +359,9 @@ export const branches = [
     description:"British Way English Academy – Anuradhapura Branch is a premier center for English language learning in the historic city of Anuradhapura. As part of the esteemed British Way network, the branch offers a structured curriculum for learners of all levels—from foundational to advanced—fostering fluency, confidence, and practical communication skills. With modern classrooms, interactive lessons, and highly qualified instructors, students develop grammar, vocabulary, pronunciation, and real-world conversational abilities. The branch also emphasizes personality development, business communication, IELTS preparation, and academic writing, empowering learners to excel academically, professionally, and as confident global communicators.",
     socialLinks: { facebook: "", instagram: "", youtube: "", tiktok: "", messenger: "", whatsapp: "", linkedin: "", twitter: "" },
     gallery: [
-      "/images/branches/anuradhapura-gallery-1.jpg",
-      "/images/branches/anuradhapura-gallery-2.jpg",
-      "/images/branches/anuradhapura-gallery-3.jpg"
+      "/images/anuradhapura-gallery-1.jpg",
+      "/images/anuradhapura-gallery-2.jpg",
+      "/images/anuradhapura-gallery-3.jpg"
     ]
   }
 ];

@@ -11,9 +11,12 @@ const Footer = () => {
         {/* Top Section: Logo and Newsletter */}
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-5 sm:gap-8 mb-8">
           <img 
-            src="images/Britishway white logo.png" 
+            src="/images/Britishway white logo.png" 
             alt="British Way English Academy" 
-            className="h-10 sm:h-12 w-auto" 
+            className="h-10 sm:h-12 w-auto"
+            width="180" 
+            height="48"
+            loading="lazy"
           />
           <div className="flex items-center bg-white rounded-full overflow-hidden w-full sm:w-auto">
             <input

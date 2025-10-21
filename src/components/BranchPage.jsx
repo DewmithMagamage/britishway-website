@@ -1,12 +1,14 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock, Users, Award, ArrowRight, Search } from "lucide-react";
 import Layout from "./Layout";
+import RegistrationPopup from "./RegistrationPopup";
 import { branches } from "../data/branches";
 
 const BranchPage = () => {
   const { branchId } = useParams();
   const navigate = useNavigate();
+  const [showRegistrationPopup, setShowRegistrationPopup] = useState(false);
   
   // Find the branch data from the imported branches array
   const branch = branches.find(b => b.id === branchId) || branches[0];
@@ -148,27 +150,49 @@ const BranchPage = () => {
           const rafRef = useRef(null);
           const offsetRef = useRef(0);
           const widthRef = useRef(0);
+          const isAnimatingRef = useRef(false);
 
           useEffect(() => {
             const track = galleryTrackRef.current;
-            if (!track) return;
+            if (!track || isAnimatingRef.current) return;
 
-            // Measure width of a single set (half of duplicated content)
-            const singleSetWidth = track.scrollWidth / 2;
-            widthRef.current = singleSetWidth;
-
-            const speedPxPerFrame = 0.7; // tune speed here
-            const step = () => {
-              offsetRef.current += speedPxPerFrame;
-              if (offsetRef.current >= widthRef.current) {
-                offsetRef.current = 0;
-              }
-              track.style.transform = `translateX(-${offsetRef.current}px)`;
-              rafRef.current = requestAnimationFrame(step);
+            const start = () => {
+              isAnimatingRef.current = true;
+              
+              // Wait for images to load and measure
+              const measureAndStart = () => {
+                const singleSetWidth = track.scrollWidth / 2;
+                if (singleSetWidth > 0) {
+                  widthRef.current = singleSetWidth;
+                  
+                  const speedPxPerFrame = 0.5; // Slower for smoother effect
+                  const step = () => {
+                    if (!isAnimatingRef.current) return;
+                    
+                    offsetRef.current += speedPxPerFrame;
+                    if (offsetRef.current >= widthRef.current) {
+                      offsetRef.current = 0;
+                    }
+                    track.style.transform = `translateX(-${offsetRef.current}px)`;
+                    rafRef.current = requestAnimationFrame(step);
+                  };
+                  rafRef.current = requestAnimationFrame(step);
+                } else {
+                  // Retry if width not ready
+                  setTimeout(measureAndStart, 100);
+                }
+              };
+              
+              measureAndStart();
             };
-            rafRef.current = requestAnimationFrame(step);
+
+            // Start animation after a short delay to ensure images are loaded
+            const timer = setTimeout(start, 500);
+
             return () => {
+              isAnimatingRef.current = false;
               if (rafRef.current) cancelAnimationFrame(rafRef.current);
+              clearTimeout(timer);
             };
           }, []);
 
@@ -182,13 +206,24 @@ const BranchPage = () => {
 
           return (
             <div className="overflow-hidden">
-              <div className="flex gap-6 will-change-transform" ref={galleryTrackRef}>
+              <div className="flex gap-6 will-change-transform whitespace-nowrap" ref={galleryTrackRef}>
                 {[...images, ...images].map((src, idx) => (
                   <img
                     key={idx}
                     src={src}
                     alt={`Gallery ${idx + 1}`}
-                    className="rounded-xl shadow-lg object-cover h-56 sm:h-64 md:h-72 lg:h-80 w-auto"
+                    className="rounded-xl shadow-lg object-cover h-56 sm:h-64 md:h-72 lg:h-80 w-auto inline-block flex-shrink-0"
+                    loading="lazy"
+                    onLoad={() => {
+                      // Trigger re-measurement when images load
+                      if (galleryTrackRef.current && !isAnimatingRef.current) {
+                        const track = galleryTrackRef.current;
+                        const singleSetWidth = track.scrollWidth / 2;
+                        if (singleSetWidth > 0 && widthRef.current === 0) {
+                          widthRef.current = singleSetWidth;
+                        }
+                      }
+                    }}
                   />
                 ))}
               </div>
@@ -206,7 +241,10 @@ const BranchPage = () => {
             with 16 branches and over 21,000 graduates annually. Guided by a passionate, qualified team, 
             we believe every student has unlimited potential and we're here to unlock it.
           </p>
-          <button className="px-8 py-4 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 transition-colors text-lg font-semibold flex items-center mx-auto">
+          <button 
+            onClick={() => setShowRegistrationPopup(true)}
+            className="px-8 py-4 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 transition-colors text-lg font-semibold flex items-center mx-auto"
+          >
             REGISTER NOW <ArrowRight className="ml-2 w-5 h-5" />
           </button>
         </div>
@@ -254,6 +292,14 @@ const BranchPage = () => {
         </button>
       </section>
       </main>
+      
+      {/* Registration Popup */}
+      <RegistrationPopup
+        isOpen={showRegistrationPopup}
+        onClose={() => setShowRegistrationPopup(false)}
+        branchName={branch.name}
+        branchId={branch.id}
+      />
     </Layout>
   );
 };
