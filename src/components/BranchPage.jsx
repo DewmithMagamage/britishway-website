@@ -19,7 +19,7 @@ const BranchPage = () => {
       {/* Hero Section (unified style) */}
       <section className="relative h-[60vh] overflow-hidden -mt-24">
         <img 
-          src={`/images/branches/${branchId}-hero.jpg`} 
+          src={`/images/${branchId}-hero.png`} 
           alt={branch.name} 
           className="absolute top-0 left-0 w-full h-full object-cover"
         />
@@ -42,7 +42,7 @@ const BranchPage = () => {
           </div>
 
           <div>
-            <img src={`/images/branches/${branchId}-gallery-1.jpg`} alt={`${branch.name} campus`} className="rounded-xl shadow-md object-cover h-64 w-full" />
+            <img src={`/images/nittambuwabranch.png`} alt={`${branch.name} campus`} className="rounded-xl shadow-md object-cover h-64 w-full" />
           </div>
         </div>
       </section>
@@ -93,7 +93,7 @@ const BranchPage = () => {
 
         <div className="grid md:grid-cols-4 gap-6">
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <img src="/images/courses/weekend-diploma.jpg" alt="Weekend Diploma" className="w-full h-48 object-cover" />
+            <img src="/images/Weekend Diploma.jpg" alt="Weekend Diploma" className="w-full h-48 object-cover" />
             <div className="p-6">
               <h4 className="text-lg font-semibold text-gray-900 mb-3">Weekend Diploma</h4>
               <p className="text-gray-600 text-sm mb-4">Product Management Masterclass, you will learn with Sarah Johnson - Head of Product Customer Platform, Super cool tools</p>
@@ -104,7 +104,7 @@ const BranchPage = () => {
           </div>
 
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <img src="/images/courses/weekday-2months.jpg" alt="Weekday Diploma 2 Months" className="w-full h-48 object-cover" />
+            <img src="/images/Weekday Diploma copy.jpg" alt="Weekday Diploma 2 Months" className="w-full h-48 object-cover" />
             <div className="p-6">
               <h4 className="text-lg font-semibold text-gray-900 mb-3">Weekday Diploma - 2 Months</h4>
               <p className="text-gray-600 text-sm mb-4">Product Management Masterclass, you will learn with Sarah Johnson - Head of Product Customer Platform, Super cool tools</p>
@@ -115,7 +115,7 @@ const BranchPage = () => {
           </div>
 
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <img src="/images/courses/weekday-3months.jpg" alt="Weekday Diploma 3 Months" className="w-full h-48 object-cover" />
+            <img src="/images/weekday Diploma copy.jpg" alt="Weekday Diploma 3 Months" className="w-full h-48 object-cover" />
             <div className="p-6">
               <h4 className="text-lg font-semibold text-gray-900 mb-3">Weekday Diploma - 3 Months</h4>
               <p className="text-gray-600 text-sm mb-4">Product Management Masterclass, you will learn with Sarah Johnson - Head of Product Customer Platform, Super cool tools</p>
@@ -126,7 +126,7 @@ const BranchPage = () => {
           </div>
 
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <img src="/images/courses/online-diploma.jpg" alt="Online English Diploma" className="w-full h-48 object-cover" />
+            <img src="/images/Online Diploma copy.jpg" alt="Online English Diploma" className="w-full h-48 object-cover" />
             <div className="p-6">
               <h4 className="text-lg font-semibold text-gray-900 mb-3">Online English Diploma</h4>
               <p className="text-gray-600 text-sm mb-4">Product Management Masterclass, you will learn with Sarah Johnson - Head of Product Customer Platform, Super cool tools</p>
@@ -138,7 +138,7 @@ const BranchPage = () => {
         </div>
       </section>
 
-      {/* Gallery Section - Infinite Auto Carousel */}
+      {/* Gallery Section - Grid Layout with Auto-scroll */}
       <section className="max-w-7xl mx-auto px-6 py-16">
         <div className="text-center mb-12">
           <h3 className="text-3xl font-bold text-gray-900 mb-4">Gallery</h3>
@@ -149,48 +149,35 @@ const BranchPage = () => {
           const galleryTrackRef = useRef(null);
           const rafRef = useRef(null);
           const offsetRef = useRef(0);
-          const widthRef = useRef(0);
-          const isAnimatingRef = useRef(false);
 
           useEffect(() => {
             const track = galleryTrackRef.current;
-            if (!track || isAnimatingRef.current) return;
+            if (!track) return;
 
-            const start = () => {
-              isAnimatingRef.current = true;
-              
-              // Wait for images to load and measure
-              const measureAndStart = () => {
-                const singleSetWidth = track.scrollWidth / 2;
-                if (singleSetWidth > 0) {
-                  widthRef.current = singleSetWidth;
-                  
-                  const speedPxPerFrame = 0.5; // Slower for smoother effect
-                  const step = () => {
-                    if (!isAnimatingRef.current) return;
-                    
-                    offsetRef.current += speedPxPerFrame;
-                    if (offsetRef.current >= widthRef.current) {
-                      offsetRef.current = 0;
-                    }
-                    track.style.transform = `translateX(-${offsetRef.current}px)`;
-                    rafRef.current = requestAnimationFrame(step);
-                  };
-                  rafRef.current = requestAnimationFrame(step);
-                } else {
-                  // Retry if width not ready
-                  setTimeout(measureAndStart, 100);
+            const startAnimation = () => {
+              const animate = () => {
+                offsetRef.current += 0.2; // Very smooth animation
+                
+                // Calculate the width of one complete set (all images)
+                const totalWidth = track.scrollWidth;
+                const singleSetWidth = totalWidth / 2; // Since we duplicate
+                
+                // Reset to beginning when we've scrolled past the first set
+                if (offsetRef.current >= singleSetWidth) {
+                  offsetRef.current = 0;
                 }
+                
+                track.style.transform = `translateX(-${offsetRef.current}px)`;
+                rafRef.current = requestAnimationFrame(animate);
               };
               
-              measureAndStart();
+              rafRef.current = requestAnimationFrame(animate);
             };
 
-            // Start animation after a short delay to ensure images are loaded
-            const timer = setTimeout(start, 500);
+            // Start animation after a delay to ensure images load
+            const timer = setTimeout(startAnimation, 2000);
 
             return () => {
-              isAnimatingRef.current = false;
               if (rafRef.current) cancelAnimationFrame(rafRef.current);
               clearTimeout(timer);
             };
@@ -206,25 +193,40 @@ const BranchPage = () => {
 
           return (
             <div className="overflow-hidden">
-              <div className="flex gap-6 will-change-transform whitespace-nowrap" ref={galleryTrackRef}>
-                {[...images, ...images].map((src, idx) => (
-                  <img
-                    key={idx}
-                    src={src}
-                    alt={`Gallery ${idx + 1}`}
-                    className="rounded-xl shadow-lg object-cover h-56 sm:h-64 md:h-72 lg:h-80 w-auto inline-block flex-shrink-0"
-                    loading="lazy"
-                    onLoad={() => {
-                      // Trigger re-measurement when images load
-                      if (galleryTrackRef.current && !isAnimatingRef.current) {
-                        const track = galleryTrackRef.current;
-                        const singleSetWidth = track.scrollWidth / 2;
-                        if (singleSetWidth > 0 && widthRef.current === 0) {
-                          widthRef.current = singleSetWidth;
-                        }
-                      }
-                    }}
-                  />
+              <div 
+                className="flex gap-6 will-change-transform" 
+                ref={galleryTrackRef}
+                style={{ width: 'max-content' }}
+              >
+                {/* First set of images */}
+                {images.map((src, idx) => (
+                  <div key={`first-${idx}`} className="flex-shrink-0">
+                    <img
+                      src={src}
+                      alt={`Gallery ${idx + 1}`}
+                      className="rounded-xl shadow-lg object-cover h-56 sm:h-64 md:h-72 lg:h-80 w-auto"
+                      loading="lazy"
+                      onError={(e) => {
+                        console.log(`Failed to load image: ${src}`);
+                        e.target.style.display = 'none';
+                      }}
+                    />
+                  </div>
+                ))}
+                {/* Second set of images for seamless loop */}
+                {images.map((src, idx) => (
+                  <div key={`second-${idx}`} className="flex-shrink-0">
+                    <img
+                      src={src}
+                      alt={`Gallery ${idx + 1}`}
+                      className="rounded-xl shadow-lg object-cover h-56 sm:h-64 md:h-72 lg:h-80 w-auto"
+                      loading="lazy"
+                      onError={(e) => {
+                        console.log(`Failed to load image: ${src}`);
+                        e.target.style.display = 'none';
+                      }}
+                    />
+                  </div>
                 ))}
               </div>
             </div>

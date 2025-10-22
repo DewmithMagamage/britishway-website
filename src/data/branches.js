@@ -151,7 +151,7 @@ export const branches = [
     socialLinks: { 
       facebook: "https://www.facebook.com/share/1ADcigWiay/", 
       instagram: "https://www.instagram.com/britishway.nugegoda?igsh=MWludmM5dTJkNzltMQ==", 
-      youtube: "", 
+      youtube: "https://youtube.com/@britishwayenglishacademy10250?si=7rlrSr8DgR1hsLzZ", 
       tiktok: "https://www.tiktok.com/@britishway.nugegoda?_t=ZS-90hnF5aNkbx&_r=1", 
       whatsapp: "https://wa.me/94742025198", 
     },
@@ -289,11 +289,11 @@ export const branches = [
     mapUrl: "https://maps.app.goo.gl/pwy2yoZJjz9xufcy5",
     description:"British Way English Academy – Kurunegala Branch is a premier center for English language learning in the cultural and educational hub of Kurunegala. As part of the renowned British Way network, the branch provides a structured and interactive curriculum for learners of all levels—from beginners to advanced—fostering fluency, confidence, and global communication skills. Guided by highly qualified instructors and supported by modern classrooms and multimedia tools, students engage in practical learning that develops grammar, vocabulary, pronunciation, and real-world conversational ability. Beyond academics, the Kurunegala Branch emphasizes personality development, cultural awareness, and critical thinking, empowering learners to excel academically, professionally, and as confident global citizens.",
     socialLinks: { 
-      facebook: "", 
-      instagram: "", 
-      youtube: "", 
-      tiktok: "", 
-      whatsapp: ""
+      facebook: "https://www.facebook.com/BritishWayKurunegala", 
+      instagram: "http://instagram.com/britishway_kurunegala?igsh=cjhpcGdiNmxreHZo", 
+      youtube: "https://www.youtube.com/@BritishWayEnglishAcademy-Kurun", 
+      tiktok: "https://www.tiktok.com/@britishwaykurunegala", 
+      whatsapp: "https://wa.me/94762638107"
     },
     gallery: [
       "/images/kurunegala-gallery-1.jpg",
@@ -317,19 +317,22 @@ export const branches = [
     mapUrl: "https://maps.app.goo.gl/nhv6GgBVpYPeVfm99",
     description:"British Way English Academy – Rathnapura Branch is a leading center for English language learning in the heart of Rathnapura. As part of the esteemed British Way network, the branch provides a structured and interactive curriculum for learners of all ages, fostering fluency, confidence, and practical communication skills. Guided by highly qualified instructors and supported by modern classrooms and multimedia resources, students engage in lessons that develop grammar, vocabulary, pronunciation, and real-world conversational ability. Beyond academics, the Rathnapura Branch emphasizes personality development, leadership, and cultural awareness, empowering learners to excel academically, professionally, and as confident global communicators.",
     socialLinks: { 
-      facebook: "", 
+      facebook: "https://www.facebook.com/BWAERatnapura", 
       instagram: "", 
-      youtube: "", 
+      youtube: "https://www.youtube.com/@BWEA_Rathnapura", 
       tiktok: "", 
-      messenger: "", 
-      whatsapp: "", 
-      linkedin: "", 
-      twitter: "" 
+      whatsapp: "https://wa.me/94774515773", 
     },
     gallery: [
       "/images/ratnapura-gallery-1.jpg",
       "/images/ratnapura-gallery-2.jpg",
-      "/images/ratnapura-gallery-3.jpg"
+      "/images/ratnapura-gallery-3.jpg",
+      "/images/ratnapura-gallery-4.jpg",
+      "/images/ratnapura-gallery-5.jpg",
+      "/images/ratnapura-gallery-6.jpg",
+      "/images/ratnapura-gallery-7.jpg",
+      "/images/ratnapura-gallery-8.jpg",
+      "/images/ratnapura-gallery-9.jpg"
     ]
   },
   {
@@ -341,11 +344,22 @@ export const branches = [
     email: "gampahabwea@gmail.com",
     mapUrl: "https://maps.app.goo.gl/VwzvqaPC9pRF3dpM6",
     description:"British Way English Academy – Gampaha Branch, founded in 2013, is a premier center for English language learning in the heart of Gampaha. As part of the island-wide British Way network, the branch provides comprehensive training in all four core language skills—reading, writing, speaking, and listening—while also emphasizing confidence, etiquette, and presentation skills. Students benefit from flexible programs, including General English, Spoken English, Advanced Certificates, and IELTS preparation, along with weekend and short-term courses to suit busy schedules. With highly qualified instructors, interactive lessons, and a supportive learning environment, the Gampaha Branch empowers learners to excel academically, professionally, and as confident global communicators.",
-    socialLinks: { facebook: "", instagram: "", youtube: "", tiktok: "", messenger: "", whatsapp: "", linkedin: "", twitter: "" },
+    socialLinks: { 
+      facebook: "", 
+      instagram: "", 
+      youtube: "", 
+      tiktok: "",  
+      whatsapp: ""
+    },
     gallery: [
       "/images/gampaha-gallery-1.jpg",
       "/images/gampaha-gallery-2.jpg",
-      "/images/gampaha-gallery-3.jpg"
+      "/images/gampaha-gallery-3.jpg",
+      "/images/gampaha-gallery-4.jpg",
+      "/images/gampaha-gallery-5.jpg",
+      "/images/gampaha-gallery-6.jpg",
+      "/images/gampaha-gallery-8.jpg",
+      "/images/gampaha-gallery-9.jpg"
     ]
   },
   {

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Registration Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 50px auto; padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input, select, textarea { width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; }
+        button { background: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        .result { margin-top: 20px; padding: 10px; border-radius: 4px; }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+    </style>
+</head>
+<body>
+    <h1>Test Registration Form</h1>
+    <form id="testForm">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="course">Course:</label>
+            <select id="course" name="course">
+                <option value="">Select a course</option>
+                <option value="Weekday Diploma">Weekday Diploma</option>
+                <option value="Weekend Diploma">Weekend Diploma</option>
+                <option value="Online Diploma">Online Diploma</option>
+                <option value="Kids Class">Kids Class</option>
+                <option value="IT+English Diploma">IT+English Diploma</option>
+                <option value="Night Class">Night Class</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="3"></textarea>
+        </div>
+        
+        <div class="form-group">
+            <label for="branchId">Branch:</label>
+            <select id="branchId" name="branchId">
+                <option value="nittambuwa">Nittambuwa</option>
+                <option value="matara">Matara</option>
+                <option value="galle">Galle</option>
+                <option value="kandy">Kandy</option>
+                <option value="polonnaruwa">Polonnaruwa</option>
+                <option value="nugegoda">Nugegoda</option>
+                <option value="kalutara">Kalutara</option>
+                <option value="kiribathgoda">Kiribathgoda</option>
+                <option value="bandarawela">Bandarawela</option>
+                <option value="negombo">Negombo</option>
+                <option value="kurunegala">Kurunegala</option>
+                <option value="ratnapura">Ratnapura</option>
+                <option value="gampaha">Gampaha</option>
+                <option value="anuradhapura">Anuradhapura</option>
+            </select>
+        </div>
+        
+        <button type="submit">Test Submit</button>
+    </form>
+    
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('testForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                course: document.getElementById('course').value,
+                message: document.getElementById('message').value,
+                branch: document.getElementById('branchId').selectedOptions[0].text + ' Branch',
+                branchId: document.getElementById('branchId').value,
+                timestamp: new Date().toISOString(),
+                source: 'test-registration'
+            };
+            
+            const scriptUrl = 'https://script.google.com/macros/s/AKfycbz1tpxI47-7dYEZvWR9CIGyJv4Q4OlBaoadheVql1FLFq_9mXvpFYbtjLksPBXiD4cgMg/exec';
+            
+            try {
+                console.log('Sending data:', formData);
+                
+                const response = await fetch(scriptUrl, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                console.log('Response received');
+                document.getElementById('result').innerHTML = '<div class="result success">✅ Form submitted successfully! Check your Google Sheet.</div>';
+                
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('result').innerHTML = '<div class="result error">❌ Error: ' + error.message + '</div>';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -3,36 +3,44 @@
 
 function doPost(e) {
   try {
+    console.log('Received request:', e);
+    
     // Parse the incoming data
     const data = JSON.parse(e.postData.contents);
+    console.log('Parsed data:', data);
     
     // Get the branch ID to determine which sheet to use
     const branchId = data.branchId;
     const branchName = data.branch;
     
+    console.log('Branch ID:', branchId, 'Branch Name:', branchName);
+    
     // Define sheet IDs for each branch (replace with your actual Google Sheet IDs)
     const branchSheets = {
-      'nittambuwa': 'YOUR_NITTAMBUWA_SHEET_ID',
-      'matara': 'YOUR_MATARA_SHEET_ID',
-      'galle': 'YOUR_GALLE_SHEET_ID',
-      'kandy': 'YOUR_KANDY_SHEET_ID',
-      'polonnaruwa': 'YOUR_POLONNARUWA_SHEET_ID',
-      'nugegoda': 'YOUR_NUGEGODA_SHEET_ID',
-      'kalutara': 'YOUR_KALUTARA_SHEET_ID',
-      'kiribathgoda': 'YOUR_KIRIBATHGODA_SHEET_ID',
-      'bandarawela': 'YOUR_BANDARAWELA_SHEET_ID',
-      'negombo': 'YOUR_NEGOMBO_SHEET_ID',
-      'kurunegala': 'YOUR_KURUNEGALA_SHEET_ID',
-      'ratnapura': 'YOUR_RATNAPURA_SHEET_ID',
-      'gampaha': 'YOUR_GAMPAHA_SHEET_ID',
-      'anuradhapura': 'YOUR_ANURADHAPURA_SHEET_ID'
+      'nittambuwa': '19p76K3-weH0PhUfITnZIeNc00R-l7HynW8C2lYNQT7U',
+      'matara': '1GTU-fSpiJJHwFTcaaJ4esHhj0lE77Tt5cu2WrqBeJag',
+      'galle': '1y6lNHstHDBbMLw8hK2hQtPt58PwiivHz1C5PT7rZk1Y',
+      'kandy': '19morJmrBQY-2uAcmiRn0WT_Xc3oOOh102TFhwUERqAU',
+      'polonnaruwa': '1hO78C-oCq2jFmEs9wiUp85QziLrnwKdF1ASqskN3RXQ',
+      'nugegoda': '1yLJ2Fd0pUfgtjc6y4HarChlGNAter7Vj_DplQnfbHCA',
+      'kalutara': '1xsq4CRn1Ay7r4SD7hlUrRSGZyx58qbY9sCDIX_QvhSM',
+      'kiribathgoda': '1ug-WaaFOrV7feS6NarujkTlXFZr6HE15umG4kvUAWGc',
+      'bandarawela': '1Tqnzc_UdQqBKG28mKfiSNfdTosqiUzMsQYnzW2EMizI',
+      'negombo': '1j1KTZEijkiKvG7ludPGVx0Vc60GCIRPDtUAow1N1dME',
+      'kurunegala': '1q58ZJLSAAlPGUwc0Ob1XNf5pGOpwec_us5pxOnCe1xU',
+      'ratnapura': '1BJwwfda3bpnSfbyjRD-GKNaJlqMzOO6zLGj39tbmXM4',
+      'gampaha': '1VyQM17ZcoPv5oGvHtIf-6RcH3iLGKZnjuuHrXysdsTA',
+      'anuradhapura': '1ksKjTpixqqiOo5dVd-cmsEcauBrRm9m_FecUaKKMU-Q'
     };
     
     // Get the sheet ID for the branch, or use a default sheet
-    const sheetId = branchSheets[branchId] || 'YOUR_DEFAULT_SHEET_ID';
+    const sheetId = branchSheets[branchId] || '19p76K3-weH0PhUfITnZIeNc00R-l7HynW8C2lYNQT7U'; // Default to Nittambuwa
+    
+    console.log('Using sheet ID:', sheetId);
     
     // Open the spreadsheet
     const spreadsheet = SpreadsheetApp.openById(sheetId);
+    console.log('Opened spreadsheet:', spreadsheet.getName());
     let sheet = spreadsheet.getSheetByName('Registrations');
     
     // Create the sheet if it doesn't exist
@@ -43,9 +51,7 @@ function doPost(e) {
       const headers = [
         'Timestamp',
         'Name',
-        'Email',
         'Phone',
-        'Age',
         'Course Interest',
         'Message',
         'Branch',
@@ -65,9 +71,7 @@ function doPost(e) {
     const rowData = [
       data.timestamp || new Date().toISOString(),
       data.name || '',
-      data.email || '',
       data.phone || '',
-      data.age || '',
       data.course || '',
       data.message || '',
       branchName || '',
@@ -77,6 +81,7 @@ function doPost(e) {
     
     // Add the data to the sheet
     sheet.appendRow(rowData);
+    console.log('Data added to sheet:', rowData);
     
     // Auto-resize columns
     sheet.autoResizeColumns(1, 10);
@@ -84,6 +89,7 @@ function doPost(e) {
     // Send email notification to branch manager (optional)
     sendEmailNotification(branchName, data);
     
+    console.log('Registration saved successfully');
     return ContentService
       .createTextOutput(JSON.stringify({ success: true, message: 'Registration saved successfully' }))
       .setMimeType(ContentService.MimeType.JSON);
@@ -123,9 +129,7 @@ function sendEmailNotification(branchName, data) {
       New student registration received:
       
       Name: ${data.name}
-      Email: ${data.email}
       Phone: ${data.phone}
-      Age: ${data.age}
       Course Interest: ${data.course}
       Message: ${data.message}
       Branch: ${branchName}
@@ -144,10 +148,8 @@ function sendEmailNotification(branchName, data) {
 function testScript() {
   const testData = {
     name: 'Test User',
-    email: 'test@example.com',
     phone: '0712345678',
-    age: '25',
-    course: 'General English',
+    course: 'Weekday Diploma',
     message: 'Test message',
     branch: 'Nittambuwa Branch',
     branchId: 'nittambuwa',
@@ -161,6 +163,29 @@ function testScript() {
     }
   };
   
+  console.log('Testing with data:', testData);
   const result = doPost(mockEvent);
-  console.log(result.getContent());
+  console.log('Test result:', result.getContent());
+  return result;
+}
+
+// Simple test to check if sheets are accessible
+function testSheetsAccess() {
+  try {
+    const branchSheets = {
+      'nittambuwa': '19p76K3-weH0PhUfITnZIeNc00R-l7HynW8C2lYNQT7U',
+      'matara': '1GTU-fSpiJJHwFTcaaJ4esHhj0lE77Tt5cu2WrqBeJag'
+    };
+    
+    for (const [branchId, sheetId] of Object.entries(branchSheets)) {
+      try {
+        const spreadsheet = SpreadsheetApp.openById(sheetId);
+        console.log(`✅ ${branchId}: ${spreadsheet.getName()}`);
+      } catch (error) {
+        console.log(`❌ ${branchId}: ${error.toString()}`);
+      }
+    }
+  } catch (error) {
+    console.log('Error testing sheets:', error);
+  }
 }

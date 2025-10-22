@@ -96,7 +96,7 @@ const CoursesPage = () => {
       {/* Hero Section */}
       <section className="relative h-[60vh] overflow-hidden -mt-24">
         <img 
-          src="/images/course card.jpg" 
+          src="/images/coursesbanner.png" 
           alt="Our Courses" 
           className="absolute top-0 left-0 w-full h-full object-cover"
         />

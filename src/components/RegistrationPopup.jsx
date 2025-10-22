@@ -4,9 +4,7 @@ import { X, User, Mail, Phone, MapPin, Calendar, GraduationCap } from "lucide-re
 const RegistrationPopup = ({ isOpen, onClose, branchName, branchId }) => {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
     phone: "",
-    age: "",
     course: "",
     message: "",
     branch: branchName || "",
@@ -31,35 +29,36 @@ const RegistrationPopup = ({ isOpen, onClose, branchName, branchId }) => {
     try {
       // For development, you can use a test endpoint or local storage
       // In production, replace with your actual Google Apps Script URL
-      const scriptUrl = process.env.REACT_APP_GOOGLE_SCRIPT_URL || 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+      const scriptUrl = process.env.REACT_APP_GOOGLE_SCRIPT_URL || 'https://script.google.com/macros/s/AKfycbxEzq5GZ9Z7PpP-QX1R3sVDnx0jgGY9muAqGv5s9GQCLEbR0cdNG5WyJxos4jd1MdrE/exec';
       
-      // Create form data for Google Apps Script
-      const formDataToSend = new FormData();
-      formDataToSend.append('name', formData.name);
-      formDataToSend.append('email', formData.email);
-      formDataToSend.append('phone', formData.phone);
-      formDataToSend.append('age', formData.age);
-      formDataToSend.append('course', formData.course);
-      formDataToSend.append('message', formData.message);
-      formDataToSend.append('branch', formData.branch);
-      formDataToSend.append('branchId', formData.branchId);
-      formDataToSend.append('timestamp', new Date().toISOString());
-      formDataToSend.append('source', 'branch-registration');
+      // Create JSON data for Google Apps Script
+      const jsonData = {
+        name: formData.name,
+        phone: formData.phone,
+        course: formData.course,
+        message: formData.message,
+        branch: formData.branch,
+        branchId: formData.branchId,
+        timestamp: new Date().toISOString(),
+        source: 'branch-registration'
+      };
 
       // Submit to Google Sheets via Google Apps Script
       const response = await fetch(scriptUrl, {
         method: 'POST',
-        body: formDataToSend
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(jsonData)
       });
 
-      // For development/testing, always show success
-      // In production, you might want to check the response
+      // Check if the submission was successful
+      console.log('Form submitted successfully');
       setSubmitStatus('success');
       setFormData({
         name: "",
-        email: "",
         phone: "",
-        age: "",
         course: "",
         message: "",
         branch: branchName || "",
@@ -83,10 +82,10 @@ const RegistrationPopup = ({ isOpen, onClose, branchName, branchId }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+    <div className="fixed inset-0 bg-black/60 backdrop-blur-md z-50 flex items-center justify-center p-4">
+      <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto border border-blue-100">
         {/* Header */}
-        <div className="sticky top-0 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 rounded-t-2xl">
+        <div className="sticky top-0 bg-gradient-to-r from-blue-600 to-blue-700 text-white p-6 rounded-t-2xl">
           <div className="flex justify-between items-center">
             <div>
               <h2 className="text-2xl font-bold">Register with {branchName}</h2>
@@ -102,11 +101,11 @@ const RegistrationPopup = ({ isOpen, onClose, branchName, branchId }) => {
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="p-6 space-y-4">
+        <form onSubmit={handleSubmit} className="p-6 space-y-6">
           {/* Name */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              <User className="w-4 h-4 inline mr-2" />
+              <User className="w-4 h-4 inline mr-2 text-blue-600" />
               Full Name *
             </label>
             <input
@@ -115,32 +114,15 @@ const RegistrationPopup = ({ isOpen, onClose, branchName, branchId }) => {
               value={formData.name}
               onChange={handleInputChange}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+              className="w-full px-4 py-3 border border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 bg-white/80"
               placeholder="Enter your full name"
-            />
-          </div>
-
-          {/* Email */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              <Mail className="w-4 h-4 inline mr-2" />
-              Email Address *
-            </label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-              required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-              placeholder="Enter your email"
             />
           </div>
 
           {/* Phone */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              <Phone className="w-4 h-4 inline mr-2" />
+              <Phone className="w-4 h-4 inline mr-2 text-blue-600" />
               Phone Number *
             </label>
             <input
@@ -149,57 +131,37 @@ const RegistrationPopup = ({ isOpen, onClose, branchName, branchId }) => {
               value={formData.phone}
               onChange={handleInputChange}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+              className="w-full px-4 py-3 border border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 bg-white/80"
               placeholder="Enter your phone number"
-            />
-          </div>
-
-          {/* Age */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              <Calendar className="w-4 h-4 inline mr-2" />
-              Age
-            </label>
-            <input
-              type="number"
-              name="age"
-              value={formData.age}
-              onChange={handleInputChange}
-              min="5"
-              max="100"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-              placeholder="Enter your age"
             />
           </div>
 
           {/* Course Interest */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              <GraduationCap className="w-4 h-4 inline mr-2" />
+              <GraduationCap className="w-4 h-4 inline mr-2 text-blue-600" />
               Course Interest
             </label>
             <select
               name="course"
               value={formData.course}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+              className="w-full px-4 py-3 border border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 bg-white/80"
             >
               <option value="">Select a course</option>
-              <option value="General English">General English</option>
-              <option value="Spoken English">Spoken English</option>
-              <option value="IELTS Preparation">IELTS Preparation</option>
-              <option value="Business English">Business English</option>
-              <option value="Kids Class">Kids Class</option>
-              <option value="Weekend Diploma">Weekend Diploma</option>
               <option value="Weekday Diploma">Weekday Diploma</option>
+              <option value="Weekend Diploma">Weekend Diploma</option>
               <option value="Online Diploma">Online Diploma</option>
+              <option value="Kids Class">Kids Class</option>
+              <option value="IT+English Diploma">IT+English Diploma</option>
+              <option value="Night Class">Night Class</option>
             </select>
           </div>
 
           {/* Message */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              <MapPin className="w-4 h-4 inline mr-2" />
+              <MapPin className="w-4 h-4 inline mr-2 text-blue-600" />
               Additional Message
             </label>
             <textarea
@@ -207,7 +169,7 @@ const RegistrationPopup = ({ isOpen, onClose, branchName, branchId }) => {
               value={formData.message}
               onChange={handleInputChange}
               rows="3"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none"
+              className="w-full px-4 py-3 border border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 resize-none bg-white/80"
               placeholder="Tell us about your learning goals..."
             />
           </div>
@@ -217,7 +179,7 @@ const RegistrationPopup = ({ isOpen, onClose, branchName, branchId }) => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+              className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center shadow-lg hover:shadow-xl"
             >
               {isSubmitting ? (
                 <>
@@ -232,21 +194,21 @@ const RegistrationPopup = ({ isOpen, onClose, branchName, branchId }) => {
 
           {/* Status Messages */}
           {submitStatus === 'success' && (
-            <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg text-center">
+            <div className="bg-green-50/90 border border-green-200 text-green-800 px-4 py-3 rounded-lg text-center backdrop-blur-sm">
               ✅ Registration successful! We'll contact you soon.
             </div>
           )}
           
           {submitStatus === 'error' && (
-            <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg text-center">
+            <div className="bg-red-50/90 border border-red-200 text-red-800 px-4 py-3 rounded-lg text-center backdrop-blur-sm">
               ❌ Registration failed. Please try again or contact us directly.
             </div>
           )}
         </form>
 
         {/* Footer */}
-        <div className="bg-gray-50 px-6 py-4 rounded-b-2xl">
-          <p className="text-xs text-gray-500 text-center">
+        <div className="bg-blue-50/80 backdrop-blur-sm px-6 py-4 rounded-b-2xl border-t border-blue-100">
+          <p className="text-xs text-blue-600 text-center">
             By registering, you agree to our terms and conditions. 
             We'll contact you within 24 hours.
           </p>
