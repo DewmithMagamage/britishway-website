@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { X, User, Mail, Phone, MapPin, Calendar, GraduationCap } from "lucide-react";
 
-const RegistrationPopup = ({ isOpen, onClose, branchName, branchId }) => {
+const RegistrationPopup = ({ isOpen, onClose, branchName, branchId, showBranchSelector = false, branches = [] }) => {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -88,8 +88,12 @@ const RegistrationPopup = ({ isOpen, onClose, branchName, branchId }) => {
         <div className="sticky top-0 bg-gradient-to-r from-blue-600 to-blue-700 text-white p-6 rounded-t-2xl">
           <div className="flex justify-between items-center">
             <div>
-              <h2 className="text-2xl font-bold">Register with {branchName}</h2>
-              <p className="text-blue-100 text-sm mt-1">Join our English learning community</p>
+              <h2 className="text-2xl font-bold">
+                {showBranchSelector ? 'Register for English Courses' : `Register with ${branchName}`}
+              </h2>
+              <p className="text-blue-100 text-sm mt-1">
+                {showBranchSelector ? 'Select your nearest branch and join our community' : 'Join our English learning community'}
+              </p>
             </div>
             <button
               onClick={onClose}
@@ -135,6 +139,37 @@ const RegistrationPopup = ({ isOpen, onClose, branchName, branchId }) => {
               placeholder="Enter your phone number"
             />
           </div>
+
+          {/* Branch Selection - Only show if showBranchSelector is true */}
+          {showBranchSelector && (
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                <MapPin className="w-4 h-4 inline mr-2 text-blue-600" />
+                Select Nearest Branch *
+              </label>
+              <select
+                name="branchId"
+                value={formData.branchId}
+                onChange={(e) => {
+                  const selectedBranch = branches.find(b => b.id === e.target.value);
+                  setFormData(prev => ({
+                    ...prev,
+                    branchId: e.target.value,
+                    branch: selectedBranch ? selectedBranch.name : ""
+                  }));
+                }}
+                required
+                className="w-full px-4 py-3 border border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 bg-white/80"
+              >
+                <option value="">Select your nearest branch</option>
+                {branches.map((branch) => (
+                  <option key={branch.id} value={branch.id}>
+                    {branch.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
 
           {/* Course Interest */}
           <div>

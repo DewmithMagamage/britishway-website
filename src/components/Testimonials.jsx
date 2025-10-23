@@ -51,8 +51,8 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-14 sm:py-16 px-5 sm:px-8 max-w-6xl mx-auto">
-      <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-start">
+    <section className="py-12 xs:py-14 sm:py-16 px-4 xs:px-5 sm:px-8 max-w-6xl mx-auto">
+      <div className="grid md:grid-cols-2 gap-6 xs:gap-8 sm:gap-12 items-start">
         <div>
           <h2 className="text-xs sm:text-sm tracking-wide uppercase text-gray-500 mb-1 sm:mb-2">Testimonials</h2>
           <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">What Students Say</h3>
@@ -64,7 +64,7 @@ const Testimonials = () => {
         
         <div className="relative">
           {/* Slider viewport */}
-          <div className="overflow-hidden pb-4 px-0 max-w-md mx-auto md:max-w-none" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
+          <div className="overflow-hidden pb-4 px-0 w-full max-w-sm xs:max-w-md mx-auto md:max-w-none" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
             {/* Slider track */}
             <div
               className="flex transition-transform duration-500 ease-in-out"
@@ -72,7 +72,7 @@ const Testimonials = () => {
             >
               {testimonials.map((testimonial, index) => (
                 <div key={index} className="min-w-full box-border px-0 sm:px-2 flex justify-center">
-                  <div className="bg-white rounded-xl p-8 sm:p-6 shadow-lg w-full max-w-md mx-4 min-h-[190px]">
+                  <div className="bg-white rounded-xl p-6 xs:p-8 sm:p-6 shadow-lg w-full max-w-sm xs:max-w-md mx-2 xs:mx-4 min-h-[180px] xs:min-h-[190px]">
                     <div className="flex items-center mb-4">
                       <img
                         src={testimonial.image}
