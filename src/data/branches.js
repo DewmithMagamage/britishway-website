@@ -371,11 +371,24 @@ export const branches = [
     email: "bwea.anuradhapura@gmail.com",
     mapUrl: "https://maps.app.goo.gl/gev56KJ43HJCc4bt7",
     description:"British Way English Academy – Anuradhapura Branch is a premier center for English language learning in the historic city of Anuradhapura. As part of the esteemed British Way network, the branch offers a structured curriculum for learners of all levels—from foundational to advanced—fostering fluency, confidence, and practical communication skills. With modern classrooms, interactive lessons, and highly qualified instructors, students develop grammar, vocabulary, pronunciation, and real-world conversational abilities. The branch also emphasizes personality development, business communication, IELTS preparation, and academic writing, empowering learners to excel academically, professionally, and as confident global communicators.",
-    socialLinks: { facebook: "", instagram: "", youtube: "", tiktok: "", messenger: "", whatsapp: "", linkedin: "", twitter: "" },
+    socialLinks: { 
+      facebook: "", 
+      instagram: "", 
+      youtube: "", 
+      tiktok: "", 
+      messenger: "", 
+      whatsapp: "", 
+
     gallery: [
       "/images/anuradhapura-gallery-1.jpg",
       "/images/anuradhapura-gallery-2.jpg",
-      "/images/anuradhapura-gallery-3.jpg"
+      "/images/anuradhapura-gallery-3.jpg",
+      "/images/anuradhapura-gallery-4.jpg",
+      "/images/anuradhapura-gallery-5.jpg",
+      "/images/anuradhapura-gallery-6.jpg",
+      "/images/anuradhapura-gallery-7.jpg",
+      "/images/anuradhapura-gallery-8.jpg",
+      "/images/anuradhapura-gallery-9.jpg"
     ]
   }
 ];
