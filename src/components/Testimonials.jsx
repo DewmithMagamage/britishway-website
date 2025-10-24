@@ -1,15 +1,35 @@
-import React, { useRef, useState } from "react";
-import { Star } from "lucide-react";
+import React, { useRef, useState, useEffect } from "react";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const touchStartXRef = useRef(null);
   const touchDeltaXRef = useRef(0);
+  const slideIntervalRef = useRef(null);
 
-  const next = () => setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  const prev = () => setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  const next = () => {
+    if (!isTransitioning) {
+      setIsTransitioning(true);
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    }
+  };
+
+  const prev = () => {
+    if (!isTransitioning) {
+      setIsTransitioning(true);
+      setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    }
+  };
+
+  useEffect(() => {
+    // Auto-advance slides
+    slideIntervalRef.current = setInterval(next, 5000);
+    return () => clearInterval(slideIntervalRef.current);
+  }, []);
 
   const handleTouchStart = (e) => {
+    clearInterval(slideIntervalRef.current);
     touchStartXRef.current = e.touches[0].clientX;
     touchDeltaXRef.current = 0;
   };
@@ -27,6 +47,12 @@ const Testimonials = () => {
     }
     touchStartXRef.current = null;
     touchDeltaXRef.current = 0;
+    // Restart auto-advance
+    slideIntervalRef.current = setInterval(next, 5000);
+  };
+
+  const handleTransitionEnd = () => {
+    setIsTransitioning(false);
   };
   
   const testimonials = [
@@ -51,62 +77,103 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-14 sm:py-16 px-5 sm:px-8 max-w-6xl mx-auto">
-      <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-start">
-        <div>
-          <h2 className="text-xs sm:text-sm tracking-wide uppercase text-gray-500 mb-1 sm:mb-2">Testimonials</h2>
-          <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">What Students Say</h3>
-          <p className="text-gray-600">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
-            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-          </p>
-        </div>
-        
-        <div className="relative">
-          {/* Slider viewport */}
-          <div className="overflow-hidden pb-4 px-0 max-w-md mx-auto md:max-w-none" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
-            {/* Slider track */}
-            <div
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-            >
-              {testimonials.map((testimonial, index) => (
-                <div key={index} className="min-w-full box-border px-0 sm:px-2 flex justify-center">
-                  <div className="bg-white rounded-xl p-8 sm:p-6 shadow-lg w-full max-w-md mx-4 min-h-[190px]">
-                    <div className="flex items-center mb-4">
+    <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative overflow-hidden">
+      <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
+        <h2 className="text-sm md:text-base font-semibold text-blue-600 mb-3">TESTIMONIALS</h2>
+        <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">What Our Students Say</h3>
+        <p className="text-gray-600 text-sm md:text-base">
+          Discover how British Way English Academy has transformed the lives of our students
+          through quality education and dedicated support.
+        </p>
+      </div>
+
+      <div className="relative">
+        {/* Main slider container */}
+        <div 
+          className="overflow-hidden w-full"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          {/* Slider track */}
+          <div
+            className="flex transition-transform duration-500 ease-out"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            onTransitionEnd={handleTransitionEnd}
+          >
+            {testimonials.map((testimonial, index) => (
+              <div 
+                key={index} 
+                className="w-full flex-shrink-0 px-4 sm:px-6"
+              >
+                <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 max-w-xl mx-auto transform transition-transform duration-300 hover:scale-[1.02]">
+                  <div className="flex items-start space-x-4 mb-6">
+                    <div className="flex-shrink-0">
                       <img
                         src={testimonial.image}
                         alt={testimonial.name}
-                        className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover mr-3 sm:mr-4"
+                        className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover ring-2 ring-blue-100"
+                        loading="lazy"
                       />
-                      <div>
-                        <h4 className="font-semibold">{testimonial.name}</h4>
-                        <div className="flex">
-                          {[...Array(testimonial.rating)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                          ))}
-                        </div>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-lg md:text-xl font-semibold text-gray-900 mb-1">
+                        {testimonial.name}
+                      </h4>
+                      <div className="flex items-center space-x-1 mb-2">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <Star 
+                            key={i} 
+                            className="w-4 h-4 md:w-5 md:h-5 fill-yellow-400 text-yellow-400"
+                          />
+                        ))}
                       </div>
                     </div>
-                    <p className="text-gray-600 text-sm">{testimonial.text}</p>
                   </div>
+                  <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+                    "{testimonial.text}"
+                  </p>
                 </div>
-              ))}
-            </div>
-          </div>
-          
-          {/* Carousel dots */}
-          <div className="flex justify-center mt-6 gap-2">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${
-                  index === currentIndex ? 'bg-blue-600 scale-110' : 'bg-gray-300 hover:bg-gray-400'
-                }`}
-              />
+              </div>
             ))}
           </div>
+        </div>
+
+        {/* Navigation Buttons */}
+        <div className="hidden md:block">
+          <button
+            onClick={prev}
+            disabled={isTransitioning}
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg hover:bg-white/95 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            aria-label="Previous testimonial"
+          >
+            <ChevronLeft className="w-6 h-6 text-gray-700" />
+          </button>
+          <button
+            onClick={next}
+            disabled={isTransitioning}
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg hover:bg-white/95 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            aria-label="Next testimonial"
+          >
+            <ChevronRight className="w-6 h-6 text-gray-700" />
+          </button>
+        </div>
+
+        {/* Dots navigation */}
+        <div className="flex justify-center items-center space-x-2 mt-8">
+          {testimonials.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => !isTransitioning && setCurrentIndex(index)}
+              disabled={isTransitioning}
+              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                index === currentIndex 
+                  ? 'bg-blue-600 w-8'
+                  : 'bg-gray-300 hover:bg-gray-400'
+              }`}
+              aria-label={`Go to testimonial ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>

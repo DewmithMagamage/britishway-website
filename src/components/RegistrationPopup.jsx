@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { X, User, Mail, Phone, MapPin, Calendar, GraduationCap } from "lucide-react";
 
-const RegistrationPopup = ({ isOpen, onClose, branchName, branchId }) => {
+const RegistrationPopup = ({ isOpen, onClose, branchName, branchId, branches, onBranchSelect }) => {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -136,11 +136,44 @@ const RegistrationPopup = ({ isOpen, onClose, branchName, branchId }) => {
             />
           </div>
 
+          {/* Branch Selection */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              <MapPin className="w-4 h-4 inline mr-2 text-blue-600" />
+              Select Branch *
+            </label>
+            <select
+              name="branch"
+              value={formData.branch}
+              onChange={(e) => {
+                const selectedBranch = branches.find(b => b.name === e.target.value);
+                handleInputChange(e);
+                if (selectedBranch) {
+                  onBranchSelect(selectedBranch);
+                  setFormData(prev => ({
+                    ...prev,
+                    branch: selectedBranch.name,
+                    branchId: selectedBranch.id
+                  }));
+                }
+              }}
+              required
+              className="w-full px-4 py-3 border border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 bg-white/80"
+            >
+              <option value="">Select a branch</option>
+              {branches.map((branch) => (
+                <option key={branch.id} value={branch.name}>
+                  {branch.name}
+                </option>
+              ))}
+            </select>
+          </div>
+
           {/* Course Interest */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
               <GraduationCap className="w-4 h-4 inline mr-2 text-blue-600" />
-              Course Interest
+              Course Interest *
             </label>
             <select
               name="course"

@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import { Phone, Mail } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import { useFormContext } from "../context/FormContext";
+import { branches } from "../data/branches";
 
 const Contact = () => {
   const { addFormSubmission } = useFormContext();
@@ -8,7 +9,8 @@ const Contact = () => {
     name: '',
     email: '',
     phone: '',
-    city: '',
+    branch: '',
+    branchId: '',
     message: '',
     course: 'General Inquiry'
   });
@@ -27,7 +29,32 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Add form submission to context
+      // For development, you can use a test endpoint or local storage
+      // In production, replace with your actual Google Apps Script URL
+      const scriptUrl = process.env.REACT_APP_GOOGLE_SCRIPT_URL || 'https://script.google.com/macros/s/AKfycbxEzq5GZ9Z7PpP-QX1R3sVDnx0jgGY9muAqGv5s9GQCLEbR0cdNG5WyJxos4jd1MdrE/exec';
+      
+      // Create JSON data for Google Apps Script
+      const jsonData = {
+        name: formData.name,
+        phone: formData.phone,
+        branch: formData.branch,
+        branchId: formData.branchId,
+        message: formData.message,
+        timestamp: new Date().toISOString(),
+        source: 'contact-form'
+      };
+
+      // Submit to Google Sheets via Google Apps Script
+      const response = await fetch(scriptUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(jsonData)
+      });
+
+      // Add form submission to context for local tracking
       addFormSubmission(formData);
       
       // Reset form
@@ -115,17 +142,30 @@ const Contact = () => {
             
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                City *
+                <MapPin className="w-4 h-4 inline mr-2 text-blue-600" />
+                Select Branch *
               </label>
-              <input
-                type="text"
-                name="city"
-                value={formData.city}
-                onChange={handleChange}
+              <select
+                name="branch"
+                value={formData.branch}
+                onChange={(e) => {
+                  const selectedBranch = branches.find(b => b.name === e.target.value);
+                  setFormData(prev => ({
+                    ...prev,
+                    branch: e.target.value,
+                    branchId: selectedBranch ? selectedBranch.id : ''
+                  }));
+                }}
                 required
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="Enter your city"
-              />
+              >
+                <option value="">Select a branch</option>
+                {branches.map((branch) => (
+                  <option key={branch.id} value={branch.name}>
+                    {branch.name}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
           

@@ -13,9 +13,9 @@ const Footer = () => {
           <img 
             src="/images/Britishway white logo.png" 
             alt="British Way English Academy" 
-            className="h-10 sm:h-12 w-auto"
-            width="180" 
-            height="48"
+            className="h-8 sm:h-10 md:h-12 w-auto max-w-[180px] sm:max-w-[200px] md:max-w-[220px]"
+            width="220" 
+            height="55"
             loading="lazy"
           />
           <div className="flex items-center bg-white rounded-full overflow-hidden w-full sm:w-auto">
