@@ -377,8 +377,8 @@ export const branches = [
       youtube: "", 
       tiktok: "", 
       messenger: "", 
-      whatsapp: "", 
-
+      whatsapp: ""
+    },
     gallery: [
       "/images/anuradhapura-gallery-1.jpg",
       "/images/anuradhapura-gallery-2.jpg",
