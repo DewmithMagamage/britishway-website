@@ -78,13 +78,44 @@ const NewsEventsPage = () => {
   const news = [
     {
       id: 1,
-      title: "CONVOCATION CERAMONY 2025",
+      title: "CONVOCATION CEREMONY 2025",
       date: "21ST JULY",
       description: "On July 21st, 2025, British Way English Academy proudly celebrated its Convocation Ceremony at the BMICH, honoring the achievements of our latest batch of graduates. Surrounded by family, friends, and esteemed colleagues, this event was a testament to our commitment to fostering academic excellence, confidence and skills to succeed globally...",
       image: "/images/Stu 01.png",
       featured: true
     },
-    ...events // Same events for news section
+    {
+      id: 2,
+      title: "NEW BRANCH OPENING IN COLOMBO",
+      date: "15TH JULY",
+      description: "We are excited to announce the opening of our newest branch in the heart of Colombo. This expansion marks another milestone in our mission to make quality English education accessible to more students across Sri Lanka...",
+      image: "/images/course card.jpg",
+      featured: false
+    },
+    {
+      id: 3,
+      title: "STUDENT ACHIEVEMENT AWARDS 2025",
+      date: "10TH JULY",
+      description: "Celebrating excellence in English language learning, our annual Student Achievement Awards recognized outstanding performers across all branches. Special congratulations to our top achievers who demonstrated exceptional progress...",
+      image: "/images/Stu 02.jpeg",
+      featured: false
+    },
+    {
+      id: 4,
+      title: "INTERNATIONAL ENGLISH DAY CELEBRATION",
+      date: "5TH JULY",
+      description: "British Way English Academy celebrated International English Day with a series of engaging activities, competitions, and cultural exchanges. Students from all branches participated in speech contests, debates, and creative writing workshops...",
+      image: "/images/Stu 03.jpeg",
+      featured: false
+    },
+    {
+      id: 5,
+      title: "PARTNERSHIP WITH CAMBRIDGE ASSESSMENT",
+      date: "1ST JULY",
+      description: "We are proud to announce our new partnership with Cambridge Assessment English, further strengthening our commitment to providing internationally recognized English language qualifications...",
+      image: "/images/course card.jpg",
+      featured: false
+    }
   ];
 
   // Filter events based on search term and filter type
@@ -311,21 +342,21 @@ const NewsEventsPage = () => {
 
   // Compact horizontal preview used under News tab
   const NewsCard = ({ news }) => (
-    <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex">
-      <img
-        src={news.image}
-        alt={news.title}
-        className="w-40 h-28 object-cover"
-      />
-      <div className="p-4 flex-1">
-        <h3 className="font-semibold text-gray-800 text-sm mb-2 line-clamp-1">{news.title}</h3>
-        <div className="space-y-1 text-xs text-gray-600 mb-2">
-          <p>{news.date}</p>
-          <p>Main Conference Hall - British Way Head Office</p>
-        </div>
-        <button className="text-blue-600 text-xs font-semibold inline-flex items-center">
+    <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+      <div className="aspect-w-16 aspect-h-9">
+        <img
+          src={news.image}
+          alt={news.title}
+          className="w-full h-48 object-cover"
+        />
+      </div>
+      <div className="p-6">
+        <div className="text-blue-600 text-sm font-semibold mb-2">{news.date}</div>
+        <h3 className="font-bold text-gray-800 text-lg mb-3 line-clamp-2">{news.title}</h3>
+        <p className="text-gray-600 text-sm mb-4 line-clamp-3">{news.description}</p>
+        <button className="text-blue-600 font-semibold inline-flex items-center hover:text-blue-700 transition-colors">
           Read more
-          <ArrowRight className="w-3 h-3 ml-1" />
+          <ArrowRight className="w-4 h-4 ml-1" />
         </button>
       </div>
     </div>
