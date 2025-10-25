@@ -397,13 +397,15 @@ const NewsEventsPage = () => {
           alt="News & Events" 
           className="absolute top-0 left-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/20" />
         <div className="absolute inset-0 flex items-center z-10">
-          <div className="text-white max-w-3xl p-8 mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Stay Updated</h1>
-            <p className="text-lg md:text-xl max-w-2xl mx-auto">
-              Catch the latest happenings, news, and events from our community. From big moments that matter - explore what's new and what's next.
-            </p>
+          <div className="container mx-auto">
+            <div className="text-white max-w-2xl px-8 md:px-16">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-left">Stay Updated</h1>
+              <p className="text-lg md:text-xl">
+                Catch the latest happenings, news, and events from our community. From big moments that matter - explore what's new and what's next.
+              </p>
+            </div>
           </div>
         </div>
       </section>

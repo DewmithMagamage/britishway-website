@@ -35,13 +35,15 @@ const AboutPage = () => {
           alt="About Us" 
           className="absolute top-0 left-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/20" />
         <div className="absolute inset-0 flex items-center z-10">
-          <div className="text-white max-w-3xl p-8 mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">About Us</h1>
-            <p className="text-lg md:text-xl max-w-2xl mx-auto">
-              For over two decades, British Way English Academy has been shaping futures with trusted language education.
-            </p>
+          <div className="container mx-auto">
+            <div className="text-white max-w-2xl px-8 md:px-16">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-left">About Us</h1>
+              <p className="text-lg md:text-xl">
+                For over two decades, British Way English Academy has been shaping futures with trusted language education.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -62,34 +64,35 @@ const AboutPage = () => {
             </p>
           </div>
 
-          {/* Stats pill */}
-          <div className="mt-6 rounded-2xl bg-white shadow-lg p-4 grid grid-cols-3 gap-3 max-w-md">
-            <Stat icon={"21+"} value="21+" label="Years Of Experience" />
-            <Stat icon={"1M"} value="1M" label="Students" />
-            <Stat icon={"14"} value="14" label="Branches" />
+          {/* Stats Section - Modern Design */}
+          <div className="mt-12 grid grid-cols-3 gap-8 max-w-3xl">
+            <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 p-6 text-center transition-transform hover:scale-105 duration-300">
+              <div className="absolute top-0 left-0 w-full h-full bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+              <span className="block text-4xl font-bold text-white mb-2 group-hover:animate-pulse">21+</span>
+              <span className="block text-sm text-blue-100">Years Of Excellence</span>
+            </div>
+            
+            <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 p-6 text-center transition-transform hover:scale-105 duration-300">
+              <div className="absolute top-0 left-0 w-full h-full bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+              <span className="block text-4xl font-bold text-white mb-2 group-hover:animate-pulse">1M+</span>
+              <span className="block text-sm text-blue-100">Successful Students</span>
+            </div>
+            
+            <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 p-6 text-center transition-transform hover:scale-105 duration-300">
+              <div className="absolute top-0 left-0 w-full h-full bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+              <span className="block text-4xl font-bold text-white mb-2 group-hover:animate-pulse">14</span>
+              <span className="block text-sm text-blue-100">Active Branches</span>
+            </div>
           </div>
         </Reveal>
 
-        {/* Image collage to match design shapes */}
+        {/* Single feature image */}
         <Reveal className="relative w-full flex items-start justify-center" variant="slide-left">
-          <div className="relative w-[280px] sm:w-[360px] md:w-[420px] lg:w-[520px]">
-            {/* Main image */}
+          <div className="w-full max-w-lg">
             <img
               src="/images/course card.jpg"
-              alt="Students"
-              className="rounded-xl shadow-xl w-full h-auto object-cover"
-            />
-            {/* Overlay small image bottom-right */}
-            <img
-              src="/images/Stu 01.png"
-              alt="Speaker"
-              className="absolute -bottom-6 -right-6 w-28 h-28 object-cover rounded-xl shadow-lg"
-            />
-            {/* Top small image */}
-            <img
-              src="/images/Stu 02.jpeg"
-              alt="Class"
-              className="absolute -top-6 -right-10 w-28 h-20 object-cover rounded-xl shadow-lg"
+              alt="Students at British Way English Academy"
+              className="rounded-2xl shadow-2xl w-full h-[500px] object-cover hover:scale-105 transition-transform duration-500"
             />
           </div>
         </Reveal>

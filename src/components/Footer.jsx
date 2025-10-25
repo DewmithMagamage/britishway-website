@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { MapPin, Facebook, Youtube, Twitter, Instagram, Linkedin } from "lucide-react";
+import { MapPin, Facebook, Youtube, Twitter, Instagram, Linkedin, Send } from "lucide-react";
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -18,16 +18,15 @@ const Footer = () => {
             height="55"
             loading="lazy"
           />
-          <div className="flex items-center bg-white rounded-full overflow-hidden w-full sm:w-auto">
+          <div className="relative w-full sm:w-[400px]">
             <input
               type="email"
               placeholder="Enter your email to get the latest news..."
-              className="px-4 py-2 text-gray-800 w-full sm:w-64 focus:outline-none"
+              className="w-full px-6 py-3 pr-12 text-gray-800 bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-blue-300"
             />
-            <button className="bg-blue-600 px-4 py-2 hover:bg-blue-700 transition-colors">
-              {/* Removed search icon to match image */}
+            <button className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-600 hover:text-blue-600 transition-colors">
+              <Send className="w-5 h-5" />
             </button>
-            
           </div>
         </div>
 

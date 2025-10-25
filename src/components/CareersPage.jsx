@@ -72,14 +72,16 @@ const CareersPage = () => {
             alt="Careers" 
             className="absolute top-0 left-0 w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/20" />
           <div className="absolute inset-0 flex items-center z-10">
-            <div className="text-white max-w-3xl p-8 mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">Join Our Team</h1>
-              <p className="text-lg md:text-xl max-w-2xl mx-auto">
-                Be part of Sri Lanka's leading English education institution. 
-                Help us shape the future of thousands of students.
-              </p>
+            <div className="container mx-auto">
+              <div className="text-white max-w-2xl px-8 md:px-16">
+                <h1 className="text-5xl md:text-6xl font-bold mb-6 text-left">Join Our Team</h1>
+                <p className="text-lg md:text-xl">
+                  Be part of Sri Lanka's leading English education institution. 
+                  Help us shape the future of thousands of students.
+                </p>
+              </div>
             </div>
           </div>
         </section>
