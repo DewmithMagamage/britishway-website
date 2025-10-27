@@ -1,9 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 const CourseCard = ({ course }) => {
+  const navigate = useNavigate();
   return (
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+    <div 
+      onClick={() => navigate(`/course/${course.id}`)}
+      className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+    >
       {/* Course Image */}
       <div className="h-40 sm:h-48 overflow-hidden">
         <img

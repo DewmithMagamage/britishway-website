@@ -7,6 +7,7 @@ import BranchesPage from "./components/BranchesPage";
 import BranchPage from "./components/BranchPage";
 import NewsEventsPage from "./components/NewsEventsPage";
 import CoursesPage from "./components/CoursesPage";
+import CourseDetailPage from "./components/CourseDetailPage";
 import ContactUsPage from "./components/ContactUsPage";
 import CareersPage from "./components/CareersPage";
 import TestimonialsPage from "./components/TestimonialsPage";
@@ -36,6 +37,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/courses" element={<CoursesPage />} />
+            <Route path="/course/:courseId" element={<CourseDetailPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactUsPage />} />
             <Route path="/news-events" element={<NewsEventsPage />} />

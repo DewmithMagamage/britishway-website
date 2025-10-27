@@ -20,66 +20,66 @@ const CoursesPage = () => {
 
   const courses = [
     {
-      id: 1,
+      id: "50-day-camp",
       title: "50 Day Camp",
       description: "Intensive English learning program designed for rapid skill development. Perfect for students who want to accelerate their English proficiency in a short time.",
-      instructor: "Sarah Johnson - Head of Product Customer Platform Expert Instructor",
+      instructor: "View More...",
       category: "Full Time Diplomas",
-      image: "/images/50 Day Residential camp.jpg"
+      image: "/images/50 Day Residential camp.jpg"
     },
     {
-      id: 2,
+      id: "weekday-2month",
       title: "Weekday Diploma - 2 Months",
       description: "Comprehensive English diploma program covering all essential language skills. Structured curriculum with practical applications and real-world scenarios.",
-      instructor: "Sarah Johnson - Head of Product Customer Platform Expert Instructor",
+      instructor: "View More...",
       category: "Full Time Diplomas",
       image: "/images/Weekday Diploma copy.jpg"
     },
     {
-      id: 3,
+      id: "weekday-3month",
       title: "Weekday Diploma - 3 Months",
       description: "Extended English diploma program with advanced modules and specialized training. Ideal for students seeking comprehensive language mastery.",
-      instructor: "Sarah Johnson - Head of Product Customer Platform Expert Instructor",
+      instructor: "View More...",
       category: "Full Time Diplomas",
       image: "/images/course card.jpg"
     },
     {
-      id: 4,
+      id: "weekend-diploma",
       title: "Weekend Diploma",
       description: "Flexible weekend program designed for working professionals. Balance your career with English language development through our structured weekend classes.",
-      instructor: "Sarah Johnson - Head of Product Customer Platform Expert Instructor",
+      instructor: "View More...",
       category: "Part Time Diplomas",
       image: "/images/Weekend Diploma.jpg"
     },
     {
-      id: 5,
+      id: "online-diploma",
       title: "Online English Diploma",
       description: "Modern online learning experience with interactive sessions and digital resources. Learn English from anywhere with our comprehensive online platform.",
-      instructor: "Sarah Johnson - Head of Product Customer Platform Expert Instructor",
+      instructor: "View More...",
       category: "Online Courses",
       image: "/images/Online Diploma copy.jpg"
     },
     {
-      id: 6,
+      id: "it-english",
       title: "IT + English Diploma",
       description: "Combined program offering both English language skills and IT fundamentals. Perfect for students looking to enhance their career prospects in technology.",
-      instructor: "Sarah Johnson - Head of Product Customer Platform Expert Instructor",
+      instructor: "View More...",
       category: "Full Time Diplomas",
       image: "/images/IT+English.jpg"
     },
     {
-      id: 7,
+      id: "kids-class",
       title: "Kids Class",
       description: "Fun and engaging English classes designed specifically for children. Interactive learning methods that make English enjoyable for young learners.",
-      instructor: "Sarah Johnson - Head of Product Customer Platform Expert Instructor",
+      instructor: "View More...",
       category: "Kids Class",
       image: "/images/Kids Class.jpg"
     },
     {
-      id: 8,
+      id: "night-class",
       title: "Night Class",
       description: "Evening English classes for working adults and students. Flexible timing that fits your busy schedule while maintaining quality education.",
-      instructor: "Sarah Johnson - Head of Product Customer Platform Expert Instructor",
+      instructor: "View More...",
       category: "Part Time Diplomas",
       image: "/images/course card.jpg"
     }
