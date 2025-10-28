@@ -10,11 +10,24 @@ import News from "./components/News";
 import Events from "./components/Events";
 import Contact from "./components/Contact";
 
+
+import RegistrationPopup from "./components/RegistrationPopup";
+import { branches } from "./data/branches";
+
 const Home = () => {
+  const [isPopupOpen, setIsPopupOpen] = React.useState(false);
+  const [selectedBranch, setSelectedBranch] = React.useState(null);
+
+  const handleOpenPopup = () => setIsPopupOpen(true);
+  const handleClosePopup = () => {
+    setIsPopupOpen(false);
+    setSelectedBranch(null);
+  };
+
   return (
     <Layout noTopPadding>
       <div className="w-full overflow-hidden bg-white text-gray-900">
-        <Hero />
+        <Hero onApplyNow={handleOpenPopup} />
         <Partners />
         <Programmes />
         <About />
@@ -23,6 +36,14 @@ const Home = () => {
         <News />
         <Events />
         <Contact />
+        <RegistrationPopup
+          isOpen={isPopupOpen}
+          onClose={handleClosePopup}
+          branchName={selectedBranch?.name || ""}
+          branchId={selectedBranch?.id || ""}
+          branches={branches}
+          onBranchSelect={setSelectedBranch}
+        />
       </div>
     </Layout>
   );

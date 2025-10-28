@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 
-const Hero = () => {
+const Hero = ({ onApplyNow }) => {
   const [textIndex, setTextIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
 
@@ -48,10 +48,13 @@ const Hero = () => {
             Join Sri Lanka's largest English training institute with 20+ years of excellence. 
             At British Way, we empower potential and inspire growth.
           </p>
-          <button className="group relative px-4 sm:px-6 py-2.5 sm:py-3 bg-blue-600 text-white rounded-lg shadow-xl 
-            transition-all duration-300 ease-in-out text-sm sm:text-base font-semibold inline-flex items-center
-            hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/30 border-2 border-transparent
-            hover:border-blue-500">
+          <button
+            className="group relative px-4 sm:px-6 py-2.5 sm:py-3 bg-blue-600 text-white rounded-lg shadow-xl 
+              transition-all duration-300 ease-in-out text-sm sm:text-base font-semibold inline-flex items-center
+              hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/30 border-2 border-transparent
+              hover:border-blue-500"
+            onClick={onApplyNow}
+          >
             APPLY NOW
             <ArrowRight className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
           </button>

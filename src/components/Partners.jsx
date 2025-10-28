@@ -15,7 +15,7 @@ const logos = [
 const Partners = () => {
   return (
     <section className="w-full py-12 bg-white text-center">
-      <h2 className="text-2xl font-bold mb-1">Our Strategic Partners</h2>
+      <h2 className="text-3xl font-bold mb-1">Our Strategic Partners</h2>
       <p className="text-gray-500 mb-8">Pioneering Education through Growth.</p>
       <Marquee gradient={false} speed={50}>
         {logos.map((logo, index) => (

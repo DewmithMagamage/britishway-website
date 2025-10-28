@@ -65,7 +65,7 @@ const Footer = () => {
             <div className="mb-6">
               <h4 className="font-bold text-lg mb-4">Location</h4>
               <p className="text-sm text-blue-200">
-                2/36, Kandy Road, Nittambuwa, Sri Lanka. (Head Office )
+                2/36, Kandy Road, Nittambuwa, Sri Lanka. (Head Office)
               </p>
             </div>
             
@@ -95,7 +95,7 @@ const Footer = () => {
         
         {/* Bottom Section */}
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 text-blue-200 text-sm">
-          <p className="text-center sm:text-left">British Way English Academy © 2025. All rights reserved.</p>
+          <p className="text-center sm:text-left">British Way English Academy IT Department © 2025. All rights reserved.</p>
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
             <button onClick={() => navigate('/')} className="hover:text-white transition-colors">Home</button>
             <button onClick={() => navigate('/courses')} className="hover:text-white transition-colors">Courses</button>

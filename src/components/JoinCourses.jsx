@@ -18,11 +18,11 @@ const JoinCourses = () => {
   return (
     <section className="py-20 bg-gradient-to-b from-white via-gray-100 to-white relative overflow-hidden">
       <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center relative z-10">
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+        <h2 className="text-3xl font-bold mb-1">
           Start Your Course Today
         </h2>
         
-        <p className="text-gray-600 text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
+        <p className="text-gray-600 text-lg sm:text-xl leading-relaxed mb-10 max-w-3xl mx-auto">
           Ready to embark on your journey to learn English Language the best way?
           <br className="hidden sm:block"/>
           Take your first step towards fluency and confidence!

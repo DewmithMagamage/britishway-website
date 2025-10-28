@@ -33,8 +33,18 @@ const CourseCard = ({ course }) => {
         </p>
         
         {/* Enroll Button */}
-        <button className="w-full bg-blue-600 text-white py-2.5 sm:py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300 flex items-center justify-center space-x-2">
+        <button className="w-full bg-blue-600 text-white py-2.5 sm:py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300 flex items-center justify-center space-x-2 mb-2">
           <span className="font-medium">Enroll Now</span>
+          <ArrowRight className="w-4 h-4" />
+        </button>
+        <button
+          className="w-full bg-gray-100 text-blue-700 py-2 px-4 rounded-lg font-medium border border-blue-200 hover:bg-blue-50 transition-colors duration-300 flex items-center justify-center space-x-2"
+          onClick={(e) => {
+            e.stopPropagation();
+            navigate(`/course/${course.id}`);
+          }}
+        >
+          <span>More Details</span>
           <ArrowRight className="w-4 h-4" />
         </button>
       </div>

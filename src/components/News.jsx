@@ -1,7 +1,10 @@
+
 import React from "react";
 import { Calendar, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const News = () => {
+  const navigate = useNavigate();
   return (
     <section className="py-16 px-8 max-w-6xl mx-auto">
       <div className="flex items-center justify-between mb-8">
@@ -9,7 +12,10 @@ const News = () => {
           <h2 className="text-sm tracking-wide uppercase text-gray-500 mb-2">Latest</h2>
           <h3 className="text-3xl font-bold">News</h3>
         </div>
-        <button className="flex items-center text-blue-600 hover:text-blue-700">
+        <button
+          className="flex items-center text-blue-600 hover:text-blue-700"
+          onClick={() => navigate('/news-events')}
+        >
           <span className="mr-2">View All</span>
           <ArrowRight className="w-4 h-4" />
         </button>

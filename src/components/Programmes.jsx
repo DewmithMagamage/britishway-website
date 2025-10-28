@@ -84,7 +84,7 @@ const Programmes = () => {
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-2xl font-bold mb-1">What We Offer</h2>
+          <h2 className="text-3xl font-bold mb-1">What We Offer</h2>
           <p className="text-lg text-gray-600">A range of courses that can meet your educational needs.</p>
         </div>
 
