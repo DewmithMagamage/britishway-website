@@ -1,16 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const programmes = [
-  { title: "Two-Month Diploma", subtitle: "Gives You All the Essentials in Learning English and More.", img: "/images/Weekday Diploma copy.jpg" },
-  { title: "50 Day Camp", subtitle: "An Outstanding English Knowledge in a Residential Background.", img: "/images/50 Day Residential camp.jpg" },
-  { title: "Diploma (Weekend-Based)", subtitle: "Turn your weekends into stepping stones for success.", img: "/images/Weekend Diploma.jpg" },
-  { title: "English Classes for Kids", subtitle: "Engaging English Lessons Designed Just for Your Child .", img: "/images/Kids Class.jpg" },
-  { title: "IT+English Diploma", subtitle: "Expand your IT Knowledge with English.", img: "/images/IT+English.jpg" },
-  { title: "Online Diploma", subtitle: "Master English Anytime, Anywhere.", img: "/images/Online Diploma copy.jpg" },
+  { id: 'weekday-2month', title: "Two-Month Diploma", subtitle: "Gives You All the Essentials in Learning English and More.", img: "/images/Weekday Diploma copy.jpg" },
+  { id: '50-day-camp', title: "50 Day Camp", subtitle: "An Outstanding English Knowledge in a Residential Background.", img: "/images/50 Day Residential camp.jpg" },
+  { id: 'weekend-diploma', title: "Diploma (Weekend-Based)", subtitle: "Turn your weekends into stepping stones for success.", img: "/images/Weekend Diploma.jpg" },
+  { id: 'kids-class', title: "English Classes for Kids", subtitle: "Engaging English Lessons Designed Just for Your Child .", img: "/images/Kids Class.jpg" },
+  { id: 'it-english', title: "IT+English Diploma", subtitle: "Expand your IT Knowledge with English.", img: "/images/IT+English.jpg" },
+  { id: 'online-diploma', title: "Online Diploma", subtitle: "Master English Anytime, Anywhere.", img: "/images/Online Diploma copy.jpg" },
 ];
 
 const Programmes = () => {
+  const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [cardsToShow, setCardsToShow] = useState(3); // responsive: 1 (mobile), 2 (tablet), 3 (desktop)
   const CARD_WIDTH = 350;
@@ -129,7 +131,10 @@ const Programmes = () => {
                     <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 text-gray-800">
                       <h3 className="text-base sm:text-lg md:text-xl font-bold mb-1 sm:mb-2">{programme.title}</h3>
                       <p className="text-xs sm:text-sm opacity-80 mb-3 sm:mb-4 leading-relaxed">{programme.subtitle}</p>
-                      <button className="px-4 sm:px-6 py-1.5 sm:py-2 text-sm bg-gray-800/80 backdrop-blur-sm rounded-lg border border-gray-700/50 hover:bg-gray-800 transition-all duration-300 text-white">
+                      <button
+                        className="px-4 sm:px-6 py-1.5 sm:py-2 text-sm bg-gray-800/80 backdrop-blur-sm rounded-lg border border-gray-700/50 hover:bg-gray-800 transition-all duration-300 text-white"
+                        onClick={() => navigate(`/course/${programme.id}`)}
+                      >
                         More Details
                       </button>
                     </div>
