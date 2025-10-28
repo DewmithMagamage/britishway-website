@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Layout from "./Layout";
 import { ArrowLeft } from "lucide-react";
+import RegistrationPopup from "./RegistrationPopup";
+import { branches } from "../data/branches";
 
 const courseData = {
   "50-day-camp": {
@@ -122,6 +124,17 @@ const CourseDetailPage = () => {
   const { courseId } = useParams();
   const navigate = useNavigate();
   const course = courseData[courseId];
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [selectedBranch, setSelectedBranch] = useState(null);
+
+  const handleOpenPopup = () => {
+    setIsPopupOpen(true);
+  };
+
+  const handleClosePopup = () => {
+    setIsPopupOpen(false);
+    setSelectedBranch(null);
+  };
 
   if (!course) {
     return <div>Course not found</div>;
@@ -230,62 +243,25 @@ const CourseDetailPage = () => {
                 <p className="text-sm text-gray-500 mb-6">Register Online get early bird course fee</p>
               </div>
 
-              {/* Registration Form */}
-              <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-8">
-                <form className="space-y-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
-                    <input
-                      type="text"
-                      required
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="Enter your full name"
-                    />
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Email *</label>
-                      <input
-                        type="email"
-                        required
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        placeholder="Enter your email"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Phone *</label>
-                      <input
-                        type="tel"
-                        required
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        placeholder="Enter your phone"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Preferred Branch *</label>
-                    <select
-                      required
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    >
-                      <option value="">Select a branch</option>
-                      <option value="nugegoda">Nugegoda</option>
-                      <option value="kandy">Kandy</option>
-                      <option value="galle">Galle</option>
-                      <option value="kurunegala">Kurunegala</option>
-                    </select>
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full bg-blue-700 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-800 transition-colors"
-                  >
-                    REGISTER NOW →
-                  </button>
-                </form>
+              {/* Registration Button */}
+              <div className="max-w-2xl mx-auto text-center">
+                <button
+                  onClick={handleOpenPopup}
+                  className="bg-blue-700 text-white py-4 px-8 rounded-lg font-semibold hover:bg-blue-800 transition-colors text-lg w-full md:w-auto"
+                >
+                  REGISTER NOW →
+                </button>
               </div>
+
+              {/* Registration Popup */}
+              <RegistrationPopup
+                isOpen={isPopupOpen}
+                onClose={handleClosePopup}
+                branchName={selectedBranch?.name || ""}
+                branchId={selectedBranch?.id || ""}
+                branches={branches}
+                onBranchSelect={setSelectedBranch}
+              />
             </div>
           </div>
         </section>
