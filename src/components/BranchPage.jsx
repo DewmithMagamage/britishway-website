@@ -9,6 +9,7 @@ const BranchPage = () => {
   const { branchId } = useParams();
   const navigate = useNavigate();
   const [showRegistrationPopup, setShowRegistrationPopup] = useState(false);
+  const [selectedBranch, setSelectedBranch] = useState(null);
   
   // Find the branch data from the imported branches array
   const branch = branches.find(b => b.id === branchId) || branches[0];
@@ -303,6 +304,8 @@ const BranchPage = () => {
         onClose={() => setShowRegistrationPopup(false)}
         branchName={branch.name}
         branchId={branch.id}
+        branches={branches}
+        onBranchSelect={setSelectedBranch}
       />
     </Layout>
   );
