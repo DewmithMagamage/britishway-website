@@ -31,7 +31,7 @@ const AboutPage = () => {
       {/* Hero Banner */}
       <section className="relative h-[60vh] overflow-hidden -mt-24">
         <img 
-          src="/images/aboutus.png" 
+          src="/images/banner 01.jpg" 
           alt="About Us" 
           className="absolute top-0 left-0 w-full h-full object-cover"
         />
@@ -39,7 +39,7 @@ const AboutPage = () => {
         <div className="absolute inset-0 flex items-center z-10">
           <div className="container mx-auto">
             <div className="text-white max-w-2xl px-8 md:px-16">
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-left">About Us</h1>
+              <h1 className=" text-5xl md:text-6xl font-bold mb-6 text-left">About Us</h1>
               <p className="text-lg md:text-xl">
                 For over two decades, British Way English Academy has been shaping futures with trusted language education.
               </p>
@@ -51,7 +51,7 @@ const AboutPage = () => {
       {/* Intro + Gallery + Stats */}
       <section className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-start">
         <Reveal as="div" variant="slide-right">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About Us</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-16">About Us</h2>
           <div className="space-y-4 text-gray-700 leading-relaxed text-sm">
             <p>
               This is where your dreams of perfecting your English language skills come true. British Way English Academy is the best of its kind to bring the prime standards in English Language Skills training.
@@ -90,9 +90,8 @@ const AboutPage = () => {
         <Reveal className="relative w-full flex items-start justify-center" variant="slide-left">
           <div className="w-full max-w-lg">
             <img
-              src="/images/course card.jpg"
+              src="/images/aboutus.png"
               alt="Students at British Way English Academy"
-              className="rounded-2xl shadow-2xl w-full h-[500px] object-cover hover:scale-105 transition-transform duration-500"
             />
           </div>
         </Reveal>

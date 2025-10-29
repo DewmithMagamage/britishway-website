@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "./Layout";
 import { StarIcon } from "@heroicons/react/24/solid";
 import { ChatBubbleLeftRightIcon } from "@heroicons/react/24/outline";
+import { useNavigate } from "react-router-dom";
 
 const TestimonialsPage = () => {
   const testimonials = [
@@ -62,11 +63,13 @@ const TestimonialsPage = () => {
   ];
 
   const stats = [
-    { number: "21,000+", label: "Students Graduated Annually" },
+    { number: "9,000+", label: "Students Graduated Annually" },
     { number: "95%", label: "Student Satisfaction Rate" },
     { number: "20+", label: "Years of Experience" },
     { number: "14", label: "Branches Nationwide" }
   ];
+
+  const navigate = useNavigate();
 
   return (
     <Layout>
@@ -92,13 +95,13 @@ const TestimonialsPage = () => {
         </section>
 
         {/* Stats Section */}
-        <section className="py-16 bg-blue-600">
+        <section className="py-16 bg-gradient-to-b from-[#2F327D] to-[#0A0B1C] text-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center text-white">
-                  <div className="text-4xl md:text-5xl font-bold mb-2">{stat.number}</div>
-                  <div className="text-blue-100">{stat.label}</div>
+                  <div className="text-4xl md:text-5xl font-extrabold mb-2 tracking-tight">{stat.number}</div>
+                  <div className="text-blue-100 text-sm">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -117,30 +120,40 @@ const TestimonialsPage = () => {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {testimonials.map((testimonial) => (
-                <div key={testimonial.id} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
-                  <div className="flex items-center mb-4">
+                <article key={testimonial.id} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-2xl transition-shadow duration-200">
+                  <header className="flex items-center gap-4 mb-4">
                     <img 
                       src={testimonial.image} 
                       alt={testimonial.name}
-                      className="w-12 h-12 rounded-full object-cover mr-4"
+                      className="w-14 h-14 rounded-full object-cover ring-2 ring-white shadow-sm"
                     />
                     <div>
-                      <h3 className="font-semibold text-gray-900">{testimonial.name}</h3>
-                      <p className="text-sm text-gray-600">{testimonial.course} - {testimonial.branch}</p>
+                      <h3 className="font-semibold text-gray-900 text-lg">{testimonial.name}</h3>
+                      <p className="text-sm text-gray-500">{testimonial.course} — <span className="font-medium text-gray-700">{testimonial.branch}</span></p>
                     </div>
-                  </div>
-                  
-                  <div className="flex items-center mb-4">
+                  </header>
+
+                  <div className="flex items-center mb-4" aria-hidden>
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <StarIcon key={i} className="h-5 w-5 text-yellow-400" />
+                      <StarIcon key={i} className="h-5 w-5 text-yellow-400 mr-0.5" />
                     ))}
                   </div>
-                  
-                  <div className="relative">
-                    <ChatBubbleLeftRightIcon className="h-8 w-8 text-blue-100 absolute -top-2 -left-2" />
-                    <p className="text-gray-700 italic pl-6">{testimonial.text}</p>
+
+                  <div className="relative mb-4">
+                    <ChatBubbleLeftRightIcon className="h-7 w-7 text-blue-100 absolute -top-2 -left-2" />
+                    <blockquote className="text-gray-700 italic pl-6 leading-relaxed">“{testimonial.text}”</blockquote>
                   </div>
-                </div>
+
+                  <footer className="mt-4">
+                    <button
+                      onClick={() => navigate('/courses')}
+                      className="text-sm text-blue-600 hover:underline"
+                      aria-label={`View courses related to ${testimonial.name}`}
+                    >
+                      View Courses
+                    </button>
+                  </footer>
+                </article>
               ))}
             </div>
           </div>
@@ -156,16 +169,14 @@ const TestimonialsPage = () => {
 
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                <div className="aspect-video bg-gray-200 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M8 5v10l8-5-8-5z"/>
-                      </svg>
-                    </div>
-                    <p className="text-gray-600">Video testimonial coming soon</p>
-                  </div>
-                </div>
+                <video
+                  controls
+                  className="w-full h-full object-cover bg-black"
+                  src="/images/hero-bg-video.mp4"
+                  poster="/images/Stu 01.png"
+                >
+                  Your browser does not support the video tag.
+                </video>
                 <div className="p-6">
                   <h3 className="font-semibold text-gray-900 mb-2">Sarah's Success Story</h3>
                   <p className="text-gray-600 text-sm">How British Way helped Sarah achieve her career goals</p>
@@ -173,16 +184,14 @@ const TestimonialsPage = () => {
               </div>
 
               <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                <div className="aspect-video bg-gray-200 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M8 5v10l8-5-8-5z"/>
-                      </svg>
-                    </div>
-                    <p className="text-gray-600">Video testimonial coming soon</p>
-                  </div>
-                </div>
+                <video
+                  controls
+                  className="w-full h-full object-cover bg-black"
+                  src="/videos/testimonial02.mp4"
+                  poster="/images/Stu 02.jpeg"
+                >
+                  Your browser does not support the video tag.
+                </video>
                 <div className="p-6">
                   <h3 className="font-semibold text-gray-900 mb-2">Michael's Journey</h3>
                   <p className="text-gray-600 text-sm">From beginner to confident English speaker</p>
@@ -193,7 +202,7 @@ const TestimonialsPage = () => {
         </section>
 
         {/* Call to Action */}
-        <section className="py-16 bg-blue-600">
+        <section className="py-16 bg-gradient-to-b from-[#2F327D] to-[#0A0B1C] text-white">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <h2 className="text-3xl font-bold text-white mb-4">Ready to Start Your Success Story?</h2>
             <p className="text-blue-100 text-lg mb-8">

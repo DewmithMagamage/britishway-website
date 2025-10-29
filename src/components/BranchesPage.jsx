@@ -13,7 +13,7 @@ const BranchesPage = () => {
       {/* Hero Section (unified style) */}
       <section className="relative h-[60vh] overflow-hidden -mt-24">
         <img 
-          src="/images/course card.jpg" 
+          src="/images/banner 02.jpg" 
           alt="Visit Our Branches" 
           className="absolute top-0 left-0 w-full h-full object-cover"
         />
@@ -33,17 +33,16 @@ const BranchesPage = () => {
       {/* Our Branches Section */}
       <section className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-start">
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Branches</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 mt-16">Our Branches</h2>
           <p className="text-gray-700 leading-relaxed text-sm">
             British Way English Academy takes pride in being Sri Lanka's largest and most trusted English training institute, with 14 branches island-wide. Each of our branches is designed to deliver the same standard of excellence in English education, offering modern classrooms, advanced facilities, and a supportive environment for students. With highly qualified lecturers and a consistent teaching methodology, we ensure that no matter which branch you choose, you will experience the same quality learning journey. Our 14 branches make us easily accessible to students across the country, empowering thousands every year to achieve academic, professional, and personal success.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
-          <img src="/images/branches/gallery-1.jpg" alt="Branch gallery 1" className="rounded-xl shadow-md object-cover h-40 md:h-48 w-full" />
-          <img src="/images/branches/gallery-2.jpg" alt="Branch gallery 2" className="rounded-xl shadow-md object-cover h-40 md:h-48 w-full" />
-          <img src="/images/branches/gallery-3.jpg" alt="Branch gallery 3" className="rounded-xl shadow-md object-cover h-40 md:h-48 w-full col-span-2" />
+        <div className="grid grid-cols-0 gap-8">
+          <img src="/images/aboutus.png" alt="Branch gallery" className="" />
         </div>
+
       </section>
 
       {/* Find Your Nearest Branch Section */}
