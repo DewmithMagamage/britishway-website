@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const About = () => {
   const navigate = useNavigate();
   return (
-    <section className="py-16 px-8 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <section className="py-16 px-8 mx-auto grid md:grid-cols-2 gap-12 items-center">
       <div>
         <h2 className="text-sm tracking-wide uppercase text-gray-500 mb-2">A Bit</h2>
         <h3 className="text-3xl font-bold mb-6">About Us</h3>
@@ -19,9 +19,13 @@ const About = () => {
           onClick={() => navigate('/about')}
         >Explore More</button>
       </div>
-      <div className="grid grid-cols-1 gap-4">
-        <img src="/images/aboutus.png" alt="About 1" />
-      </div>
+<div className="grid grid-cols-1 gap-4">
+  <img
+    src="/images/aboutus.png"
+    alt="About"
+    className="w-[1000px] h-[800px] object-cover mx-auto rounded-2xl"
+  />
+</div>
     </section>
   );
 };
