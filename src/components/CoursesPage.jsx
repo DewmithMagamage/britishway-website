@@ -97,7 +97,7 @@ const CoursesPage = () => {
       <section className="relative h-[60vh] overflow-hidden -mt-24">
         <img 
           src="/images/banner 01.jpg" 
-          alt="Our Courses" 
+          alt="OurCourses" 
           className="absolute top-0 left-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/20" />
