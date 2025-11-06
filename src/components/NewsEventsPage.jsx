@@ -89,7 +89,7 @@ const NewsEventsPage = () => {
       title: "Orientation Day – Two-Month Diploma Program 2024",
       date: "June 4, 2025",
       description: "We are excited to share highlights from our recent orientation day for the 2025 Two-Month Diploma program at British Way English Academy. Our new students were warmly welcomed, given an overview of the program, and introduced to our dedicated instructors and facilities. The day was filled with engaging activities, valuable information sessions, and the chance for students to connect with their peers. We are thrilled to have such enthusiastic participants and look forward to a successful and enriching journey ahead.",
-      image: "/images/course card.jpg",
+      image: "/images/oriantation.png",
       featured: false
     },
     {
@@ -113,7 +113,7 @@ const NewsEventsPage = () => {
       title: "British Way Spirit 2024",
       date: "September 25, 2024",
       description: "British Way Spirit 2024 was a remarkable display of confidence, skill, and teamwork! Our talented students participated in three competitive categories Public Speaking,Debating, Spelling Bee.It was truly inspiring to witness their enthusiasm, preparation, and command of the English language — a proud moment for the entire British Way family!",
-      image: "/images/course card.jpg",
+      image: "/images/spritcompetion.png",
       featured: false
     }
   ];

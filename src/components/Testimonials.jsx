@@ -63,10 +63,10 @@ const Testimonials = () => {
       text: "Today, as an undergraduate and freelance presenter, I credit British Way English Academy for shaping my confidence, fluency, and path to success."
     },
     {
-      name: "Sarah Johnson",
-      image: "/images/Stu 02.jpeg", 
+      name: "Chalani Tharuka Gamage",
+      image: "/images/stuchalani.png", 
       rating: 5,
-      text: "British Way helped me gain confidence in speaking English. The teachers are amazing and the environment is very supportive."
+      text: "As an AI and Data Science undergraduate, British Way English Academy helped me communicate with greater fluency and confidence."
     },
     {
       name: "Michael Chen",
