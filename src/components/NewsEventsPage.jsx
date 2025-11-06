@@ -79,40 +79,40 @@ const NewsEventsPage = () => {
     {
       id: 1,
       title: "CONVOCATION CEREMONY 2025",
-      date: "21ST JULY",
+      date: "July 21, 2025",
       description: "On July 21st, 2025, British Way English Academy proudly celebrated its Convocation Ceremony at the BMICH, honoring the achievements of our latest batch of graduates. Surrounded by family, friends, and esteemed colleagues, this event was a testament to our commitment to fostering academic excellence, confidence and skills to succeed globally...",
-      image: "/images/Stu 01.png",
+      image: "/images/convocation2026.jpg",
       featured: true
     },
     {
       id: 2,
-      title: "NEW BRANCH OPENING IN COLOMBO",
-      date: "15TH JULY",
-      description: "We are excited to announce the opening of our newest branch in the heart of Colombo. This expansion marks another milestone in our mission to make quality English education accessible to more students across Sri Lanka...",
+      title: "Orientation Day – Two-Month Diploma Program 2024",
+      date: "June 4, 2025",
+      description: "We are excited to share highlights from our recent orientation day for the 2025 Two-Month Diploma program at British Way English Academy. Our new students were warmly welcomed, given an overview of the program, and introduced to our dedicated instructors and facilities. The day was filled with engaging activities, valuable information sessions, and the chance for students to connect with their peers. We are thrilled to have such enthusiastic participants and look forward to a successful and enriching journey ahead.",
       image: "/images/course card.jpg",
       featured: false
     },
     {
       id: 3,
-      title: "STUDENT ACHIEVEMENT AWARDS 2025",
+      title: "British Way Hosts MAPIYA WANDANA 2024 (මා පිය වන්දනා)",
       date: "10TH JULY",
-      description: "Celebrating excellence in English language learning, our annual Student Achievement Awards recognized outstanding performers across all branches. Special congratulations to our top achievers who demonstrated exceptional progress...",
-      image: "/images/Stu 02.jpeg",
+      description: "British Way English Academy is proud to have hosted yet another successful MAAPIYA WANDANA program on the 10th of March 2024 .",
+      image: "/images/MAPIYAWANDANA.jpg",
       featured: false
     },
     {
       id: 4,
-      title: "INTERNATIONAL ENGLISH DAY CELEBRATION",
-      date: "5TH JULY",
-      description: "British Way English Academy celebrated International English Day with a series of engaging activities, competitions, and cultural exchanges. Students from all branches participated in speech contests, debates, and creative writing workshops...",
+      title: "Dining Ethics Practices-2024",
+      date: "August 14, 2025",
+      description: "Discover the art of dining with grace and confidence at our Dining Etiquette Event, part of the Britishway English Academy’s 50 Day Camp. This interactive session will cover essential dining manners, effective conversation skills, and the subtleties of polite behavior during meals. Perfect for students and professionals alike, this event will help you navigate any dining situation with poise.",
       image: "/images/Stu 03.jpeg",
       featured: false
     },
     {
       id: 5,
-      title: "PARTNERSHIP WITH CAMBRIDGE ASSESSMENT",
-      date: "1ST JULY",
-      description: "We are proud to announce our new partnership with Cambridge Assessment English, further strengthening our commitment to providing internationally recognized English language qualifications...",
+      title: "British Way Spirit 2024",
+      date: "September 25, 2024",
+      description: "British Way Spirit 2024 was a remarkable display of confidence, skill, and teamwork! Our talented students participated in three competitive categories Public Speaking,Debating, Spelling Bee.It was truly inspiring to witness their enthusiasm, preparation, and command of the English language — a proud moment for the entire British Way family!",
       image: "/images/course card.jpg",
       featured: false
     }

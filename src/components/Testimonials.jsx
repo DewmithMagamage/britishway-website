@@ -57,10 +57,10 @@ const Testimonials = () => {
   
   const testimonials = [
     {
-      name: "Olivia Green",
-      image: "/images/Stu 01.png",
+      name: "Amasha Liyanage",
+      image: "/images/Stuamasha.png",
       rating: 5,
-      text: ".. followed by some bogus content. Aenean commodo ligula egget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+      text: "Today, as an undergraduate and freelance presenter, I credit British Way English Academy for shaping my confidence, fluency, and path to success."
     },
     {
       name: "Sarah Johnson",
