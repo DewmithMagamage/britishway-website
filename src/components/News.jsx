@@ -24,7 +24,7 @@ const News = () => {
       <div className="grid md:grid-cols-2 gap-8 items-start">
         <div className="order-1 md:order-1">
           <img 
-            src="/images/course card.jpg" 
+            src="/images/concocationBMICH.png" 
             alt="Convocation Ceremony 2025"
             className="w-full h-80 object-cover rounded-xl shadow-lg"
           />

@@ -18,7 +18,7 @@ const MapSection = () => {
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           <div className="h-96">
             <iframe
-              src="https://maps.google.com/maps?q=Nittambuwa,Sri+Lanka&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3778.4040584500485!2d80.09624097474911!3d7.14691876560543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae302a806b73f91%3A0x2562994dc2d8ab84!2sBritish%20Way%20English%20Academy%20%7C%20Head%20Office!5e1!3m2!1sen!2slk!4v1762486225945!5m2!1sen!2slk"
               width="100%"
               height="100%"
               style={{ border: 0 }}
