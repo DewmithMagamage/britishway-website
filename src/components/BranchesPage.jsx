@@ -13,7 +13,7 @@ const BranchesPage = () => {
       {/* Hero Section (unified style) */}
       <section className="relative h-[60vh] overflow-hidden -mt-24">
         <img 
-          src="/images/banner 02.jpg" 
+          src="/images/Branchpage.png" 
           alt="Visit Our Branches" 
           className="absolute top-0 left-0 w-full h-full object-cover"
         />

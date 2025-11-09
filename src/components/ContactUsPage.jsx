@@ -52,64 +52,64 @@ const ContactUsPage = () => {
       id: 6,
       name: "Kurunegala Branch",
       address: "987/6, Kandy Road, Kurunegala",
-      phone: "037 2 678 901",
-      email: "kurunegala@britishway.lk",
+      phone: "0333 555 306",
+      email: "kurunegalabwea@gmail.com",
       mapUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d120835.75589703672!2d80.2150679!3d7.4183366!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae3397ff4ed9ebf%3A0xe7cc9eae19177596!2sBritish%20Way%20English%20Academy%20-%20Kurunegala!5e1!3m2!1sen!2slk!4v1762448941125!5m2!1sen!2slk"
     },
     {
       id: 7,
       name: "Gampaha Branch",
-      address: "147/8, Colombo Road, Gampaha",
-      phone: "033 2 789 012",
-      email: "gampaha@britishway.lk",
+      address: "67/ Marybiso Mawatha, Gampaha",
+      phone: "0333 555 310",
+      email: "gampahabwea@gmail.com",
       mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3778.8450084221417!2d79.99570407474882!3d7.093392416279044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2fb8ccd08be15%3A0x1c3bc03fb930a1a!2sBritish%20Way%20English%20Academy!5e1!3m2!1sen!2slk!4v1762449065574!5m2!1sen!2slk"
     },
     {
       id: 8,
       name: "Negombo Branch",
-      address: "258/9, Main Street, Negombo",
-      phone: "031 2 890 123",
-      email: "negombo@britishway.lk",
+      address: "100, Nicholas Marcues Mawatha, Negombo",
+      phone: "0333 555 307",
+      email: "negombobwea@gmail.com",
       mapUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d120893.50962606393!2d79.6977425!3d7.2049615!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2efd59df2a7cb%3A0x4c73cfb1c8ec7d2d!2sBritish%20Way%20English%20Academy%20Negombo!5e1!3m2!1sen!2slk!4v1762487016592!5m2!1sen!2slk"
     },
     {
       id: 9,
       name: "Rathnapura Branch",
-      address: "369/1, Colombo Road, Rathnapura",
-      phone: "045 2 901 234",
-      email: "rathnapura@britishway.lk",
+      address: "Kudugalwaththa, Ratnapura",
+      phone: "045 728 4794",
+      email: "bwearathnapura@gmail.com",
       mapUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d419802.4646955926!2d79.95574796533758!3d6.8922210943312265!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae3bf0badad2f2b%3A0xd60beed8e915b5b!2sBritish%20Way%20English%20Academy!5e1!3m2!1sen!2slk!4v1762487140394!5m2!1sen!2slk"
     },
     {
       id: 10,
       name: "Anuradhapura Branch",
-      address: "741/2, Kandy Road, Anuradhapura",
-      phone: "025 2 012 345",
-      email: "anuradhapura@britishway.lk",
+      address: "514A/2A, Maithreepala Senanayaka Mawatha, Anuradhapura",
+      phone: "025 205 4285",
+      email: "bwea.anuradhapura@gmail.com",
       mapUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d965237.9459881175!2d79.6218216!3d8.0507425!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afcf5aca2e2b0f7%3A0xf91258182ae6c43b!2sBritish%20Way%20English%20Academy-%20Anuradhapura!5e1!3m2!1sen!2slk!4v1762488211175!5m2!1sen!2slk"
     },
     {
       id: 11,
       name: "Polonnaruwa Branch",
-      address: "852/3, Main Street, Polonnaruwa",
-      phone: "027 2 123 456",
-      email: "polonnaruwa@britishway.lk",
+      address: "PCC Bulding,2nd floor, Pola junction, Polonnaruwa",
+      phone: "027 764 4588",
+      email: "bwea.polonnaruwa1@gmail.com",
       mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.480768178191!2d81.00171999999999!3d7.940403700000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afb437743f4e1cd%3A0x6980c5685c689be0!2sBritish%20Way%20English%20Academy%20-%20Polonnaruwa!5e1!3m2!1sen!2slk!4v1762486735625!5m2!1sen!2slk"
     },
     {
       id: 12,
       name: "Bandarawela Branch",
-      address: "963/4, Badulla Road, Bandarawela",
-      phone: "057 2 234 567",
-      email: "bandarawela@britishway.lk",
+      address: "444, Badulla Road, Bandarawela",
+      phone: "057 222 0116",
+      email: "bandarawelabwea@gmail.com",
       mapUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d483918.41580033157!2d80.1495911!3d6.8746629!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae46f3e70beacb5%3A0xaf15b8744afa5433!2sBritish%20Way%20English%20Academy!5e1!3m2!1sen!2slk!4v1762486860145!5m2!1sen!2slk"
     },
     {
       id: 13,
       name: "Kandy Branch",
-      address: "159/5, Peradeniya Road, Kandy",
-      phone: "081 2 345 678",
-      email: "kandy@britishway.lk",
+      address: "497, Peradeniya road, Kandy",
+      phone: "0333 555 309",
+      email: "kandybwea@gmail.com",
       mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1367.202828567434!2d80.62719334176442!3d7.286964351570535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae3689afd833859%3A0x96060a6d12fedfe!2sBritishway%20English%20Academy%20-%20Kandy!5e1!3m2!1sen!2slk!4v1762486630591!5m2!1sen!2slk"
     }
   ];
