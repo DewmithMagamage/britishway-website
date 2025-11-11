@@ -60,19 +60,19 @@ const Testimonials = () => {
       name: "Amasha Liyanage",
       image: "/images/Stuamasha.png",
       rating: 5,
-      text: "Today, as an undergraduate and freelance presenter, I credit British Way English Academy for shaping my confidence, fluency, and path to success."
+      text: "Today, as an undergraduate and freelance presenter, I credit British Way English Academy - Kiribathgoda branch for shaping my confidence, fluency, and path to success."
     },
     {
       name: "Chalani Tharuka Gamage",
       image: "/images/stuchalani.png", 
       rating: 5,
-      text: "As an AI and Data Science undergraduate, British Way English Academy helped me communicate with greater fluency and confidence."
+      text: "As an AI and Data Science undergraduate, British Way English Academy - Matara Branch helped me communicate with greater fluency and confidence."
     },
     {
-      name: "Michael Chen",
-      image: "/images/Stu 03.jpeg",
+      name: "Nisansala Sewwandi",
+      image: "/images/malshastu.png",
       rating: 5,
-      text: "The courses are well-structured and practical. I've improved my English significantly since joining British Way."
+      text: "British Way English Academy was not just where I learned English but where I discovered myself and built confidence.Today, I’ve achieved my childhood dream by becoming an English teacher at the Nugegoda Branch."
     }
   ];
 

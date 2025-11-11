@@ -8,30 +8,30 @@ const TestimonialsPage = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Sarah Johnson",
-      course: "Weekend Diploma",
-      branch: "Nugegoda",
+      name: "Amasha liyanagen",
+      course: "Weekday Diploma",
+      branch: "Kiribathgoda",
       rating: 5,
-      text: "British Way English Academy transformed my English skills completely. The instructors are highly qualified and the learning environment is excellent. I highly recommend this institution to anyone looking to improve their English.",
-      image: "/images/Stu 01.png"
+      text: "I’m truly grateful to British Way English Academy, Kiribathgoda branch for helping me improve my English language and building my confidence. Before joining, I found it difficult to communicate fluently, but thanks to their supportive teachers and effective learning methods, I was able to enhance my speaking and writing skills. Today,I’m studying as an undergraduate and working as a freelance presenter.",
+      image: "/images/stuamasha.png"
     },
     {
       id: 2,
-      name: "Michael Fernando",
-      course: "Online Diploma",
-      branch: "Kandy",
+      name: "Chalani Tharuka Gamage",
+      course: "Weekday Diploma",
+      branch: "Matara",
       rating: 5,
-      text: "The online classes were fantastic! The teachers were very supportive and the course material was comprehensive. I was able to balance my work and studies effectively.",
-      image: "/images/Stu 02.jpeg"
+      text: "As an AI and Data Science undergraduate at IIT, BritishWay has been the bridge that strengthened my communication skills. I now handle the English language more smoothly and confidently than ever before.!",
+      image: "/images/stuchalani.png"
     },
     {
       id: 3,
-      name: "Priya Perera",
-      course: "Kids Class",
-      branch: "Gampaha",
+      name: "Nisansala Sewwandi",
+      course: "50 Day Camp",
+      branch: "Nittabuwa",
       rating: 5,
-      text: "My daughter loves attending the kids class at British Way. The teachers make learning fun and engaging. Her English has improved significantly in just a few months.",
-      image: "/images/Stu 03.jpeg"
+      text: "When I was a child, I had an ambition to become a teacher one day.But after getting older, I realized it is not easy to achieve. Sometimes Ifailed and sometimes I learnt. But after all I wanted to make a freshstart for my whole life. So, I decided to go to British Way EnglishAcademy Nittambuwa Residential Camp.At there I learnt lots of things not only English but also life lessonsand I improved my public speaking skills as well. So yes! British WayEnglish Academy is not just a place for me.it is the place where Ifinally found myself.",
+      image: "/images/malshastu.png"
     },
     {
       id: 4,
