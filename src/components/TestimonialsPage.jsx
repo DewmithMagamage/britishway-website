@@ -13,7 +13,7 @@ const TestimonialsPage = () => {
       branch: "Kiribathgoda",
       rating: 5,
       text: "I’m truly grateful to British Way English Academy, Kiribathgoda branch for helping me improve my English language and building my confidence. Before joining, I found it difficult to communicate fluently, but thanks to their supportive teachers and effective learning methods, I was able to enhance my speaking and writing skills. Today,I’m studying as an undergraduate and working as a freelance presenter.",
-      image: "/images/stuamasha.png"
+      image: "/images/Stuamasha.png"
     },
     {
       id: 2,
@@ -54,11 +54,11 @@ const TestimonialsPage = () => {
     {
       id: 6,
       name: "Chaminda Rathnayake",
-      course: "IELTS Preparation",
+      course: "Weekday Diploma",
       branch: "Negombo",
       rating: 5,
-      text: "Thanks to British Way's IELTS preparation course, I achieved my target score and got admission to my dream university. The mock tests and personalized feedback were invaluable.",
-      image: "/images/Stu 03.jpeg"
+      text: "I’m truly grateful to have been a part of the British Way English Academy Negombo family. It wasn’t just an English course — it was a home. The Negombo Branch became one of the most unforgettable milestones in my life. The teachers not only improved my English, but also shaped my confidence and personality. We learned so much more than just language. This journey helped me grow, communicate better, and believe in myself. I highly recommend British Way English Academy Negombo to anyone looking to learn English. Thank you to the Principal, teachers, and staff for everything. Love you so much, British Way Negombo!",
+      image: "/images/negambostu.png"
     }
   ];
 

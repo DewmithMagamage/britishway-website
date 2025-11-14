@@ -15,33 +15,33 @@ const NewsEventsPage = () => {
   const events = [
     {
       id: 1,
-      title: "Business English Workshop",
+      title: "Beach Cleanup Day - Nittabuwa Branch",
       date: new Date(2025, 0, 15), // January 15, 2025
       time: "9.30 am to 12.30 pm",
-      location: "Main Conference Hall - British Way Main Office",
-      image: "/images/course card.jpg",
-      type: "workshop",
+      location: "Negombo Beach",
+      image: "/images/beachcleanup.png",
+      type: "free",
       price: "Free"
     },
     {
       id: 2,
-      title: "IELTS Preparation Seminar",
+      title: "Beach Day Activity - Nittabuwa Branch",
       date: new Date(2025, 0, 22), // January 22, 2025
       time: "2.00 pm to 5.00 pm",
       location: "Main Conference Hall - British Way Main Office",
-      image: "/images/course card.jpg",
-      type: "seminar",
-      price: "Rs. 2,000"
+      image: "/images/beachactivityday.png",
+      type: "free",
+      price: "Free"
     },
     {
       id: 3,
-      title: "English Speaking Club",
-      date: new Date(2025, 0, 28), // January 28, 2025
-      time: "6.00 pm to 8.00 pm",
-      location: "Main Conference Hall - British Way Main Office",
-      image: "/images/course card.jpg",
-      type: "free",
-      price: "Free"
+      title: "Cambridge English Exam",
+      date: new Date(2025, 2, 28), 
+      time: "9.00 am to 11.00 am",
+      location: " IT Lab - British Campus - Nittabuwa",
+      image: "/images/cambridgeexme.png",
+      type: "workshop",
+      price: "Rs. 5,000"
     },
     {
       id: 4,
