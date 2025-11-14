@@ -21,7 +21,7 @@ const TestimonialsPage = () => {
       course: "Weekday Diploma",
       branch: "Matara",
       rating: 5,
-      text: "As an AI and Data Science undergraduate at IIT, BritishWay has been the bridge that strengthened my communication skills. I now handle the English language more smoothly and confidently than ever before.!",
+      text: "As an AI and Data Science undergraduate at IIT, British Way - Matara Branch has been the bridge that strengthened my communication skills and shaped my professional personality. The interactive sessions, inspiring lecturers, and supportive environment encouraged me to speak confidently and think critically in English. Thanks to British Way, I can now communicate my ideas fluently in both academic and professional settings, opening new opportunities for my future. I now handle the English language more smoothly and confidently than ever before!",
       image: "/images/stuchalani.png"
     },
     {
@@ -35,20 +35,20 @@ const TestimonialsPage = () => {
     },
     {
       id: 4,
-      name: "David Silva",
-      course: "Weekday Diploma - 3 Months",
-      branch: "Matara",
+      name: "Shanuka Thennakoon",
+      course: "Weekday Diploma",
+      branch: "Gampaha",
       rating: 5,
-      text: "The 3-month weekday diploma was exactly what I needed to advance my career. The practical approach and real-world applications made learning very effective.",
-      image: "/images/Stu 01.png"
+      text: "I am truly grateful to British Way English Academy, Gampaha, for helping me improve my English skills and confidence. The academy provided excellent training in communication, grammar, and public speaking, which played a big role in my professional growth. The teachers were supportive and always encouraged me to speak fluently and correctly. The knowledge and experience I gained there helped me achieve my dream of working as a banker. I proudly recommend British Way English Academy to anyone who wants to develop their English and succeed in their career.",
+      image: "/images/stugampaha.png"
     },
     {
       id: 5,
-      name: "Nimali Gunasekara",
-      course: "Business English Workshop",
-      branch: "Colombo",
+      name: "Yasashmi Vidanaarachchi",
+      course: "Weekday Diploma",
+      branch: "Nugegoda",
       rating: 5,
-      text: "The business English workshop helped me communicate more effectively in professional settings. The instructors were experienced and the course content was very relevant.",
+      text: "My love for the English language began in childhood, and at the Nugegoda Branch of British Way English Academy, I discovered the perfect path to fluency. British Way helped me overcome stage fright, build confidence, and master proper grammar through engaging and practical learning experiences. Today, as a lecturer at the same branch, I feel privileged to guide students on the same inspiring journey that once transformed me.",
       image: "/images/Stu 02.jpeg"
     },
     {
