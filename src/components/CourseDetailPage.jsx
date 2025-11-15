@@ -441,7 +441,7 @@ const CourseDetailPage = () => {
     <Layout>
       <div className="min-h-screen bg-white">
         {/* Hero Section */}
-        <section className="relative h-[60vh] overflow-hidden -mt-24">
+        <section className="relative h-[50vh] sm:h-[55vh] md:h-[60vh] overflow-hidden -mt-24">
           <img 
             src={course.image}
             alt={course.title} 
@@ -450,22 +450,22 @@ const CourseDetailPage = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/20" />
           <div className="absolute inset-0 flex items-center z-10">
             <div className="container mx-auto">
-              <div className="text-white max-w-2xl px-8 md:px-16">
-                <h1 className="text-5xl md:text-6xl font-bold mb-4 text-left">{course.title}</h1>
-                <p className="text-xl md:text-2xl font-light">{course.subtitle}</p>
+              <div className="text-white max-w-2xl px-4 sm:px-8 md:px-16">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-4 text-left">{course.title}</h1>
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-light">{course.subtitle}</p>
               </div>
             </div>
           </div>
         </section>
 
         {/* Course Details Section */}
-        <section className="py-16">
-          <div className="container mx-auto px-8">
+        <section className="py-8 sm:py-12 md:py-16">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8">
             {/* Back to Courses Button */}
-            <div className="mb-8">
+            <div className="mb-6 sm:mb-8">
               <button
                 onClick={() => navigate('/courses')}
-                className="flex items-center text-blue-600 hover:text-blue-800 transition-colors"
+                className="flex items-center text-blue-600 hover:text-blue-800 transition-colors text-sm sm:text-base"
               >
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Back to All Courses
@@ -474,44 +474,44 @@ const CourseDetailPage = () => {
 
             <div className="max-w-5xl mx-auto">
               {/* Course Stats - Modern Cards */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-                <div className="bg-gradient-to-br from-black/10 via-blue-900/20 to-blue-800/30 backdrop-blur-sm p-6 rounded-xl border border-gray-300/30 shadow-sm">
-                  <p className="text-sm text-gray-700 mb-2">Course Length</p>
-                  <p className="text-xl font-bold text-gray-900">{course.courseDuration}</p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-8 sm:mb-12">
+                <div className="bg-gradient-to-br from-black/10 via-blue-900/20 to-blue-800/30 backdrop-blur-sm p-4 sm:p-6 rounded-xl border border-gray-300/30 shadow-sm">
+                  <p className="text-xs sm:text-sm text-gray-700 mb-1 sm:mb-2">Course Length</p>
+                  <p className="text-lg sm:text-xl font-bold text-gray-900 break-words">{course.courseDuration}</p>
                 </div>
-                <div className="bg-gradient-to-br from-black/10 via-blue-900/20 to-blue-800/30 backdrop-blur-sm p-6 rounded-xl border border-gray-300/30 shadow-sm">
-                  <p className="text-sm text-gray-700 mb-2">Minimum Age</p>
-                  <p className="text-xl font-bold text-gray-900">{course.minimumAge}</p>
+                <div className="bg-gradient-to-br from-black/10 via-blue-900/20 to-blue-800/30 backdrop-blur-sm p-4 sm:p-6 rounded-xl border border-gray-300/30 shadow-sm">
+                  <p className="text-xs sm:text-sm text-gray-700 mb-1 sm:mb-2">Minimum Age</p>
+                  <p className="text-lg sm:text-xl font-bold text-gray-900 break-words">{course.minimumAge}</p>
                 </div>
-                <div className="bg-gradient-to-br from-black/10 via-blue-900/20 to-blue-800/30 backdrop-blur-sm p-6 rounded-xl border border-gray-300/30 shadow-sm">
-                  <p className="text-sm text-gray-700 mb-2">Course Hours</p>
-                  <p className="text-xl font-bold text-gray-900">{course.courseHours}</p>
+                <div className="bg-gradient-to-br from-black/10 via-blue-900/20 to-blue-800/30 backdrop-blur-sm p-4 sm:p-6 rounded-xl border border-gray-300/30 shadow-sm">
+                  <p className="text-xs sm:text-sm text-gray-700 mb-1 sm:mb-2">Course Hours</p>
+                  <p className="text-lg sm:text-xl font-bold text-gray-900 break-words">{course.courseHours}</p>
                 </div>
-                <div className="bg-gradient-to-br from-black/10 via-blue-900/20 to-blue-800/30 backdrop-blur-sm p-6 rounded-xl border border-gray-300/30 shadow-sm">
-                  <p className="text-sm text-gray-700 mb-2">Course Structure</p>
-                  <p className="text-xl font-bold text-gray-900">{course.courseStructure}</p>
+                <div className="bg-gradient-to-br from-black/10 via-blue-900/20 to-blue-800/30 backdrop-blur-sm p-4 sm:p-6 rounded-xl border border-gray-300/30 shadow-sm">
+                  <p className="text-xs sm:text-sm text-gray-700 mb-1 sm:mb-2">Course Structure</p>
+                  <p className="text-lg sm:text-xl font-bold text-gray-900 break-words">{course.courseStructure}</p>
                 </div>
               </div>
 
               {/* Course Image */}
-              <div className="mb-16">
+              <div className="mb-8 sm:mb-12 md:mb-16">
                 <img 
                   src={course.image} 
                   alt={course.title}
-                  className="w-full h-[500px] object-cover rounded-2xl shadow-lg"
+                  className="w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px] object-cover rounded-xl sm:rounded-2xl shadow-lg"
                 />
               </div>
 
               {/* Course Details Section */}
-              <div className="mb-16 bg-gradient-to-br from-black/5 via-blue-900/10 to-blue-800/15 backdrop-blur-sm rounded-2xl shadow-sm border border-gray-300/30 p-8">
-                <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-300/40">
-                  <h3 className="text-3xl font-bold text-gray-900">Course Details</h3>
+              <div className="mb-8 sm:mb-12 md:mb-16 bg-gradient-to-br from-black/5 via-blue-900/10 to-blue-800/15 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-sm border border-gray-300/30 p-4 sm:p-6 md:p-8">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 sm:mb-6 pb-3 sm:pb-4 border-b border-gray-300/40 gap-3 sm:gap-0">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">Course Details</h3>
                   {/* Google-style Language Toggle */}
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <span>Offered in:</span>
+                  <div className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm text-gray-600 flex-wrap">
+                    <span className="whitespace-nowrap">Offered in:</span>
                     <button
                       onClick={() => setLanguage("en")}
-                      className={`px-3 py-1 rounded transition-all ${
+                      className={`px-2 sm:px-3 py-1 rounded transition-all text-xs sm:text-sm ${
                         language === "en"
                           ? "text-blue-600 font-medium underline decoration-2 underline-offset-2"
                           : "text-blue-600 hover:bg-blue-50"
@@ -522,7 +522,7 @@ const CourseDetailPage = () => {
                     <span className="text-gray-400">|</span>
                     <button
                       onClick={() => setLanguage("si")}
-                      className={`px-3 py-1 rounded transition-all ${
+                      className={`px-2 sm:px-3 py-1 rounded transition-all text-xs sm:text-sm ${
                         language === "si"
                           ? "text-blue-600 font-medium underline decoration-2 underline-offset-2"
                           : "text-blue-600 hover:bg-blue-50"
@@ -532,9 +532,9 @@ const CourseDetailPage = () => {
                     </button>
                   </div>
                 </div>
-                <div className="space-y-5">
+                <div className="space-y-3 sm:space-y-4 md:space-y-5">
                   {course.description[language].map((paragraph, index) => (
-                    <p key={index} className="text-gray-700 leading-relaxed text-lg">
+                    <p key={index} className="text-gray-700 leading-relaxed text-base sm:text-lg">
                       {paragraph}
                     </p>
                   ))}
@@ -542,15 +542,15 @@ const CourseDetailPage = () => {
               </div>
 
               {/* Who is this course suitable for? */}
-              <div className="mb-16 bg-gradient-to-br from-black/10 via-blue-900/20 to-blue-800/30 backdrop-blur-sm rounded-2xl shadow-sm border border-gray-300/30 p-8">
-                <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-300/40">
-                  <h3 className="text-3xl font-bold text-gray-900">Who is this course suitable for?</h3>
+              <div className="mb-8 sm:mb-12 md:mb-16 bg-gradient-to-br from-black/10 via-blue-900/20 to-blue-800/30 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-sm border border-gray-300/30 p-4 sm:p-6 md:p-8">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 sm:mb-6 pb-3 sm:pb-4 border-b border-gray-300/40 gap-3 sm:gap-0">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">Who is this course suitable for?</h3>
                   {/* Google-style Language Toggle */}
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <span>Offered in:</span>
+                  <div className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm text-gray-600 flex-wrap">
+                    <span className="whitespace-nowrap">Offered in:</span>
                     <button
                       onClick={() => setLanguage("en")}
-                      className={`px-3 py-1 rounded transition-all ${
+                      className={`px-2 sm:px-3 py-1 rounded transition-all text-xs sm:text-sm ${
                         language === "en"
                           ? "text-blue-600 font-medium underline decoration-2 underline-offset-2"
                           : "text-blue-600 hover:bg-blue-50"
@@ -561,7 +561,7 @@ const CourseDetailPage = () => {
                     <span className="text-gray-400">|</span>
                     <button
                       onClick={() => setLanguage("si")}
-                      className={`px-3 py-1 rounded transition-all ${
+                      className={`px-2 sm:px-3 py-1 rounded transition-all text-xs sm:text-sm ${
                         language === "si"
                           ? "text-blue-600 font-medium underline decoration-2 underline-offset-2"
                           : "text-blue-600 hover:bg-blue-50"
@@ -571,13 +571,13 @@ const CourseDetailPage = () => {
                     </button>
                   </div>
                 </div>
-                <ul className="space-y-4">
+                <ul className="space-y-3 sm:space-y-4">
                   {course.suitableFor[language].map((item, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <span className="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold mt-0.5">
+                    <li key={index} className="flex items-start gap-2 sm:gap-3">
+                      <span className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mt-0.5">
                         {index + 1}
                       </span>
-                      <p className="text-gray-700 leading-relaxed text-lg flex-1">
+                      <p className="text-gray-700 leading-relaxed text-base sm:text-lg flex-1">
                         {item}
                       </p>
                     </li>
@@ -586,15 +586,15 @@ const CourseDetailPage = () => {
               </div>
 
               {/* What skills will develop through this course? */}
-              <div className="mb-16 bg-gradient-to-br from-black/10 via-blue-900/20 to-blue-800/30 backdrop-blur-sm rounded-2xl shadow-sm border border-gray-300/30 p-8">
-                <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-300/40">
-                  <h3 className="text-3xl font-bold text-gray-900">What skills will develop through this course?</h3>
+              <div className="mb-8 sm:mb-12 md:mb-16 bg-gradient-to-br from-black/10 via-blue-900/20 to-blue-800/30 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-sm border border-gray-300/30 p-4 sm:p-6 md:p-8">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 sm:mb-6 pb-3 sm:pb-4 border-b border-gray-300/40 gap-3 sm:gap-0">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">What skills will develop through this course?</h3>
                   {/* Google-style Language Toggle */}
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <span>Offered in:</span>
+                  <div className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm text-gray-600 flex-wrap">
+                    <span className="whitespace-nowrap">Offered in:</span>
                     <button
                       onClick={() => setLanguage("en")}
-                      className={`px-3 py-1 rounded transition-all ${
+                      className={`px-2 sm:px-3 py-1 rounded transition-all text-xs sm:text-sm ${
                         language === "en"
                           ? "text-blue-600 font-medium underline decoration-2 underline-offset-2"
                           : "text-blue-600 hover:bg-blue-50"
@@ -605,7 +605,7 @@ const CourseDetailPage = () => {
                     <span className="text-gray-400">|</span>
                     <button
                       onClick={() => setLanguage("si")}
-                      className={`px-3 py-1 rounded transition-all ${
+                      className={`px-2 sm:px-3 py-1 rounded transition-all text-xs sm:text-sm ${
                         language === "si"
                           ? "text-blue-600 font-medium underline decoration-2 underline-offset-2"
                           : "text-blue-600 hover:bg-blue-50"
@@ -615,13 +615,13 @@ const CourseDetailPage = () => {
                     </button>
                   </div>
                 </div>
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
                   {course.skillsDeveloped[language].map((skill, index) => (
-                    <div key={index} className="flex items-start gap-3 bg-black/5 backdrop-blur-sm rounded-lg p-4 border border-gray-300/30">
-                      <svg className="flex-shrink-0 w-6 h-6 text-blue-700 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div key={index} className="flex items-start gap-2 sm:gap-3 bg-black/5 backdrop-blur-sm rounded-lg p-3 sm:p-4 border border-gray-300/30">
+                      <svg className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 text-blue-700 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
-                      <p className="text-gray-700 leading-relaxed text-lg flex-1">
+                      <p className="text-gray-700 leading-relaxed text-base sm:text-lg flex-1">
                         {skill}
                       </p>
                     </div>
@@ -630,17 +630,17 @@ const CourseDetailPage = () => {
               </div>
 
               {/* Apply Section - Keep unchanged as requested */}
-              <div className="text-center mb-8">
-                <h2 className="text-2xl font-bold mb-4">APPLY FOR</h2>
-                <h3 className="text-xl text-gray-600 mb-2">{course.courseDuration.toUpperCase()} ENGLISH DIPLOMA</h3>
-                <p className="text-sm text-gray-500 mb-6">Register Online get early bird course fee</p>
+              <div className="text-center mb-6 sm:mb-8">
+                <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">APPLY FOR</h2>
+                <h3 className="text-lg sm:text-xl text-gray-600 mb-2 break-words">{course.courseDuration.toUpperCase()} ENGLISH DIPLOMA</h3>
+                <p className="text-xs sm:text-sm text-gray-500 mb-4 sm:mb-6">Register Online get early bird course fee</p>
               </div>
 
               {/* Registration Button - Keep unchanged as requested */}
               <div className="max-w-2xl mx-auto text-center">
                 <button
                   onClick={handleOpenPopup}
-                  className="bg-blue-700 text-white py-4 px-8 rounded-lg font-semibold hover:bg-blue-800 transition-colors text-lg w-full md:w-auto"
+                  className="bg-blue-700 text-white py-3 sm:py-4 px-6 sm:px-8 rounded-lg font-semibold hover:bg-blue-800 transition-colors text-base sm:text-lg w-full md:w-auto"
                 >
                   REGISTER NOW →
                 </button>
