@@ -25,7 +25,7 @@ const CoursesPage = () => {
       description: "Intensive English learning program designed for rapid skill development. Perfect for students who want to accelerate their English proficiency in a short time.",
       instructor: "View More...",
       category: "Full Time Diplomas",
-      image: "/images/50 Day Residential camp.jpg"
+      image: "/images/50DayResidentialcamp.jpg"
     },
     {
       id: "weekday-2month",

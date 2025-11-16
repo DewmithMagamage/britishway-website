@@ -49,7 +49,7 @@ const TestimonialsPage = () => {
       branch: "Nugegoda",
       rating: 5,
       text: "My love for the English language began in childhood, and at the Nugegoda Branch of British Way English Academy, I discovered the perfect path to fluency. British Way helped me overcome stage fright, build confidence, and master proper grammar through engaging and practical learning experiences. Today, as a lecturer at the same branch, I feel privileged to guide students on the same inspiring journey that once transformed me.",
-      image: "/images/Stu 02.jpeg"
+      image: "/images/Stu 01.jpeg"
     },
     {
       id: 6,
@@ -187,7 +187,7 @@ const TestimonialsPage = () => {
                 <video
                   controls
                   className="w-full h-full object-cover bg-black"
-                  src="/videos/testimonial02.mp4"
+                  src="/images/testimonial02.mp4"
                   poster="/images/Stu 02.jpeg"
                 >
                   Your browser does not support the video tag.
