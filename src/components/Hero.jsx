@@ -26,7 +26,7 @@ const Hero = ({ onApplyNow }) => {
   return (
     <section className="relative w-full h-[90vh] md:h-screen overflow-hidden">
       <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover">
-        <source src="/images/bgherovideo.mp4" type="video/mp4" />
+        <source src="/images/bgvideoo.mp4" type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-black/40" />
       
