@@ -291,7 +291,7 @@ const AboutPage = () => {
 {/* Chairman Message Image */}
 <div className="flex justify-center py-20">
   <img
-    src="/images/MD Sir.png"
+    src="/images/mdimage.png"
     alt="Message from the Chairman"
     className="w-full max-w-4xl h-auto"
   />
@@ -300,7 +300,7 @@ const AboutPage = () => {
 {/* CEO Message Image */}
 <div className="flex justify-center py-20">
   <img
-    src="images/CEO.png"
+    src="images/ceoimage.png"
     alt="Message from the Chairman"
     className="w-full max-w-4xl h-auto"
   />
