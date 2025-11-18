@@ -9,7 +9,7 @@ const courseData = {
   "50-day-camp": {
     title: "50 Day Camp",
     subtitle: "Intensive English Diploma",
-    image: "/images/50 Day Residential camp.jpg",
+    image: "/images/3.png",
     courseDuration: "50 Days",
     minimumAge: "Over 16",
     courseHours: "200 hours",
@@ -60,7 +60,7 @@ const courseData = {
   "weekday-2month": {
     title: "Weekday Diploma",
     subtitle: "Two Month English Diploma",
-    image: "/images/Weekday Diploma copy.jpg",
+    image: "/images/1.png",
     courseDuration: "2 Months",
     minimumAge: "Over 16",
     courseHours: "320 hours",
@@ -111,7 +111,7 @@ const courseData = {
   "weekday-3month": {
     title: "Weekday Diploma",
     subtitle: "Three Month English Diploma",
-    image: "/images/weekday Diploma copy.jpg",
+    image: "/images/2.png",
     courseDuration: "3 Months",
     minimumAge: "Over 16",
     courseHours: "480 hours",
@@ -162,7 +162,7 @@ const courseData = {
   "weekend-diploma": {
     title: "Weekend Diploma",
     subtitle: "Weekend English Course",
-    image: "/images/Weekend Diploma.jpg",
+    image: "/images/4.png",
     courseDuration: "6 Months",
     minimumAge: "Over 16",
     courseHours: "240 hours",
@@ -264,7 +264,7 @@ const courseData = {
   "online-diploma": {
     title: "Online Diploma",
     subtitle: "Virtual English Course",
-    image: "/images/Online Diploma copy.jpg",
+    image: "/images/5.png",
     courseDuration: "3 Months",
     minimumAge: "Over 16",
     courseHours: "Virtual Learning",

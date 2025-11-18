@@ -25,7 +25,7 @@ const CoursesPage = () => {
       description: "Intensive English learning program designed for rapid skill development. Perfect for students who want to accelerate their English proficiency in a short time.",
       instructor: "View More...",
       category: "Full Time Diplomas",
-      image: "/images/50DayResidentialcamp.jpg"
+      image: "/images/3.png"
     },
     {
       id: "weekday-2month",
@@ -33,7 +33,7 @@ const CoursesPage = () => {
       description: "Comprehensive English diploma program covering all essential language skills. Structured curriculum with practical applications and real-world scenarios.",
       instructor: "View More...",
       category: "Full Time Diplomas",
-      image: "/images/Weekday Diploma copy.jpg"
+      image: "/images/1.png"
     },
     {
       id: "weekday-3month",
@@ -41,7 +41,7 @@ const CoursesPage = () => {
       description: "Extended English diploma program with advanced modules and specialized training. Ideal for students seeking comprehensive language mastery.",
       instructor: "View More...",
       category: "Full Time Diplomas",
-      image: "/images/course card.jpg"
+      image: "/images/2.png"
     },
     {
       id: "weekend-diploma",
@@ -49,7 +49,7 @@ const CoursesPage = () => {
       description: "Flexible weekend program designed for working professionals. Balance your career with English language development through our structured weekend classes.",
       instructor: "View More...",
       category: "Part Time Diplomas",
-      image: "/images/Weekend Diploma.jpg"
+      image: "/images/4.png"
     },
     {
       id: "online-diploma",
@@ -57,7 +57,7 @@ const CoursesPage = () => {
       description: "Modern online learning experience with interactive sessions and digital resources. Learn English from anywhere with our comprehensive online platform.",
       instructor: "View More...",
       category: "Online Courses",
-      image: "/images/Online Diploma copy.jpg"
+      image: "/images/5.png"
     },
     {
       id: "it-english",
