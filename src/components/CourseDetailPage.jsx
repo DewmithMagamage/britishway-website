@@ -315,7 +315,7 @@ const courseData = {
   "it-english": {
     title: "IT + English Course",
     subtitle: "Combined Skills Diploma",
-    image: "/images/IT+English.jpg",
+    image: "/images/6.png",
     courseDuration: "4 Months",
     minimumAge: "Over 16",
     courseHours: "400 hours",
@@ -366,7 +366,7 @@ const courseData = {
   "kids-class": {
     title: "Kids Class",
     subtitle: "Young Learners Program",
-    image: "/images/Kids Class.jpg",
+    image: "/images/8.png",
     courseDuration: "3 Months",
     minimumAge: "Ages 8-15",
     courseHours: "120 hours",

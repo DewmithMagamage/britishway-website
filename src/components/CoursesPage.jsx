@@ -65,7 +65,7 @@ const CoursesPage = () => {
       description: "Combined program offering both English language skills and IT fundamentals. Perfect for students looking to enhance their career prospects in technology.",
       instructor: "View More...",
       category: "Full Time Diplomas",
-      image: "/images/IT+English.jpg"
+      image: "/images/6.png"
     },
     {
       id: "kids-class",
@@ -73,7 +73,7 @@ const CoursesPage = () => {
       description: "Fun and engaging English classes designed specifically for children. Interactive learning methods that make English enjoyable for young learners.",
       instructor: "View More...",
       category: "Kids Class",
-      image: "/images/Kids Class.jpg"
+      image: "/images/8.png"
     },
     {
       id: "night-class",
@@ -81,7 +81,7 @@ const CoursesPage = () => {
       description: "Evening English classes for working adults and students. Flexible timing that fits your busy schedule while maintaining quality education.",
       instructor: "View More...",
       category: "Part Time Diplomas",
-      image: "/images/course card.jpg"
+      image: "/images/7.png"
     }
   ];
 
