@@ -1,8 +1,9 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { Search, Calendar, ArrowRight, ChevronRight, ChevronLeft, Mail, Phone, Facebook, Instagram, Linkedin, Filter, X } from "lucide-react";
 import Layout from "./Layout";
 import Reveal from "./Reveal";
 import StayConnected from "./StayConnected";
+import { getEvents, getNews, subscribeToEvents, subscribeToNews } from "../utils/dataStorage";
 
 const NewsEventsPage = () => {
   const [activeTab, setActiveTab] = useState("events");
@@ -11,112 +12,41 @@ const NewsEventsPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filterType, setFilterType] = useState("all");
   const [showFilters, setShowFilters] = useState(false);
+  const [events, setEvents] = useState([]);
+  const [news, setNews] = useState([]);
 
-  const events = [
-    {
-      id: 1,
-      title: "Beach Cleanup Day - Nittabuwa Branch",
-      date: new Date(2025, 0, 15), // January 15, 2025
-      time: "9.30 am to 12.30 pm",
-      location: "Negombo Beach",
-      image: "/images/beachcleanup.png",
-      type: "free",
-      price: "Free"
-    },
-    {
-      id: 2,
-      title: "Beach Day Activity - Nittabuwa Branch",
-      date: new Date(2025, 0, 22), // January 22, 2025
-      time: "2.00 pm to 5.00 pm",
-      location: "Main Conference Hall - British Way Main Office",
-      image: "/images/beachactivityday.png",
-      type: "free",
-      price: "Free"
-    },
-    {
-      id: 3,
-      title: "Cambridge English Exam",
-      date: new Date(2025, 2, 28), 
-      time: "9.00 am to 11.00 am",
-      location: " IT Lab - British Campus - Nittabuwa",
-      image: "/images/cambridgeexme.png",
-      type: "workshop",
-      price: "Rs. 5,000"
-    },
-    {
-      id: 4,
-      title: "Grammar Masterclass",
-      date: new Date(2025, 1, 5), // February 5, 2025
-      time: "10.00 am to 1.00 pm",
-      location: "Main Conference Hall - British Way Main Office",
-      image: "/images/course card.jpg",
-      type: "workshop",
-      price: "Rs. 1,500"
-    },
-    {
-      id: 5,
-      title: "Career Development Workshop",
-      date: new Date(2025, 1, 12), // February 12, 2025
-      time: "9.00 am to 12.00 pm",
-      location: "Main Conference Hall - British Way Main Office",
-      image: "/images/course card.jpg",
-      type: "workshop",
-      price: "Free"
-    },
-    {
-      id: 6,
-      title: "TOEFL Preparation Course",
-      date: new Date(2025, 1, 18), // February 18, 2025
-      time: "2.30 pm to 5.30 pm",
-      location: "Main Conference Hall - British Way Main Office",
-      image: "/images/course card.jpg",
-      type: "course",
-      price: "Rs. 3,000"
-    }
-  ];
-
-  const news = [
-    {
-      id: 1,
-      title: "CONVOCATION CEREMONY 2025",
-      date: "July 21, 2025",
-      description: "On July 21st, 2025, British Way English Academy proudly celebrated its Convocation Ceremony at the BMICH, honoring the achievements of our latest batch of graduates. Surrounded by family, friends, and esteemed colleagues, this event was a testament to our commitment to fostering academic excellence, confidence and skills to succeed globally...",
-      image: "/images/convocation2026.jpg",
-      featured: true
-    },
-    {
-      id: 2,
-      title: "Orientation Day – Two-Month Diploma Program 2024",
-      date: "June 4, 2025",
-      description: "We are excited to share highlights from our recent orientation day for the 2025 Two-Month Diploma program at British Way English Academy. Our new students were warmly welcomed, given an overview of the program, and introduced to our dedicated instructors and facilities. The day was filled with engaging activities, valuable information sessions, and the chance for students to connect with their peers. We are thrilled to have such enthusiastic participants and look forward to a successful and enriching journey ahead.",
-      image: "/images/oriantation.png",
-      featured: false
-    },
-    {
-      id: 3,
-      title: "British Way Hosts MAPIYA WANDANA 2024 (මා පිය වන්දනා)",
-      date: "10TH JULY",
-      description: "British Way English Academy is proud to have hosted yet another successful MAAPIYA WANDANA program on the 10th of March 2024 .",
-      image: "/images/MAPIYAWANDANA.jpg",
-      featured: false
-    },
-    {
-      id: 4,
-      title: "Dining Ethics Practices-2024",
-      date: "August 14, 2025",
-      description: "Discover the art of dining with grace and confidence at our Dining Etiquette Event, part of the Britishway English Academy’s 50 Day Camp. This interactive session will cover essential dining manners, effective conversation skills, and the subtleties of polite behavior during meals. Perfect for students and professionals alike, this event will help you navigate any dining situation with poise.",
-      image: "/images/Stu 03.jpeg",
-      featured: false
-    },
-    {
-      id: 5,
-      title: "British Way Spirit 2024",
-      date: "September 25, 2024",
-      description: "British Way Spirit 2024 was a remarkable display of confidence, skill, and teamwork! Our talented students participated in three competitive categories Public Speaking,Debating, Spelling Bee.It was truly inspiring to witness their enthusiasm, preparation, and command of the English language — a proud moment for the entire British Way family!",
-      image: "/images/spritcompetion.png",
-      featured: false
-    }
-  ];
+  useEffect(() => {
+    // Load events and news from Firebase
+    const loadData = async () => {
+      try {
+        const [allEvents, allNews] = await Promise.all([
+          getEvents(),
+          getNews()
+        ]);
+        // Filter to only show active events and published news
+        setEvents(allEvents.filter(e => !e.status || e.status === 'active'));
+        setNews(allNews.filter(n => !n.status || n.status === 'published'));
+      } catch (error) {
+        console.error('Error loading data:', error);
+      }
+    };
+    
+    loadData();
+    
+    // Subscribe to real-time updates
+    const unsubscribeEvents = subscribeToEvents((eventsData) => {
+      setEvents(eventsData.filter(e => !e.status || e.status === 'active'));
+    });
+    
+    const unsubscribeNews = subscribeToNews((newsData) => {
+      setNews(newsData.filter(n => !n.status || n.status === 'published'));
+    });
+    
+    return () => {
+      unsubscribeEvents();
+      unsubscribeNews();
+    };
+  }, []);
 
   // Filter events based on search term and filter type
   const filteredEvents = useMemo(() => {

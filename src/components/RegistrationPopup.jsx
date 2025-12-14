@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { X, User, Mail, Phone, MapPin, Calendar, GraduationCap } from "lucide-react";
+import { useFormContext } from "../context/FormContext";
 
 const RegistrationPopup = ({ isOpen, onClose, branchName, branchId, branches, onBranchSelect }) => {
+  const { addFormSubmission } = useFormContext();
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -51,6 +53,17 @@ const RegistrationPopup = ({ isOpen, onClose, branchName, branchId, branches, on
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(jsonData)
+      });
+
+      // Save to Firebase via FormContext
+      await addFormSubmission({
+        name: formData.name,
+        phone: formData.phone,
+        email: '', // Registration popup doesn't have email field
+        course: formData.course,
+        branch: formData.branch,
+        branchId: formData.branchId,
+        message: formData.message
       });
 
       // Check if the submission was successful

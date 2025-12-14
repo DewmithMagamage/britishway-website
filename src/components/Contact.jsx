@@ -54,8 +54,8 @@ const Contact = () => {
         body: JSON.stringify(jsonData)
       });
 
-      // Add form submission to context for local tracking
-      addFormSubmission(formData);
+      // Add form submission to Firebase via context
+      await addFormSubmission(formData);
       
       // Reset form
       setFormData({
