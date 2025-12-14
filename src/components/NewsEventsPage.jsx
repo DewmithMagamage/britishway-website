@@ -19,14 +19,28 @@ const NewsEventsPage = () => {
     // Load events and news from Firebase
     const loadData = async () => {
       try {
+        // #region agent log
+        fetch('http://127.0.0.1:7242/ingest/ff30ee0a-eb10-4559-b853-779dc0ceea0c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'NewsEventsPage.jsx:20',message:'loadData entry',data:{},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
+        // #endregion
         const [allEvents, allNews] = await Promise.all([
           getEvents(),
           getNews()
         ]);
+        // #region agent log
+        fetch('http://127.0.0.1:7242/ingest/ff30ee0a-eb10-4559-b853-779dc0ceea0c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'NewsEventsPage.jsx:26',message:'Data loaded from Firebase',data:{allEventsLength:allEvents.length,allNewsLength:allNews.length,firstEventDateType:allEvents[0]?.date?.constructor?.name,firstEventDateValue:allEvents[0]?.date},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B,E'})}).catch(()=>{});
+        // #endregion
         // Filter to only show active events and published news
-        setEvents(allEvents.filter(e => !e.status || e.status === 'active'));
-        setNews(allNews.filter(n => !n.status || n.status === 'published'));
+        const filteredEvents = allEvents.filter(e => !e.status || e.status === 'active');
+        const filteredNews = allNews.filter(n => !n.status || n.status === 'published');
+        // #region agent log
+        fetch('http://127.0.0.1:7242/ingest/ff30ee0a-eb10-4559-b853-779dc0ceea0c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'NewsEventsPage.jsx:29',message:'After filtering',data:{filteredEventsLength:filteredEvents.length,filteredNewsLength:filteredNews.length,newsFirstItem:filteredNews[0]?true:false},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+        // #endregion
+        setEvents(filteredEvents);
+        setNews(filteredNews);
       } catch (error) {
+        // #region agent log
+        fetch('http://127.0.0.1:7242/ingest/ff30ee0a-eb10-4559-b853-779dc0ceea0c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'NewsEventsPage.jsx:32',message:'Error loading data',data:{error:error.message,stack:error.stack},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
+        // #endregion
         console.error('Error loading data:', error);
       }
     };
@@ -35,10 +49,16 @@ const NewsEventsPage = () => {
     
     // Subscribe to real-time updates
     const unsubscribeEvents = subscribeToEvents((eventsData) => {
+      // #region agent log
+      fetch('http://127.0.0.1:7242/ingest/ff30ee0a-eb10-4559-b853-779dc0ceea0c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'NewsEventsPage.jsx:38',message:'subscribeToEvents callback',data:{eventsDataLength:eventsData.length,firstEventDateType:eventsData[0]?.date?.constructor?.name},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
+      // #endregion
       setEvents(eventsData.filter(e => !e.status || e.status === 'active'));
     });
     
     const unsubscribeNews = subscribeToNews((newsData) => {
+      // #region agent log
+      fetch('http://127.0.0.1:7242/ingest/ff30ee0a-eb10-4559-b853-779dc0ceea0c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'NewsEventsPage.jsx:42',message:'subscribeToNews callback',data:{newsDataLength:newsData.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+      // #endregion
       setNews(newsData.filter(n => !n.status || n.status === 'published'));
     });
     
@@ -48,16 +68,44 @@ const NewsEventsPage = () => {
     };
   }, []);
 
+  // Log news array state for debugging
+  useEffect(() => {
+    // #region agent log
+    fetch('http://127.0.0.1:7242/ingest/ff30ee0a-eb10-4559-b853-779dc0ceea0c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'NewsEventsPage.jsx:50',message:'News array state changed',data:{newsLength:news.length,newsFirstItem:news[0]?true:false,newsFirstItemType:news[0]?.constructor?.name},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+    // #endregion
+  }, [news]);
+
   // Filter events based on search term and filter type
   const filteredEvents = useMemo(() => {
+    // #region agent log
+    fetch('http://127.0.0.1:7242/ingest/ff30ee0a-eb10-4559-b853-779dc0ceea0c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'NewsEventsPage.jsx:52',message:'filteredEvents useMemo entry',data:{eventsLength:events.length,selectedDate:selectedDate?.toISOString()},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C,D'})}).catch(()=>{});
+    // #endregion
     return events.filter(event => {
+      // #region agent log
+      fetch('http://127.0.0.1:7242/ingest/ff30ee0a-eb10-4559-b853-779dc0ceea0c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'NewsEventsPage.jsx:54',message:'Filtering event',data:{eventId:event.id,eventDateType:event.date?.constructor?.name,eventDateIsDate:event.date instanceof Date,eventDateValue:event.date},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B,C'})}).catch(()=>{});
+      // #endregion
       const matchesSearch = event.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            event.location.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesFilter = filterType === "all" || event.type === filterType;
-      const matchesDate = !selectedDate || 
-        (event.date.getDate() === selectedDate.getDate() && 
-         event.date.getMonth() === selectedDate.getMonth() && 
-         event.date.getFullYear() === selectedDate.getFullYear());
+      let matchesDate = true;
+      if (selectedDate) {
+        try {
+          // #region agent log
+          fetch('http://127.0.0.1:7242/ingest/ff30ee0a-eb10-4559-b853-779dc0ceea0c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'NewsEventsPage.jsx:60',message:'Before date comparison',data:{eventDateType:event.date?.constructor?.name,eventDateIsDate:event.date instanceof Date},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+          // #endregion
+          matchesDate = event.date.getDate() === selectedDate.getDate() && 
+                       event.date.getMonth() === selectedDate.getMonth() && 
+                       event.date.getFullYear() === selectedDate.getFullYear();
+          // #region agent log
+          fetch('http://127.0.0.1:7242/ingest/ff30ee0a-eb10-4559-b853-779dc0ceea0c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'NewsEventsPage.jsx:63',message:'After date comparison',data:{matchesDate},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+          // #endregion
+        } catch (dateError) {
+          // #region agent log
+          fetch('http://127.0.0.1:7242/ingest/ff30ee0a-eb10-4559-b853-779dc0ceea0c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'NewsEventsPage.jsx:66',message:'Date comparison error',data:{error:dateError.message,eventDateType:event.date?.constructor?.name},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+          // #endregion
+          matchesDate = false;
+        }
+      }
       
       return matchesSearch && matchesFilter && matchesDate;
     });
@@ -100,22 +148,42 @@ const NewsEventsPage = () => {
   const hasEventsOnDate = (day) => {
     if (!day) return false;
     const date = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
-    return events.some(event => 
-      event.date.getDate() === day && 
-      event.date.getMonth() === currentDate.getMonth() && 
-      event.date.getFullYear() === currentDate.getFullYear()
-    );
+    return events.some(event => {
+      // #region agent log
+      fetch('http://127.0.0.1:7242/ingest/ff30ee0a-eb10-4559-b853-779dc0ceea0c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'NewsEventsPage.jsx:103',message:'hasEventsOnDate check',data:{day,eventDateType:event.date?.constructor?.name,eventDateIsDate:event.date instanceof Date},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B,C'})}).catch(()=>{});
+      // #endregion
+      try {
+        return event.date.getDate() === day && 
+               event.date.getMonth() === currentDate.getMonth() && 
+               event.date.getFullYear() === currentDate.getFullYear();
+      } catch (dateError) {
+        // #region agent log
+        fetch('http://127.0.0.1:7242/ingest/ff30ee0a-eb10-4559-b853-779dc0ceea0c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'NewsEventsPage.jsx:108',message:'hasEventsOnDate error',data:{error:dateError.message,eventDateType:event.date?.constructor?.name},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+        // #endregion
+        return false;
+      }
+    });
   };
 
   // Get events for a specific date
   const getEventsForDate = (day) => {
     if (!day) return [];
     const date = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
-    return events.filter(event => 
-      event.date.getDate() === day && 
-      event.date.getMonth() === currentDate.getMonth() && 
-      event.date.getFullYear() === currentDate.getFullYear()
-    );
+    return events.filter(event => {
+      // #region agent log
+      fetch('http://127.0.0.1:7242/ingest/ff30ee0a-eb10-4559-b853-779dc0ceea0c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'NewsEventsPage.jsx:115',message:'getEventsForDate filter',data:{day,eventDateType:event.date?.constructor?.name,eventDateIsDate:event.date instanceof Date},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B,C'})}).catch(()=>{});
+      // #endregion
+      try {
+        return event.date.getDate() === day && 
+               event.date.getMonth() === currentDate.getMonth() && 
+               event.date.getFullYear() === currentDate.getFullYear();
+      } catch (dateError) {
+        // #region agent log
+        fetch('http://127.0.0.1:7242/ingest/ff30ee0a-eb10-4559-b853-779dc0ceea0c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'NewsEventsPage.jsx:120',message:'getEventsForDate error',data:{error:dateError.message,eventDateType:event.date?.constructor?.name},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+        // #endregion
+        return false;
+      }
+    });
   };
 
   // Handle date selection
@@ -234,41 +302,58 @@ const NewsEventsPage = () => {
     );
   };
 
-  const EventCard = ({ event }) => (
-    <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-      <img
-        src={event.image}
-        alt={event.title}
-        className="w-full h-48 object-cover"
-      />
-      <div className="p-4">
-        <div className="flex justify-between items-start mb-2">
-          <h3 className="font-semibold text-gray-800 flex-1">{event.title}</h3>
-          <span className={`text-xs px-2 py-1 rounded-full ${
-            event.price === "Free" 
-              ? 'bg-green-100 text-green-800' 
-              : 'bg-blue-100 text-blue-800'
-          }`}>
-            {event.price}
-          </span>
+  const EventCard = ({ event }) => {
+    // #region agent log
+    fetch('http://127.0.0.1:7242/ingest/ff30ee0a-eb10-4559-b853-779dc0ceea0c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'NewsEventsPage.jsx:237',message:'EventCard render',data:{eventId:event.id,eventDateType:event.date?.constructor?.name,eventDateIsDate:event.date instanceof Date,eventDateValue:event.date},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B,C'})}).catch(()=>{});
+    // #endregion
+    let dateString = '';
+    try {
+      dateString = event.date.toLocaleDateString('en-US', { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+      });
+      // #region agent log
+      fetch('http://127.0.0.1:7242/ingest/ff30ee0a-eb10-4559-b853-779dc0ceea0c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'NewsEventsPage.jsx:247',message:'EventCard date formatted',data:{dateString},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+      // #endregion
+    } catch (dateError) {
+      // #region agent log
+      fetch('http://127.0.0.1:7242/ingest/ff30ee0a-eb10-4559-b853-779dc0ceea0c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'NewsEventsPage.jsx:250',message:'EventCard date error',data:{error:dateError.message,eventDateType:event.date?.constructor?.name},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+      // #endregion
+      dateString = 'Invalid date';
+    }
+    return (
+      <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <img
+          src={event.image}
+          alt={event.title}
+          className="w-full h-48 object-cover"
+        />
+        <div className="p-4">
+          <div className="flex justify-between items-start mb-2">
+            <h3 className="font-semibold text-gray-800 flex-1">{event.title}</h3>
+            <span className={`text-xs px-2 py-1 rounded-full ${
+              event.price === "Free" 
+                ? 'bg-green-100 text-green-800' 
+                : 'bg-blue-100 text-blue-800'
+            }`}>
+              {event.price}
+            </span>
+          </div>
+          <div className="space-y-1 text-sm text-gray-600 mb-4">
+            <p className="font-medium">{dateString}</p>
+            <p>{event.time}</p>
+            <p className="text-xs">{event.location}</p>
+          </div>
+          <button className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors flex items-center justify-center">
+            Register Now
+            <ArrowRight className="w-4 h-4 ml-2" />
+          </button>
         </div>
-        <div className="space-y-1 text-sm text-gray-600 mb-4">
-          <p className="font-medium">{event.date.toLocaleDateString('en-US', { 
-            weekday: 'long', 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric' 
-          })}</p>
-          <p>{event.time}</p>
-          <p className="text-xs">{event.location}</p>
-        </div>
-        <button className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors flex items-center justify-center">
-          Register Now
-          <ArrowRight className="w-4 h-4 ml-2" />
-        </button>
       </div>
-    </div>
-  );
+    );
+  };
 
   // Compact horizontal preview used under News tab
   const NewsCard = ({ news }) => (
@@ -516,7 +601,13 @@ const NewsEventsPage = () => {
             {/* Top featured banner */}
             <div className="mb-10">
               <Reveal>
-                <FeaturedNewsCard news={news[0]} />
+                {news[0] ? (
+                  <FeaturedNewsCard news={news[0]} />
+                ) : (
+                  <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm p-4 md:p-6">
+                    <p className="text-gray-600">No featured news available</p>
+                  </div>
+                )}
               </Reveal>
             </div>
             {/* Compact list grid like preview cards */}
