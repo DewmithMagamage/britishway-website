@@ -345,10 +345,10 @@ export const branches = [
     mapUrl: "https://maps.app.goo.gl/VwzvqaPC9pRF3dpM6",
     description:"British Way English Academy – Gampaha Branch, founded in 2013, is a premier center for English language learning in the heart of Gampaha. As part of the island-wide British Way network, the branch provides comprehensive training in all four core language skills—reading, writing, speaking, and listening—while also emphasizing confidence, etiquette, and presentation skills. Students benefit from flexible programs, including General English, Spoken English, Advanced Certificates, and IELTS preparation, along with weekend and short-term courses to suit busy schedules. With highly qualified instructors, interactive lessons, and a supportive learning environment, the Gampaha Branch empowers learners to excel academically, professionally, and as confident global communicators.",
     socialLinks: { 
-      facebook: "", 
-      instagram: "", 
+      facebook: "https://britishway.lk/?fbclid=IwdGRjcANi5NRjbGNrA2Lk0GV4dG4DYWVtAjExAAEerxIHoIjMQ7U-1GQ56hTZvMsAM_o6_lJCOWFif2sRWdwrpjyNzyNB20zvX_g_aem_NyiGxuBQmLAIue_l3ZkOng", 
+      instagram: "https://britishway.lk/?fbclid=IwdGRjcANi5NRjbGNrA2Lk0GV4dG4DYWVtAjExAAEerxIHoIjMQ7U-1GQ56hTZvMsAM_o6_lJCOWFif2sRWdwrpjyNzyNB20zvX_g_aem_NyiGxuBQmLAIue_l3ZkOng", 
       youtube: "", 
-      tiktok: "",  
+      tiktok: "https://www.tiktok.com/@britishway.gampaha?_t=ZS-90hi8PKRU1M&_r=1",  
       whatsapp: ""
     },
     gallery: [
@@ -372,7 +372,7 @@ export const branches = [
     mapUrl: "https://maps.app.goo.gl/gev56KJ43HJCc4bt7",
     description:"British Way English Academy – Anuradhapura Branch is a premier center for English language learning in the historic city of Anuradhapura. As part of the esteemed British Way network, the branch offers a structured curriculum for learners of all levels—from foundational to advanced—fostering fluency, confidence, and practical communication skills. With modern classrooms, interactive lessons, and highly qualified instructors, students develop grammar, vocabulary, pronunciation, and real-world conversational abilities. The branch also emphasizes personality development, business communication, IELTS preparation, and academic writing, empowering learners to excel academically, professionally, and as confident global communicators.",
     socialLinks: { 
-      facebook: "", 
+      facebook: "https://www.facebook.com/share/17cK7XPrkK/", 
       instagram: "", 
       youtube: "", 
       tiktok: "", 
