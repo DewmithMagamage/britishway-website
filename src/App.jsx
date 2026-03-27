@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { FormProvider } from "./context/FormContext";
 import Home from "./Home";
 import AboutPage from "./components/AboutPage";
@@ -15,6 +15,14 @@ import AdminDashboard from "./components/AdminDashboard";
 import Login from "./components/Login";
 import RequireAuth from "./components/RequireAuth";
 import SplashScreen from "./components/SplashScreen";
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -34,6 +42,7 @@ function App() {
         <SplashScreen onFinish={() => setLoading(false)} />
       ) : (
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/courses" element={<CoursesPage />} />
