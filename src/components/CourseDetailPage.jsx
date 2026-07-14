@@ -9,7 +9,7 @@ const courseData = {
   "50-day-camp": {
     title: "50 Day Camp",
     subtitle: "Intensive English Diploma",
-    image: "/images/cc2.jpeg",
+    image: "/images/cc2.jpg",
     courseDuration: "50 Days",
     minimumAge: "Over 16",
     courseHours: "200 hours",
@@ -60,7 +60,7 @@ const courseData = {
   "weekday-2month": {
     title: "Weekday Diploma",
     subtitle: "Two Month English Diploma",
-    image: "/images/cc1.jpeg",
+    image: "/images/cc1.jpg",
     courseDuration: "2 Months",
     minimumAge: "Over 16",
     courseHours: "320 hours",
@@ -111,7 +111,7 @@ const courseData = {
   "weekday-3month": {
     title: "Weekday Diploma",
     subtitle: "Three Month English Diploma",
-    image: "/images/cc1.jpeg",
+    image: "/images/cc1.jpg",
     courseDuration: "3 Months",
     minimumAge: "Over 16",
     courseHours: "480 hours",
@@ -162,7 +162,7 @@ const courseData = {
   "weekend-diploma": {
     title: "Weekend Diploma",
     subtitle: "Weekend English Course",
-    image: "/images/cc3.jpeg",
+    image: "/images/cc3.jpg",
     courseDuration: "6 Months",
     minimumAge: "Over 16",
     courseHours: "240 hours",
@@ -213,7 +213,7 @@ const courseData = {
   "night-class": {
     title: "Night Class",
     subtitle: "Evening English Course",
-    image: "/images/cc7.jpeg",
+    image: "/images/cc7.jpg",
     courseDuration: "4 Months",
     minimumAge: "Over 16",
     courseHours: "160 hours",
@@ -264,7 +264,7 @@ const courseData = {
   "online-diploma": {
     title: "Online Diploma",
     subtitle: "Virtual English Course",
-    image: "/images/cc6.jpeg",
+    image: "/images/cc6.jpg",
     courseDuration: "3 Months",
     minimumAge: "Over 16",
     courseHours: "Virtual Learning",
@@ -315,7 +315,7 @@ const courseData = {
   "it-english": {
     title: "IT + English Course",
     subtitle: "Combined Skills Diploma",
-    image: "/images/cc5.jpeg",
+    image: "/images/cc5.jpg",
     courseDuration: "4 Months",
     minimumAge: "Over 16",
     courseHours: "400 hours",
@@ -366,7 +366,7 @@ const courseData = {
   "kids-class": {
     title: "Kids Class",
     subtitle: "Young Learners Program",
-    image: "/images/cc4.jpeg",
+    image: "/images/cc4.jpg",
     courseDuration: "3 Months",
     minimumAge: "Ages 8-15",
     courseHours: "120 hours",

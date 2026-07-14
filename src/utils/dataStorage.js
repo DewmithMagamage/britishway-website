@@ -24,7 +24,7 @@ const defaultCourses = [
     description: "Intensive English learning program designed for rapid skill development. Perfect for students who want to accelerate their English proficiency in a short time.",
     instructor: "View More...",
     category: "Full Time Diplomas",
-    image: "/images/cc2.jpeg"
+    image: "/images/cc2.jpg"
   },
   {
     id: "weekday-2month",
@@ -32,7 +32,7 @@ const defaultCourses = [
     description: "Comprehensive English diploma program covering all essential language skills. Structured curriculum with practical applications and real-world scenarios.",
     instructor: "View More...",
     category: "Full Time Diplomas",
-    image: "/images/cc1.jpeg"
+    image: "/images/cc1.jpg"
   },
   {
     id: "weekday-3month",
@@ -40,7 +40,7 @@ const defaultCourses = [
     description: "Extended English diploma program with advanced modules and specialized training. Ideal for students seeking comprehensive language mastery.",
     instructor: "View More...",
     category: "Full Time Diplomas",
-    image: "/images/cc1.jpeg"
+    image: "/images/cc1.jpg"
   },
   {
     id: "weekend-diploma",
@@ -48,7 +48,7 @@ const defaultCourses = [
     description: "Flexible weekend program designed for working professionals. Balance your career with English language development through our structured weekend classes.",
     instructor: "View More...",
     category: "Part Time Diplomas",
-    image: "/images/cc3.jpeg"
+    image: "/images/cc3.jpg"
   },
   {
     id: "online-diploma",
@@ -56,7 +56,7 @@ const defaultCourses = [
     description: "Modern online learning experience with interactive sessions and digital resources. Learn English from anywhere with our comprehensive online platform.",
     instructor: "View More...",
     category: "Online Courses",
-    image: "/images/cc6.jpeg"
+    image: "/images/cc6.jpg"
   },
   {
     id: "it-english",
@@ -64,7 +64,7 @@ const defaultCourses = [
     description: "Combined program offering both English language skills and IT fundamentals. Perfect for students looking to enhance their career prospects in technology.",
     instructor: "View More...",
     category: "Full Time Diplomas",
-    image: "/images/cc5.jpeg"
+    image: "/images/cc5.jpg"
   },
   {
     id: "kids-class",
@@ -72,7 +72,7 @@ const defaultCourses = [
     description: "Fun and engaging English classes designed specifically for children. Interactive learning methods that make English enjoyable for young learners.",
     instructor: "View More...",
     category: "Kids Class",
-    image: "/images/cc4.jpeg"
+    image: "/images/cc4.jpg"
   },
   {
     id: "night-class",
@@ -80,7 +80,7 @@ const defaultCourses = [
     description: "Evening English classes for working adults and students. Flexible timing that fits your busy schedule while maintaining quality education.",
     instructor: "View More...",
     category: "Part Time Diplomas",
-    image: "/images/cc7.jpeg"
+    image: "/images/cc7.jpg"
   }
 ];
 
