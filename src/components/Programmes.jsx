@@ -3,12 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const programmes = [
-  { id: 'weekday-2month', title: "Two-Month Diploma", subtitle: "Gives You All the Essentials in Learning English and More.", img: "/images/c1.png" },
-  { id: '50-day-camp', title: "50 Day Camp", subtitle: "An Outstanding English Knowledge in a Residential Background.", img: "/images/c3.png" },
-  { id: 'weekend-diploma', title: "Diploma (Weekend-Based)", subtitle: "Turn your weekends into stepping stones for success.", img: "/images/c4.png" },
-  { id: 'kids-class', title: "English Classes for Kids", subtitle: "Engaging English Lessons Designed Just for Your Child .", img: "/images/c8.png" },
-  { id: 'it-english', title: "IT+English Diploma", subtitle: "Expand your IT Knowledge with English.", img: "/images/c6.png" },
-  { id: 'online-diploma', title: "Online Diploma", subtitle: "Master English Anytime, Anywhere.", img: "/images/c5.png" },
+  { id: 'weekday-2month', title: "Two-Month Diploma", subtitle: "Gives You All the Essentials in Learning English and More.", img: "/images/cc1.jpeg" },
+  { id: '50-day-camp', title: "50 Day Camp", subtitle: "An Outstanding English Knowledge in a Residential Background.", img: "/images/cc2.png" },
+  { id: 'weekend-diploma', title: "Diploma (Weekend-Based)", subtitle: "Turn your weekends into stepping stones for success.", img: "/images/cc3.png" },
+  { id: 'kids-class', title: "English Classes for Kids", subtitle: "Engaging English Lessons Designed Just for Your Child .", img: "/images/cc4.png" },
+  { id: 'it-english', title: "IT+English Diploma", subtitle: "Expand your IT Knowledge with English.", img: "/images/cc5.png" },
+  { id: 'online-diploma', title: "Online Diploma", subtitle: "Master English Anytime, Anywhere.", img: "/images/cc6.png" },
 ];
 
 const Programmes = () => {
