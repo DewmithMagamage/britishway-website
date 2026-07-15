@@ -73,6 +73,12 @@ const Testimonials = () => {
       image: "/images/malshastu.png",
       rating: 5,
       text: "British Way English Academy was not just where I learned English but where I discovered myself and built confidence.Today, I’ve achieved my childhood dream by becoming an English teacher at the Nugegoda Branch."
+    },
+    {
+      name: "Shanuka Thennakoon",
+      image: "/images/stugampaha.png",
+      rating: 5,
+      text: "I am truly grateful to British Way English Academy, Gampaha, for helping me improve my English skills and confidence."
     }
   ];
 
