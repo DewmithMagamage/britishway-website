@@ -3,13 +3,13 @@ import React from "react";
 const StayConnected = () => {
   const socialPlatforms = [
     { name: "Telegram", image: "/images/Telegram.png", href: "#" },
-    { name: "Messenger", image: "/images/Messenger.png", href: "#" },
-    { name: "YouTube", image: "/images/Youtube.png", href: "#" },
-    { name: "Instagram", image: "/images/Instergram.png", href: "#" },
-    { name: "WhatsApp", image: "/images/Whatsapp.png", href: "#" },
-    { name: "Facebook", image: "/images/Facebook.png", href: "#" },
-    { name: "LinkedIn", image: "/images/Linkedin.png", href: "#" },
-    { name: "TikTok", image: "/images/Tiktok.png", href: "#" },
+    { name: "Messenger", image: "/images/Messenger.png", href: "https://www.facebook.com/BritishWayEnglishAcademy.lk" },
+    { name: "YouTube", image: "/images/Youtube.png", href: "https://www.youtube.com/@BritishWayEnglishAcademy" },
+    { name: "Instagram", image: "/images/Instergram.png", href: "https://www.instagram.com/britishwaylk?igsh=MWkzc2J6Y3ZqY3B0MQ==" },
+    { name: "WhatsApp", image: "/images/Whatsapp.png", href: "https://wa.me/94711010010" },
+    { name: "Facebook", image: "/images/Facebook.png", href: "https://www.facebook.com/BritishWayEnglishAcademy.lk" },
+    { name: "LinkedIn", image: "/images/Linkedin.png", href: "https://www.linkedin.com/school/british-way-english-academy/" },
+    { name: "TikTok", image: "/images/Tiktok.png", href: "https://www.tiktok.com/@britishwayenglishacademy?_r=1&_t=ZS-982tymFiioq" },
     { name: "Twitter", image: "/images/Twitter.png", href: "#" }
   ];
 

@@ -50,10 +50,10 @@ const Header = () => {
               <a href="#" className="hover:text-blue-300 transition-colors">
                 <Twitter className="w-4 h-4" />
               </a>
-              <a href="#" className="hover:text-blue-300 transition-colors">
+              <a href="https://www.instagram.com/britishwaylk?igsh=MWkzc2J6Y3ZqY3B0MQ==" className="hover:text-blue-300 transition-colors">
                 <Instagram className="w-4 h-4" />
               </a>
-              <a href="#" className="hover:text-blue-300 transition-colors">
+              <a href="https://www.linkedin.com/school/british-way-english-academy/" className="hover:text-blue-300 transition-colors">
                 <Linkedin className="w-4 h-4" />
               </a>
             </div>
