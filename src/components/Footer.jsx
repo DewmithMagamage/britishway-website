@@ -72,16 +72,16 @@ const Footer = () => {
             <div>
               <h4 className="font-bold text-lg mb-4">Join Us</h4>
               <div className="flex space-x-4">
-                <a href="#" className="hover:text-blue-300 transition-colors">
+                <a href="https://www.youtube.com/@BritishWayEnglishAcademy" className="hover:text-blue-300 transition-colors">
                   <Youtube className="w-5 h-5" />
                 </a>
-                <a href="#" className="hover:text-blue-300 transition-colors">
+                <a href="https://www.facebook.com/BritishWayEnglishAcademy.lk" className="hover:text-blue-300 transition-colors">
                   <Facebook className="w-5 h-5" />
                 </a>
                 <a href="#" className="hover:text-blue-300 transition-colors">
                   <Twitter className="w-5 h-5" />
                 </a>
-                <a href="#" className="hover:text-blue-300 transition-colors">
+                <a href="https://www.instagram.com/britishwaylk?igsh=MWkzc2J6Y3ZqY3B0MQ==" className="hover:text-blue-300 transition-colors">
                   <Instagram className="w-5 h-5" />
                 </a>
                 {/* Removed Linkedin to match image */}
@@ -97,7 +97,7 @@ const Footer = () => {
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 text-blue-200 text-sm">
           <p className="text-center sm:text-left">British Way English Academy IT Department © 2025. All rights reserved.</p>
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
-            <button onClick={() => navigate('/')} className="hover:text-white transition-colors">Home</button>
+            <button onClick={() => navigate('/hero')} className="hover:text-white transition-colors">Home</button>
             <button onClick={() => navigate('/courses')} className="hover:text-white transition-colors">Courses</button>
             <button onClick={() => navigate('/about')} className="hover:text-white transition-colors">About Us</button>
             <button onClick={() => navigate('/contact')} className="hover:text-white transition-colors">Contact Us</button>

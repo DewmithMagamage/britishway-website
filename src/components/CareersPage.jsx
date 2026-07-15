@@ -9,7 +9,7 @@ const CareersPage = () => {
       title: "English Language Instructor",
       location: "Multiple Locations",
       type: "Full-time",
-      experience: "2+ years",
+      experience: "1.5+ years",
       description: "We are looking for passionate English language instructors to join our team across various branches.",
       requirements: [
         "Bachelor's degree in English or related field",
@@ -20,44 +20,44 @@ const CareersPage = () => {
     },
     {
       id: 2,
-      title: "Branch Manager",
-      location: "Nugegoda",
+      title: "Accounts Assistant",
+      location: "Head Office / Multiple Locations",
       type: "Full-time",
-      experience: "5+ years",
-      description: "Lead and manage one of our branch operations, ensuring excellent service delivery.",
+      experience: "2+ years",
+      description: "We are seeking a detail-oriented Accounts Assistant to support our finance team with daily accounting operations, financial records, and reporting.",
       requirements: [
-        "Master's degree in Management or related field",
-        "5+ years management experience",
-        "Strong leadership skills",
-        "Experience in education sector preferred"
+        "Diploma or Bachelor's degree in Accounting, Finance, or a related field",
+        "Knowledge of accounting principles and bookkeeping",
+        "Proficiency in Microsoft Excel and accounting software",
+        "High level of accuracy and attention to detail"
       ]
     },
     {
       id: 3,
-      title: "Marketing Coordinator",
+      title: "Branch Coordinator",
       location: "Head Office - Nittambuwa",
       type: "Full-time",
-      experience: "3+ years",
+      experience: "1.5+ years",
       description: "Develop and implement marketing strategies to promote our courses and services.",
       requirements: [
-        "Bachelor's degree in Marketing or related field",
-        "3+ years marketing experience",
-        "Digital marketing skills",
-        "Creative thinking and problem-solving"
+        "Previous experience in administration or branch management",
+        "Strong leadership and organizational skills",
+        "Excellent communication and problem-solving abilities",
+        "Proficiency in Microsoft Office applications"
       ]
     },
     {
       id: 4,
-      title: "IT Support Specialist",
-      location: "Head Office - Nittambuwa",
+      title: "Call Center Officer",
+      location: "Head Office / Multiple Locations",
       type: "Full-time",
       experience: "2+ years",
-      description: "Provide technical support for our IT infrastructure and systems.",
+      description: "We are looking for enthusiastic and customer-focused Call Center Officers to handle inquiries, assist prospective students, and provide outstanding customer service.",
       requirements: [
-        "Bachelor's degree in IT or related field",
-        "2+ years IT support experience",
-        "Knowledge of network administration",
-        "Problem-solving skills"
+        "G.C.E. A/L or higher qualification",
+        "Excellent communication skills in Sinhala and English",
+        "Previous customer service or call center experience preferred",
+        "Ability to work under pressure and meet targets"
       ]
     }
   ];
