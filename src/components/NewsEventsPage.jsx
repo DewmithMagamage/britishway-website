@@ -408,7 +408,7 @@ const NewsEventsPage = () => {
       {/* Hero Section (unified style) */}
       <section className="relative h-[60vh] overflow-hidden -mt-24">
         <img 
-          src="/images/course card.jpg" 
+          src="/images/newsandevent.jpg" 
           alt="News & Events" 
           className="absolute top-0 left-0 w-full h-full object-cover"
         />
