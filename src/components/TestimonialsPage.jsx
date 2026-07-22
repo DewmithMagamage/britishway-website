@@ -77,7 +77,7 @@ const TestimonialsPage = () => {
         {/* Hero Section */}
         <section className="relative h-[60vh] overflow-hidden -mt-24">
           <img 
-            src="/images/course card.jpg" 
+            src="/images/banner09.jpg" 
             alt="Testimonials" 
             className="absolute top-0 left-0 w-full h-full object-cover"
           />

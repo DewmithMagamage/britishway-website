@@ -54,7 +54,7 @@ const CoursesPage = () => {
       {/* Hero Section */}
       <section className="relative h-[60vh] overflow-hidden -mt-24">
         <img 
-          src="/images/cover4.jpg" 
+          src="/images/banner07.jpg" 
           alt="OurCourses" 
           className="absolute top-0 left-0 w-full h-full object-cover"
         />
