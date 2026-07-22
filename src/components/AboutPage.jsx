@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Layout from "./Layout";
 import Reveal from "./Reveal";
+import { awards } from "../data/awards";
 
 const Stat = ({ icon, value, label }) => (
   <div className="flex items-center gap-3 px-5 py-4 rounded-2xl bg-white shadow-md">
@@ -15,15 +16,6 @@ const Stat = ({ icon, value, label }) => (
 );
 
 const AboutPage = () => {
-  const awards = [
-    { image: 'Awards IMG.png', name: 'Educational Excellence Award' },
-    { image: 'ISO Cetificate.png', name: 'ISO Certification' },
-    { image: 'best english academy.png', name: 'Best English Academy' },
-    { image: 'massco 2016.png', name: 'MASSCO Award 2016' },
-    { image: 'massco 2017.png', name: 'MASSCO Award 2017' },
-    { image: 'SLIM.png', name: 'SLIM Brand Excellence' }
-  ];
-
   return (
     <Layout>
       <div className="w-full min-h-screen bg-white">

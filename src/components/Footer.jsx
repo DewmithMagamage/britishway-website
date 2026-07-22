@@ -95,7 +95,7 @@ const Footer = () => {
         
         {/* Bottom Section */}
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 text-blue-200 text-sm">
-          <p className="text-center sm:text-left">British Way English Academy IT Department © 2025. All rights reserved.</p>
+          <p className="text-center sm:text-left">British Way English Academy IT Department © 2026. All rights reserved.</p>
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
             <button onClick={() => navigate('/hero')} className="hover:text-white transition-colors">Home</button>
             <button onClick={() => navigate('/courses')} className="hover:text-white transition-colors">Courses</button>
