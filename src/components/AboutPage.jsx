@@ -31,7 +31,7 @@ const AboutPage = () => {
       {/* Hero Banner */}
       <section className="relative h-[60vh] overflow-hidden -mt-24">
         <img 
-          src="/images/banner 01.jpg" 
+          src="/images/banner02.jpg" 
           alt="About Us" 
           className="absolute top-0 left-0 w-full h-full object-cover"
         />
