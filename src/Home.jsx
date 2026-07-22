@@ -1,7 +1,6 @@
 import React from "react";
 import Layout from "./components/Layout";
 import Hero from "./components/Hero";
-import AwardsSection from "./components/AwardsSection";
 import Partners from "./components/Partners";
 import Programmes from "./components/Programmes";
 import About from "./components/About";
@@ -29,7 +28,6 @@ const Home = () => {
     <Layout noTopPadding>
       <div className="w-full overflow-hidden bg-white text-gray-900">
         <Hero onApplyNow={handleOpenPopup} />
-        <AwardsSection />
         <Partners />
         <Programmes />
         <About />

@@ -10,14 +10,16 @@ const AwardsSection = () => {
   const slideIntervalRef = useRef(null);
 
   const next = useCallback(() => {
+    if (isTransitioning) return;
     setIsTransitioning(true);
     setCurrentIndex((prev) => (prev + 1) % awards.length);
-  }, []);
+  }, [isTransitioning]);
 
   const prev = useCallback(() => {
+    if (isTransitioning) return;
     setIsTransitioning(true);
     setCurrentIndex((prev) => (prev - 1 + awards.length) % awards.length);
-  }, []);
+  }, [isTransitioning]);
 
   useEffect(() => {
     slideIntervalRef.current = setInterval(next, 5000);
@@ -59,86 +61,90 @@ const AwardsSection = () => {
   };
 
   return (
-    <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative overflow-hidden bg-gray-50">
-      <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
-        <h2 className="text-3xl font-bold mb-1">Awards and Appreciations</h2>
-        <p className="text-gray-600 text-sm md:text-base">
-          Milestones that reflect our commitment to world-class English education and the trust of
-          students across Sri Lanka.
-        </p>
-      </div>
+    <section className="py-8 md:py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
+      <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="flex flex-col justify-center text-left md:pr-4 lg:pr-8">
+          <h2 className="text-4xl md:text-4xl font-bold mb-3 leading-tight">
+            Awards and Appreciations
+          </h2>
+          <p className="text-gray-600 text-sm md:text-base leading-relaxed max-w-md">
+            Milestones that reflect our commitment to world-class English education and the trust
+            of students across Sri Lanka.
+          </p>
+        </div>
 
-      <div className="relative">
-        <div
-          className="overflow-hidden w-full"
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-        >
-          <div
-            className="flex transition-transform duration-500 ease-out"
-            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-            onTransitionEnd={handleTransitionEnd}
-          >
-            {awards.map((award, index) => (
-              <div key={index} className="w-full flex-shrink-0 px-4 sm:px-6">
-                <article className="bg-white rounded-2xl shadow-xl p-6 md:p-10 max-w-2xl mx-auto text-center transform transition-transform duration-300 hover:scale-[1.02]">
-                  <div className="flex justify-center mb-6">
-                    <img
-                      src={`/images/${award.image}`}
-                      alt={award.name}
-                      className="h-28 md:h-36 w-auto object-contain"
-                      loading="lazy"
-                    />
+        <div className="flex flex-col justify-center w-full min-w-0">
+          <div className="relative px-9 sm:px-10">
+            <div
+              className="overflow-hidden w-full"
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
+              <div
+                className="flex transition-transform duration-500 ease-out"
+                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                onTransitionEnd={handleTransitionEnd}
+              >
+                {awards.map((award, index) => (
+                  <div key={index} className="w-full flex-shrink-0 flex justify-center">
+                    <article className="w-full max-w-[17rem] sm:max-w-[18rem] bg-white rounded-xl shadow-md border border-gray-100 p-4 md:p-5 text-center">
+                      <div className="flex justify-center mb-3">
+                        <img
+                          src={`/images/${award.image}`}
+                          alt={award.name}
+                          className="h-16 md:h-[4.5rem] w-auto object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                      <h3 className="text-base font-semibold text-gray-900 mb-2 leading-snug">
+                        {award.name}
+                      </h3>
+                      <p className="text-gray-600 text-xs md:text-sm leading-relaxed min-h-[2.75rem]">
+                        {award.description}
+                      </p>
+                    </article>
                   </div>
-                  <h3 className="text-xl md:text-2xl font-semibold text-gray-900 mb-3">
-                    {award.name}
-                  </h3>
-                  <p className="text-gray-600 text-base md:text-lg leading-relaxed">
-                    {award.description}
-                  </p>
-                </article>
+                ))}
               </div>
+            </div>
+
+            <button
+              type="button"
+              onClick={prev}
+              disabled={isTransitioning}
+              className="absolute left-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-md border border-gray-100 hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              aria-label="Previous award"
+            >
+              <ChevronLeft className="w-5 h-5 text-gray-700" />
+            </button>
+            <button
+              type="button"
+              onClick={next}
+              disabled={isTransitioning}
+              className="absolute right-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-md border border-gray-100 hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              aria-label="Next award"
+            >
+              <ChevronRight className="w-5 h-5 text-gray-700" />
+            </button>
+          </div>
+
+          <div className="flex justify-center items-center gap-2 mt-4">
+            {awards.map((_, index) => (
+              <button
+                key={index}
+                type="button"
+                onClick={() => goTo(index)}
+                disabled={isTransitioning}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  index === currentIndex
+                    ? "bg-blue-600 w-6"
+                    : "bg-gray-300 hover:bg-gray-400 w-2"
+                }`}
+                aria-label={`Go to award ${index + 1}`}
+              />
             ))}
           </div>
-        </div>
-
-        <div className="hidden md:block">
-          <button
-            type="button"
-            onClick={prev}
-            disabled={isTransitioning}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg hover:bg-white/95 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-            aria-label="Previous award"
-          >
-            <ChevronLeft className="w-6 h-6 text-gray-700" />
-          </button>
-          <button
-            type="button"
-            onClick={next}
-            disabled={isTransitioning}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg hover:bg-white/95 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-            aria-label="Next award"
-          >
-            <ChevronRight className="w-6 h-6 text-gray-700" />
-          </button>
-        </div>
-
-        <div className="flex justify-center items-center space-x-2 mt-8">
-          {awards.map((_, index) => (
-            <button
-              key={index}
-              type="button"
-              onClick={() => goTo(index)}
-              disabled={isTransitioning}
-              className={`h-2.5 rounded-full transition-all duration-300 ${
-                index === currentIndex
-                  ? "bg-blue-600 w-8"
-                  : "bg-gray-300 hover:bg-gray-400 w-2.5"
-              }`}
-              aria-label={`Go to award ${index + 1}`}
-            />
-          ))}
         </div>
       </div>
     </section>
