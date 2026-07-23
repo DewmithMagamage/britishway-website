@@ -215,7 +215,7 @@ const courseData = {
     subtitle: "Evening English Course",
     image: "/images/cc7.jpg",
     courseDuration: "4 Months",
-    minimumAge: "Over 16",
+    minimumAge: "Over 18",
     courseHours: "160 hours",
     courseStructure: "Evening General English",
     description: {
@@ -266,7 +266,7 @@ const courseData = {
     subtitle: "Virtual English Course",
     image: "/images/cc6.jpg",
     courseDuration: "2 Months",
-    minimumAge: "Over 16",
+    minimumAge: "Over 17",
     courseHours: "Virtual Learning",
     courseStructure: "Online Interactive English",
     description: {
