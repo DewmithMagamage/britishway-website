@@ -111,7 +111,7 @@ const courseData = {
   "weekday-3month": {
     title: "Weekday Diploma",
     subtitle: "Three Month English Diploma",
-    image: "/images/cc1.jpg",
+    image: "/images/cc8.jpg",
     courseDuration: "3 Months",
     minimumAge: "Over 16",
     courseHours: "480 hours",
