@@ -93,7 +93,7 @@ const AwardsSection = () => {
                         <img
                           src={`/images/${award.image}`}
                           alt={award.name}
-                          className="h-16 md:h-[4.5rem] w-auto object-contain"
+                          className="h-30 md:h-40 w-auto object-contain"
                           loading="lazy"
                         />
                       </div>
