@@ -59,6 +59,15 @@ const TestimonialsPage = () => {
       rating: 5,
       text: "I’m truly grateful to have been a part of the British Way English Academy Negombo family. It wasn’t just an English course — it was a home. The Negombo Branch became one of the most unforgettable milestones in my life. The teachers not only improved my English, but also shaped my confidence and personality. We learned so much more than just language. This journey helped me grow, communicate better, and believe in myself. I highly recommend British Way English Academy Negombo to anyone looking to learn English. Thank you to the Principal, teachers, and staff for everything. Love you so much, British Way Negombo!",
       image: "/images/negambostu.png"
+    },
+    {
+      id: 7,
+      name: "Chaminda Rathnayake",
+      course: "Weekday Diploma",
+      branch: "Bandarawela",
+      rating: 5,
+      text: "I would like to express my heartfelt appreciation to British Way English Academy, Bandarawela Branch, for helping me improve my english and develop my personality. The lecturers were extremely supportive and used unique teaching methods that made learning both enjoyable for every student. The activity-based lessons not only strengthened my English but also helped me enhance my creativity and self-confidence. Choosing British Way English Academy was one of the best decisions I have ever made. Today I have no fear of speaking English and I can express myself with confidence.",
+      image: "/images/stubandarawela.png"
     }
   ];
 
