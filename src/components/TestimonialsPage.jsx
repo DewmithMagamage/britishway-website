@@ -62,12 +62,12 @@ const TestimonialsPage = () => {
     },
     {
       id: 7,
-      name: "Chaminda Rathnayake",
+      name: "Ranumi Omalshi",
       course: "Weekday Diploma",
       branch: "Bandarawela",
       rating: 5,
       text: "I would like to express my heartfelt appreciation to British Way English Academy, Bandarawela Branch, for helping me improve my english and develop my personality. The lecturers were extremely supportive and used unique teaching methods that made learning both enjoyable for every student. The activity-based lessons not only strengthened my English but also helped me enhance my creativity and self-confidence. Choosing British Way English Academy was one of the best decisions I have ever made. Today I have no fear of speaking English and I can express myself with confidence.",
-      image: "/images/stubandarawela.png"
+      image: "/images/sturanumi.png"
     }
   ];
 
